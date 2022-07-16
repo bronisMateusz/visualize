@@ -1,0 +1,40 @@
+version: '3'
+services:
+  drupal:
+    image: drupal:9-php8.1-apache
+    volumes:
+      - .:/app/
+    restart: unless-stopped
+    environment:
+      DB_HOST: ${DB_NAME}
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_USER}
+      DOMAIN: ${DOMAIN}
+    ports:
+      - "9080:80"
+  db:
+    image: mariadb:10.8
+    volumes:
+      - "db_data:/var/lib/mysql"
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_PASS}
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASS}
+    ports:
+      - "9306:3306"
+  pma:
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: ${DB_HOST}
+      PMA_USER: ${DB_USER}
+      PMA_PASSWORD: ${DB_PASS}
+      PHP_UPLOAD_MAX_FILESIZE: 1G
+      PHP_MAX_INPUT_VARS: 1G
+    ports:
+      - "9081:80"
+volumes:
+  db_data:
