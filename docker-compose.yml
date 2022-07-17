@@ -1,7 +1,12 @@
 version: '3'
 services:
   drupal:
-    image: drupal:9-php8.1-apache
+    # image: drupal:9-php8.1-apache
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - db
     volumes:
       - .:/app/
     restart: unless-stopped
@@ -13,6 +18,7 @@ services:
       DOMAIN: ${DOMAIN}
     ports:
       - "9080:80"
+      - "9443:443"
   db:
     image: mariadb:10.8
     volumes:
