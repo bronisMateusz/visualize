@@ -1,0 +1,14 @@
+name: Visualize 0.0.1
+type: theme
+base theme: olivero
+description: Theme created especially fot Visualize.pl
+package: Visualize
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - visualize/global
+regions:
+  header: "Header"
+  menu: "Menu"
+  content: "Content"
+  footer: "Footer"
