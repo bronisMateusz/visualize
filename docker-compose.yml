@@ -18,7 +18,6 @@ services:
       DOMAIN: ${DOMAIN}
     ports:
       - "9080:80"
-      - "9443:443"
   db:
     image: mariadb:10.8
     volumes:
