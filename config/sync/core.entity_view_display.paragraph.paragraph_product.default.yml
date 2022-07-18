@@ -1,0 +1,40 @@
+uuid: 134d12b7-9959-4a11-a6b4-a87c885abf1c
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_product.field_product_description
+    - field.field.paragraph.paragraph_product.field_product_name
+    - field.field.paragraph.paragraph_product.field_product_photo
+    - paragraphs.paragraphs_type.paragraph_product
+  module:
+    - text
+id: paragraph.paragraph_product.default
+targetEntityType: paragraph
+bundle: paragraph_product
+mode: default
+content:
+  field_product_description:
+    type: text_default
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_product_name:
+    type: string
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_product_photo:
+    type: entity_reference_label
+    label: visually_hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

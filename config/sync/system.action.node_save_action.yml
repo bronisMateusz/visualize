@@ -1,0 +1,13 @@
+uuid: 88fd0b6d-d52f-448e-abeb-36717789e4fe
+langcode: pl
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: LhdsoZPL_pFas2fjaAWue4zvrQ_tEVofLYtcNec-JGM
+id: node_save_action
+label: 'Zapisz zawartość'
+type: node
+plugin: 'entity:save_action:node'
+configuration: {  }

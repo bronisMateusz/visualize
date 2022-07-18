@@ -1,0 +1,13 @@
+uuid: e6e232da-a01d-4c9c-b212-46d4fffff363
+langcode: pl
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: C7X8h9FWlwkQ9y5mnU2JzgaZICAdc6HFbPVbhvjlAYE
+id: node_unpublish_action
+label: 'Zakończ publikację wpisów'
+type: node
+plugin: 'entity:unpublish_action:node'
+configuration: {  }

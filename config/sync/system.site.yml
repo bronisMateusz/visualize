@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: pl
+uuid: 6d1a7cf4-4a2a-4642-af9c-0b6ba83c62eb
+name: Visualize
+mail: mateusz.bronis99@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: pl

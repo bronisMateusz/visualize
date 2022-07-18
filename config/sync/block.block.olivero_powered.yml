@@ -1,0 +1,22 @@
+uuid: f31dbfb1-d377-40a7-8436-353a93b58ba6
+langcode: pl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: olivero_powered
+theme: olivero
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Witrynę napędza Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

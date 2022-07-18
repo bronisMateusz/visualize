@@ -1,0 +1,10 @@
+uuid: 5dbb661e-d7b2-44ec-9964-423411a77971
+langcode: pl
+status: true
+dependencies: {  }
+id: paragraph_full_page
+label: 'Akapit na całą stronę'
+icon_uuid: null
+icon_default: null
+description: 'Dodaje akapit będący kontenerem na treść, który zajmuje minimum całą wysokość wyświetlanej strony'
+behavior_plugins: {  }

@@ -1,0 +1,10 @@
+uuid: 6f05b79b-a735-4e0d-99a4-cd9a43ef1bea
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: M7yqicYkU36hRy5p9drAaGBBihhUD1OyujFrAaQ93ZE
+id: html_time
+label: 'Czas HTML'
+locked: true
+pattern: 'H:i:s'

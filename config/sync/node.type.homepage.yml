@@ -1,0 +1,17 @@
+uuid: cce91057-e52a-46e7-9d4e-a0ec6b0ae777
+langcode: pl
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Strona główna'
+type: homepage
+description: 'Dodaje nową stronę główną'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

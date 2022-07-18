@@ -1,0 +1,10 @@
+uuid: 50b07236-db96-40a4-90d5-b31791488887
+langcode: pl
+status: true
+dependencies: {  }
+id: paragraph_visualization
+label: Wizualizacje
+icon_uuid: null
+icon_default: null
+description: 'Definiuje pola wyświetlane w paragrafie Wizualizacje'
+behavior_plugins: {  }

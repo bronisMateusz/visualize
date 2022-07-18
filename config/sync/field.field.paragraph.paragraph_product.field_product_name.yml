@@ -1,0 +1,19 @@
+uuid: faadb398-9036-4413-98f2-0ad33dd69f93
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_product_name
+    - paragraphs.paragraphs_type.paragraph_product
+id: paragraph.paragraph_product.field_product_name
+field_name: field_product_name
+entity_type: paragraph
+bundle: paragraph_product
+label: 'Nazwa produktu'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

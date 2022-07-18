@@ -1,0 +1,10 @@
+uuid: d3e74e6a-a30f-4726-ab63-1b296ce6f999
+langcode: pl
+status: true
+dependencies: {  }
+id: paragraph_hero
+label: Hero
+icon_uuid: null
+icon_default: null
+description: 'Definiuje pola wyświetlane w paragrafie Hero'
+behavior_plugins: {  }

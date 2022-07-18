@@ -1,0 +1,10 @@
+uuid: f68bcfb5-e5f7-46be-b852-10bf96562539
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
+id: main
+label: 'Główna nawigacja'
+description: 'Odnośniki sekcji strony'
+locked: true
