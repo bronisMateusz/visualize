@@ -1,4 +1,4 @@
-uuid: 5e4b9fdf-b5c4-41b4-9e37-ce219a224f13
+uuid: b059d898-5624-4421-be4b-8de2c479bb58
 langcode: pl
 status: true
 dependencies:
@@ -15,7 +15,7 @@ bundle: paragraph_full_page
 label: 'Tło akapitu'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

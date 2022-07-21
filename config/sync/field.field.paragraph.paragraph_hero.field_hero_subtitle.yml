@@ -1,4 +1,4 @@
-uuid: b0a6a580-8eec-404a-8068-f51715c00084
+uuid: 7ece8793-72b0-49b9-9bfc-65ba823ad667
 langcode: pl
 status: true
 dependencies:
@@ -12,7 +12,7 @@ bundle: paragraph_hero
 label: Podtytuł
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

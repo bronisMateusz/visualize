@@ -1,4 +1,4 @@
-uuid: 134d12b7-9959-4a11-a6b4-a87c885abf1c
+uuid: a8fcfca3-9845-424b-a21a-4aeb8146d2d9
 langcode: pl
 status: true
 dependencies:
@@ -16,25 +16,26 @@ mode: default
 content:
   field_product_description:
     type: text_default
-    label: visually_hidden
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_product_name:
     type: string
-    label: visually_hidden
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_product_photo:
-    type: entity_reference_label
-    label: visually_hidden
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 0
     region: content
 hidden: {  }

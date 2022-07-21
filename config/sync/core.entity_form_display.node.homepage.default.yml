@@ -1,4 +1,4 @@
-uuid: 0736aee3-2bab-456d-a468-724382018604
+uuid: 2dc7216f-fb2b-46e9-8bf6-b2dd7dff4cc1
 langcode: pl
 status: true
 dependencies:
@@ -25,7 +25,7 @@ content:
     region: content
     settings:
       title: Akapit
-      title_plural: Akapity
+      title_plural: Paragraphs
       edit_mode: open
       closed_mode: summary
       autocollapse: none

@@ -1,4 +1,4 @@
-uuid: faadb398-9036-4413-98f2-0ad33dd69f93
+uuid: 7adf7e28-dcf0-450f-82d7-aae49cc4e5b4
 langcode: pl
 status: true
 dependencies:
@@ -12,7 +12,7 @@ bundle: paragraph_product
 label: 'Nazwa produktu'
 description: ''
 required: true
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

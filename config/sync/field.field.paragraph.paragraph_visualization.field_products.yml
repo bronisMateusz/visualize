@@ -1,4 +1,4 @@
-uuid: d00b5d41-e442-4620-b7f8-40efc7553654
+uuid: eea1328a-6500-4225-93eb-a300bfb06d4b
 langcode: pl
 status: true
 dependencies:
@@ -14,7 +14,7 @@ entity_type: paragraph
 bundle: paragraph_visualization
 label: Produkty
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''
@@ -26,15 +26,18 @@ settings:
     negate: 0
     target_bundles_drag_drop:
       paragraph_full_page:
-        weight: 8
+        weight: 6
         enabled: false
       paragraph_hero:
-        weight: 9
+        weight: 7
         enabled: false
       paragraph_product:
-        weight: 7
+        weight: 8
         enabled: true
       paragraph_visualization:
+        weight: 9
+        enabled: false
+      wizualizacje:
         weight: 10
         enabled: false
 field_type: entity_reference_revisions

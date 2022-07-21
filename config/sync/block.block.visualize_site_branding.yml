@@ -1,0 +1,25 @@
+uuid: 9f064056-c5a6-4a3b-aeef-8034dd39f8bb
+langcode: pl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - visualize
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: visualize_site_branding
+theme: visualize
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Marka witryny'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

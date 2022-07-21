@@ -1,14 +1,14 @@
-uuid: 6293b6ef-0d96-42ba-87b0-701fd8db91e5
+uuid: 20f0a84d-e3af-407e-b760-28d4bf85b62d
 langcode: pl
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_primary_link
+    - field.storage.paragraph.field_link_primary
     - paragraphs.paragraphs_type.paragraph_hero
   module:
     - link
-id: paragraph.paragraph_hero.field_primary_link
-field_name: field_primary_link
+id: paragraph.paragraph_hero.field_link_primary
+field_name: field_link_primary
 entity_type: paragraph
 bundle: paragraph_hero
 label: 'Główny link'

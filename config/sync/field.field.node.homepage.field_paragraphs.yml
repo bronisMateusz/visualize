@@ -1,4 +1,4 @@
-uuid: d8ea054b-bde1-4008-b858-deedf03066a3
+uuid: cbf1bbe3-a7aa-4fa8-9cc7-05aac76194fd
 langcode: pl
 status: true
 dependencies:
@@ -14,7 +14,7 @@ entity_type: node
 bundle: homepage
 label: Akapity
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
@@ -25,16 +25,16 @@ settings:
       paragraph_full_page: paragraph_full_page
     negate: 0
     target_bundles_drag_drop:
-      hero_content:
+      paragraph_full_page:
+        weight: 5
+        enabled: true
+      paragraph_hero:
+        weight: 6
+        enabled: false
+      paragraph_product:
         weight: 7
         enabled: false
-      paragraph_full_page:
-        weight: 6
-        enabled: true
-      product:
-        weight: 5
-        enabled: false
-      visualizations_content:
+      wizualizacje:
         weight: 8
         enabled: false
 field_type: entity_reference_revisions

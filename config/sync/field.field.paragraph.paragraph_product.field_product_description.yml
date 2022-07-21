@@ -1,4 +1,4 @@
-uuid: de0e9982-c799-43b6-9484-d25a78e748ce
+uuid: 3b9840e7-d3a5-4095-a7ca-708297666b34
 langcode: pl
 status: true
 dependencies:
@@ -13,8 +13,8 @@ entity_type: paragraph
 bundle: paragraph_product
 label: 'Opis produktu'
 description: ''
-required: false
-translatable: true
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

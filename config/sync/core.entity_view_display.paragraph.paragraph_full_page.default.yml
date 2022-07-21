@@ -1,4 +1,4 @@
-uuid: 74c13938-1d9e-4546-8594-3c1a7e14ea39
+uuid: 9ce09a55-82b8-4c64-a6c4-92b7f501c19a
 langcode: pl
 status: true
 dependencies:
@@ -15,19 +15,20 @@ mode: default
 content:
   field_paragraph:
     type: entity_reference_revisions_entity_view
-    label: visually_hidden
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_paragraph_background:
-    type: entity_reference_label
-    label: visually_hidden
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 0
     region: content
 hidden: {  }

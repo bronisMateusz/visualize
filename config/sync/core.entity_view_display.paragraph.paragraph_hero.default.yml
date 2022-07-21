@@ -1,11 +1,11 @@
-uuid: 62f23544-f547-4ea7-a5ed-9d088d9214cc
+uuid: 823aacfd-5c7e-479f-97db-f5de4cb3bf63
 langcode: pl
 status: true
 dependencies:
   config:
     - field.field.paragraph.paragraph_hero.field_hero_subtitle
     - field.field.paragraph.paragraph_hero.field_hero_title
-    - field.field.paragraph.paragraph_hero.field_primary_link
+    - field.field.paragraph.paragraph_hero.field_link_primary
     - paragraphs.paragraphs_type.paragraph_hero
   module:
     - link
@@ -16,7 +16,7 @@ mode: default
 content:
   field_hero_subtitle:
     type: string
-    label: visually_hidden
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -24,15 +24,15 @@ content:
     region: content
   field_hero_title:
     type: string
-    label: visually_hidden
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     weight: 0
     region: content
-  field_primary_link:
+  field_link_primary:
     type: link
-    label: visually_hidden
+    label: hidden
     settings:
       trim_length: 80
       url_only: false

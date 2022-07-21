@@ -1,4 +1,4 @@
-uuid: 11cf5d36-9b47-4977-be90-5607d4a4ce3b
+uuid: d1b94123-d4fc-4c30-8131-a5b2936ebac6
 langcode: pl
 status: true
 dependencies:
@@ -15,7 +15,7 @@ bundle: paragraph_product
 label: 'Zdjęcie produktu'
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:

@@ -1,4 +1,4 @@
-uuid: 78fb8bcd-57d1-4ff1-97bd-09a417f3d5c6
+uuid: 1fccf72c-8ee3-4500-852b-f46dcca2249d
 langcode: pl
 status: true
 dependencies:
@@ -6,17 +6,16 @@ dependencies:
     - field.storage.paragraph.field_paragraph
     - paragraphs.paragraphs_type.paragraph_full_page
     - paragraphs.paragraphs_type.paragraph_hero
-    - paragraphs.paragraphs_type.paragraph_visualization
   module:
     - entity_reference_revisions
 id: paragraph.paragraph_full_page.field_paragraph
 field_name: field_paragraph
 entity_type: paragraph
 bundle: paragraph_full_page
-label: Akapit
+label: Paragraf
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -24,11 +23,10 @@ settings:
   handler_settings:
     target_bundles:
       paragraph_hero: paragraph_hero
-      paragraph_visualization: paragraph_visualization
     negate: 0
     target_bundles_drag_drop:
       paragraph_full_page:
-        weight: 8
+        weight: 5
         enabled: false
       paragraph_hero:
         weight: 6
@@ -36,7 +34,7 @@ settings:
       paragraph_product:
         weight: 7
         enabled: false
-      paragraph_visualization:
+      wizualizacje:
         weight: 8
         enabled: true
 field_type: entity_reference_revisions
