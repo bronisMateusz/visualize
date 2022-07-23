@@ -1,11 +1,8 @@
-@use "../node_modules/breakpoint-sass/stylesheets/breakpoint" as *;
+// Abstracts
+@import "abstracts/variables";
 
-$color: green;
+// Blocks
+@import "blocks/site-branding";
 
-body {
-  color: $color;
-
-  @include breakpoint(800px) {
-    color: blue;
-  }
-}
+// Layouts
+@import "layouts/body";

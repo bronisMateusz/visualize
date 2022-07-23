@@ -48,7 +48,10 @@
 	{{ title_suffix }}
 	{% block content %}
 		<div{{content_attributes.addClass('block__content')}}>
-			{{ content }}
+			<a href="{{ url('<front>') }}">
+				{{content.site_logo}}
+				<span class="site-name">{{ 'Homepage'|t }}</span>
+			</a>
 		</div>
 	{% endblock %}
 </div>

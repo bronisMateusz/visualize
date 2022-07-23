@@ -1,5 +1,5 @@
 {
-  "name": "visualize",
+  "name": "visualize-theme",
   "version": "1.0.0",
   "scripts": {
     "start": "vite --host=0.0.0.0",
