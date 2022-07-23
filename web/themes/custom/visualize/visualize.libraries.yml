@@ -11,6 +11,16 @@ global-js:
   dependencies:
     - core/drupalSettings
 
+full-page:
+  version: 2.9.7
+  css:
+    component:
+      libraries/fullPage/jquery.fullpage.min.css: { minified: true }
+  js:
+    libraries/fullPage/jquery.fullpage.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+
 hot-module-replacement:
   header: true
   js:
