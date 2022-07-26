@@ -8,7 +8,7 @@ export default {
     manifest: true,
     rollupOptions: {
       // overwrite default .html entry
-      input: ["/scss/styles.scss", "/js/main.js"],
+      input: ["/scss/styles.scss", "/js/fullpage.js"],
       // Remove the [hash] since Drupal will take care of that.
       output: {
         entryFileNames: `[name].js`,

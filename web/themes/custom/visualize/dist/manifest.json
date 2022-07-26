@@ -1,0 +1,7 @@
+{
+  "js/fullpage.js": {
+    "file": "fullpage.js",
+    "src": "js/fullpage.js",
+    "isEntry": true
+  }
+}

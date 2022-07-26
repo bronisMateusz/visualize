@@ -7,7 +7,7 @@ global-styling:
 
 global-js:
   js:
-    js/main.js: { attributes: { type: "module" } }
+    js/fullpage.js: {}
   dependencies:
     - core/drupalSettings
 
