@@ -1,0 +1,18 @@
+#block-visualize-site-branding {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  .block__content {
+    display: flex;
+    justify-content: center;
+
+    .site-name {
+      position: absolute;
+      clip: rect(1px, 1px, 1px, 1px);
+      clip-path: inset(0px 0px 99.9% 99.9%);
+    }
+  }
+}

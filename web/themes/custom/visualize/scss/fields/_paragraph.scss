@@ -1,0 +1,14 @@
+.field--name-field-paragraph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 50px);
+}
+
+@media (min-width: 768px) {
+  .field--name-field-paragraph {
+    width: calc(100% - 200px);
+    max-width: 1980px;
+  }
+}

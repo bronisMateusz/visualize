@@ -1,0 +1,22 @@
+.field--name-field-paragraph-background {
+  height: 100vh;
+  width: 100vw;
+  margin-bottom: 0;
+  background-color: $black;
+
+  .media {
+    opacity: .6;
+    height: 100%;
+
+    .field,
+    .field__item {
+      height: 100%;
+    }
+  }
+
+  .field__item>* {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}

@@ -9,7 +9,7 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN \
   # Install php extensions.
   chmod +x /usr/local/bin/install-php-extensions && \
-  IPE_GD_WITHOUTAVIF=1 install-php-extensions gd opcache apcu pdo_mysql memcached uploadprogress xdebug && \
+  IPE_GD_WITHOUTAVIF=1 install-php-extensions gd opcache apcu pdo_mysql memcached uploadprogress && \
   # Install composer.
   apt-get update && apt-get install --assume-yes zip unzip git && \
   install-php-extensions @composer && \
