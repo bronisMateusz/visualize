@@ -109,4 +109,23 @@ function _vite_replace_library(array &$library, string $path, array $options): v
  */
 function visualize_preprocess_html(&$variables) {
   $variables['#attached']['drupalSettings']['path']['themeUrl'] = \Drupal::theme()->getActiveTheme()->getPath();
+
+  $main_menu_storage = \Drupal::entityTypeManager()
+    ->getStorage('menu_link_content')
+    ->loadByProperties(['menu_name' => 'main']);
+
+  $menu_titles = [];
+  $menu_links = [];
+
+  foreach ($main_menu_storage as $menu_item) {
+    $menu_item_title = $menu_item->getTitle();
+    array_push($menu_titles, $menu_item_title);
+
+
+    $menu_item_link = str_replace('#', '', $menu_item->getUrlObject()->toString());
+    array_push($menu_links, $menu_item_link);
+  }
+
+  $variables['#attached']['drupalSettings']['menuTitles'] = $menu_titles;
+  $variables['#attached']['drupalSettings']['menuLinks'] = $menu_links;
 }

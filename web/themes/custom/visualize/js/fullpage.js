@@ -4,9 +4,6 @@
       ".paragraph--type--paragraph-full-page"
     );
 
-    //need to be fixed
-    fullPageParagraphs[0].classList.add("active");
-
     const addOutAnimation = (paragraphBefore) => {
       paragraphBefore.classList.add("send-back");
 
@@ -28,10 +25,10 @@
     };
 
     $("#fullpage").fullpage({
-      anchors: ["firstPage", "secondPage"],
+      anchors: drupalSettings.menuLinks,
       navigation: true,
       navigationPosition: "left",
-      navigationTooltips: ["firstSlide", "secondSlide"],
+      navigationTooltips: drupalSettings.menuTitles,
 
       onLeave: function (index, nextIndex, direction) {
         const paragraphBefore = fullPageParagraphs[index - 1];
@@ -46,6 +43,10 @@
           addOutAnimation(paragraphBefore);
           addInAnimation(paragraphNext, direction);
         }
+      },
+      afterRender: function () {
+        //_TODO: need to be fixed
+        fullPageParagraphs[0].classList.add("active");
       },
     });
   });
