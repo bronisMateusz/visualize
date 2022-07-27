@@ -1,0 +1,21 @@
+.paragraph--type--paragraph-hero {
+  text-align: center;
+
+  .field--name-field-hero-title {
+    font-size: 4.5rem;
+    font-family: 'Everett Jana';
+    line-height: 4.5rem;
+  }
+
+  .field--name-field-hero-subtitle {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--paragraph-hero {
+    text-align: right;
+  }
+}

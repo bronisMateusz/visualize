@@ -1,7 +1,6 @@
 version: '3'
 services:
   drupal:
-    # image: drupal:9-php8.1-apache
     build:
       context: .
       dockerfile: Dockerfile
@@ -18,7 +17,7 @@ services:
       DOMAIN: ${DOMAIN}
     ports:
       - "9080:80"
-      - "9443:443"
+      - "12320:12320"
   db:
     image: mariadb:10.8
     volumes:

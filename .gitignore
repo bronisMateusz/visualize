@@ -6,6 +6,7 @@
 
 # Ignore .env files as they are personal
 .env
+/private_files/
 
 # Ignore .DS_Store file
 .DS_Store*

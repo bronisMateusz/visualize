@@ -1,0 +1,13 @@
+uuid: 85797fd8-52e2-44ea-9527-87a5a44b65b7
+langcode: pl
+status: true
+dependencies:
+  module:
+    - user
+_core:
+  default_config_hash: DyypzTfThX10FFQw-399qPfEbLLyrhXgQrKPVsmAoJ4
+id: user_block_user_action
+label: 'Zablokuj wybrane konto użytkownika(ów)'
+type: user
+plugin: user_block_user_action
+configuration: {  }
