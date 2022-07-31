@@ -29,6 +29,7 @@
       navigation: true,
       navigationPosition: "left",
       navigationTooltips: drupalSettings.menuTitles,
+      scrollOverflow: true,
 
       onLeave: function (index, nextIndex, direction) {
         const paragraphBefore = fullPageParagraphs[index - 1];

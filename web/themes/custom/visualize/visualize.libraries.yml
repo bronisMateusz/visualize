@@ -17,6 +17,7 @@ full-page:
     component:
       libraries/fullPage/jquery.fullpage.min.css: { minified: true }
   js:
+    libraries/fullPage/scrolloverflow.min.js: { minified: true }
     libraries/fullPage/jquery.fullpage.min.js: { minified: true }
   dependencies:
     - core/jquery
