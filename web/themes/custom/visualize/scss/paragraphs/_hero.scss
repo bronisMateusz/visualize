@@ -1,10 +1,18 @@
 .paragraph--type--paragraph-hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  align-self: center;
+  width: calc(100% - 50px);
+  margin: 0 auto;
 
   .field--name-field-hero-title {
     font-size: 4.5rem;
     font-family: 'Everett Jana';
     line-height: 4.5rem;
+    margin-bottom: 25px;
   }
 
   .field--name-field-hero-subtitle {
@@ -17,6 +25,8 @@
 
 @media (min-width: 768px) {
   .paragraph--type--paragraph-hero {
+    width: calc(100% - 200px);
+    max-width: 1980px;
     text-align: right;
 
     .field--name-field-hero-title {
