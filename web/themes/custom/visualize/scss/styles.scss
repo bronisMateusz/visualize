@@ -13,15 +13,17 @@
 @import "core/reset";
 
 // Field
-@import "fields/paragraph";
 @import "fields/paragraph-background";
 
 // Layouts
 @import "layouts/body";
+@import "layouts/header";
 @import "layouts/region-content";
 
 // Paragraphs
+@import "paragraphs/full-page";
 @import "paragraphs/hero";
+@import "paragraphs/visualization";
 
 // Vendor
 @import "vendors/fullpage"
