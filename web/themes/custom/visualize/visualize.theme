@@ -137,8 +137,8 @@ function visualize_preprocess_media(array &$variables) {
   $view_mode = $variables['view_mode'];
   $field = array_key_first($variables['content']);
 
-  if ($view_mode === 'media_background' && $field === 'field_media_video_file_file') {
-    $video_file = $variables['content']['field_media_video_file_file'];
+  if ($view_mode === 'media_background' && $field === 'field_media_video_file') {
+    $video_file = $variables['content']['field_media_video_file'];
     $attributes = $video_file[0]['#attributes'];
 
     //update background video attributes
