@@ -129,3 +129,22 @@ function visualize_preprocess_html(&$variables) {
   $variables['#attached']['drupalSettings']['menuTitles'] = $menu_titles;
   $variables['#attached']['drupalSettings']['menuLinks'] = $menu_links;
 }
+
+/**
+ * Implements template_preprocess_media().
+ */
+function visualize_preprocess_media(array &$variables) {
+  $view_mode = $variables['view_mode'];
+  $field = array_key_first($variables['content']);
+
+  if ($view_mode === 'media_background' && $field === 'field_media_video_file') {
+    $video_file = $variables['content']['field_media_video_file'];
+    $attributes = $video_file[0]['#attributes'];
+
+    //update background video attributes
+    unset($attributes['controls']);
+    $attributes['autoplay'] = 'autoplay';
+    $attributes['loop'] = 'loop';
+    $attributes['muted'] = 'muted';
+  }
+}

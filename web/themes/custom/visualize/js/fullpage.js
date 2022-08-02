@@ -1,21 +1,32 @@
 (function ($) {
   $(document).ready(function () {
-    const addOutAnimation = (direction, paragraphBefore) => {
+    const addOutAnimation = (direction, paragraph) => {
+      let paragraphClasses = paragraph.classList;
+
       if (direction === "down") {
-        paragraphBefore.classList.add("back-from-top");
+        paragraphClasses.add("back-from-top");
 
         setTimeout(() => {
-          paragraphBefore.classList.remove("back-from-top");
+          paragraphClasses.remove("back-from-top");
         }, 850);
       }
 
       if (direction === "up") {
-        paragraphBefore.classList.add("back-from-bottom");
+        paragraphClasses.add("back-from-bottom");
 
         setTimeout(() => {
-          paragraphBefore.classList.remove("back-from-bottom");
+          paragraphClasses.remove("back-from-bottom");
         }, 850);
       }
+    };
+
+    const setEnterActions = (paragraph) => {
+      paragraph.classList.add("active");
+
+      const paragraphBackgroundVideo = paragraph.getElementsByTagName("video");
+      const isHasVideo = !!paragraphBackgroundVideo.length;
+
+      if (isHasVideo) paragraphBackgroundVideo[0].play();
     };
 
     $("#fullpage").fullpage({
@@ -33,7 +44,7 @@
         const paragraphNext = fullPageParagraphs[nextIndex - 1];
 
         addOutAnimation(direction, paragraphBefore);
-        paragraphNext.classList.add("active");
+        setEnterActions(paragraphNext);
       },
     });
   });
