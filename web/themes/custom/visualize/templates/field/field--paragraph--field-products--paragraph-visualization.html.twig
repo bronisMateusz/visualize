@@ -7,18 +7,21 @@
 
 {% if label_hidden %}
 	<div class='products-gallery'>
+
 		<div {{ attributes.addClass('products-images') }}>
 			{% for item in items %}
 				{% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
-				{{ drupal_image(field_media_image.entity.id, '', { alt: field_media_image.alt|t, class: 'product-image'}) }}
+				{{ drupal_image(field_media_image.entity.id,'', { alt: field_media_image.alt|t, class: 'product-image'}) }}
 			{% endfor %}
 		</div>
+
 		<div {{ attributes.addClass('products-names') }}>
 			{% for item in items %}
 				{% set field_product_name = item.content['#paragraph'].field_product_name.value %}
 				<h2 class='product-name'>{{ field_product_name}}</h2>
 			{% endfor %}
 		</div>
+
 		<div {{ attributes.addClass('products-descriptions') }}>
 			{% for item in items %}
 				{% set field_product_description = item.content['#paragraph'].field_product_description.value %}
@@ -27,23 +30,27 @@
 				</div>
 			{% endfor %}
 		</div>
+
 	</div>
 {% else %}
 	<div{{attributes.addClass(classes)}}>
 		<div{{title_attributes.addClass(title_classes)}}>{{ label }}</div>
 		<div class='products-gallery'>
+
 			<div {{ attributes.addClass('products-images') }}>
 				{% for item in items %}
 					{% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
 					{{ drupal_image(field_media_image.entity.id, '', { alt: field_media_image.alt|t, class: 'product-image'}) }}
 				{% endfor %}
 			</div>
+
 			<div {{ attributes.addClass('products-names') }}>
 				{% for item in items %}
 					{% set field_product_name = item.content['#paragraph'].field_product_name.value %}
 					<h2 class='product-name'>{{ field_product_name}}</h2>
 				{% endfor %}
 			</div>
+
 			<div {{ attributes.addClass('products-descriptions') }}>
 				{% for item in items %}
 					{% set field_product_description = item.content['#paragraph'].field_product_description.value %}
@@ -52,6 +59,7 @@
 					</div>
 				{% endfor %}
 			</div>
+
 		</div>
 	</div>
 {% endif %}
