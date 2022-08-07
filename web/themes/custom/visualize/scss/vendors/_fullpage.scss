@@ -1,4 +1,9 @@
 #fp-nav {
+
+  &.left {
+    left: 10px;
+  }
+
   ul {
     li {
       height: 100%;
@@ -109,5 +114,11 @@
 
   100% {
     transform: scale(1)
+  }
+}
+
+@media (min-width: 768px) {
+  #fp-nav.left {
+    left: 20px;
   }
 }
