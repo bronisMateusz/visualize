@@ -5,7 +5,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
   align-self: center;
-  width: calc(100% - 50px);
+  width: calc(100% - 125px);
   margin: 0 auto;
 
   .field--name-field-hero-title {
@@ -24,7 +24,7 @@
 
 @media (min-width: 768px) {
   .paragraph--type--paragraph-hero {
-    width: calc(100% - 200px);
+    width: calc(100% - 160px);
     max-width: 1980px;
     text-align: right;
 
