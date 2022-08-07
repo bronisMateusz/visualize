@@ -1,4 +1,4 @@
-{% set product_gallery_classes = 'product-gallery' %}
+{% set product_gallery_classes = 'products-gallery' %}
 
 {% set products_images_classes = product_gallery_classes ~ '__images' %}
 
@@ -10,15 +10,16 @@
 	<div {{ attributes.addClass(product_gallery_classes) }}>
 		<div class={{ products_images_classes }}>
 			{% for item in items %}
-				{% set product_classes = 'product-image' %}
+				<div class='product-image__wrapper'>
+					{% set product_classes = 'product-image' %}
 
-				{% if loop.index == 1 %}
-					{% set product_classes = product_classes ~ '__active' %}
-				{% endif %}
+					{% if loop.index == 1 %}
+						{% set product_classes = product_classes ~ '__active' %}
+					{% endif %}
 
-				{% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
-				{{ drupal_image(field_media_image.entity.id,'', { alt: field_media_image.alt | t, class: product_classes }) }}
-
+					{% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
+					{{ drupal_image(field_media_image.entity.id,'', { alt: field_media_image.alt | t, class: product_classes }) }}
+				</div>
 			{% endfor %}
 		</div>
 
