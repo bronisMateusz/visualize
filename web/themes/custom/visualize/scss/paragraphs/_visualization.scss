@@ -12,6 +12,8 @@
 
       .product-image__wrapper {
         aspect-ratio: 9/11;
+        overflow: hidden;
+        position: relative;
 
         @for $i from 2 through 4 {
           &:nth-of-type(#{$i}) {
@@ -28,6 +30,8 @@
           object-fit: cover;
           height: 100%;
           width: 100%;
+          position: absolute;
+          // transition: right .5s ease-in-out;
         }
       }
 
@@ -173,6 +177,7 @@
       display: inline-flex;
       align-items: center;
       gap: 50px;
+      width: 100%;
 
       .products-gallery__images {
         margin-bottom: initial;
