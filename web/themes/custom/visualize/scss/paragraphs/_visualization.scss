@@ -95,10 +95,16 @@
     }
 
     .products-gallery__details {
+      display: grid;
 
       [class*='product-details'] {
+        opacity: 1;
+        transition: opacity .4s ease-in-out;
+        grid-column: 1;
+        grid-row: 1;
+
         &:not([class$='__active']) {
-          display: none
+          opacity: 0;
         }
 
         .product-name {
@@ -237,6 +243,8 @@
         align-self: center;
 
         [class*='product-details'] {
+          align-self: center;
+
           .product-name {
             font-size: 4rem;
             line-height: 4rem;
