@@ -16,15 +16,15 @@ full-page:
   version: 2.9.7
   css:
     component:
-      libraries/fullPage/jquery.fullpage.min.css: { minified: true }
+      libraries/fullPage/jquery.fullpage.min.css: {}
   js:
-    libraries/fullPage/scrolloverflow.min.js: { minified: true }
-    libraries/fullPage/jquery.fullpage.min.js: { minified: true }
+    libraries/fullPage/scrolloverflow.min.js: {}
+    libraries/fullPage/jquery.fullpage.min.js: {}
   dependencies:
     - core/jquery
 
 hot-module-replacement:
   header: true
   js:
-    http://localhost:12320/@vite/client:
+    http://localhost:${VITE_PORT}/@vite/client:
       { type: external, attributes: { type: "module" } }
