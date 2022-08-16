@@ -223,7 +223,7 @@
     .products-gallery {
       display: grid;
       column-gap: 50px;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 60% 40%;
       width: 100%;
 
       .products-gallery__images {
