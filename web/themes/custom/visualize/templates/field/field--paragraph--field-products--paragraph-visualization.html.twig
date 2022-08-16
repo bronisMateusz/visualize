@@ -1,7 +1,6 @@
 {% set product_gallery_class = 'products-gallery' %}
-
 {% set products_images_class = product_gallery_class ~ '__images' %}
-
+{% set products_progress_class = product_gallery_class ~ '__progress' %}
 {% set products_details_class = product_gallery_class ~ '__details' %}
 
 {% if label_hidden %}
@@ -18,6 +17,9 @@
 			{% endfor %}
 			<button class='prev-product' type='button' title='{{ 'Previous product' | t }}'>Prev</button>
 			<button class='next-product' type='button' title='{{ 'Next product' | t }}'>Next</button>
+		</div>
+		<div class={{ products_progress_class}}>
+			<div class="progress-slide"></div>
 		</div>
 		<div class={{ products_details_class }}>
 			{% for item in items %}
@@ -68,6 +70,9 @@
 			{% endfor %}
 			<button class='prev-product' type='button' title='{{ 'Previous product' | t }}'>Prev</button>
 			<button class='next-product' type='button' title='{{ 'Next product' | t }}'>Next</button>
+		</div>
+		<div class={{ products_progress_class}}>
+			<div class="progress-slide"></div>
 		</div>
 		<div class={{ products_details_class }}>
 			{% for item in items %}
