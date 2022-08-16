@@ -1,7 +1,20 @@
 {
+  "fonts/Everett-Regular.ttf": {
+    "file": "Everett-Regular.ttf",
+    "src": "fonts/Everett-Regular.ttf"
+  },
+  "fonts/Everett-Light.ttf": {
+    "file": "Everett-Light.ttf",
+    "src": "fonts/Everett-Light.ttf"
+  },
   "js/fullpage.js": {
     "file": "fullpage.js",
     "src": "js/fullpage.js",
+    "isEntry": true
+  },
+  "scss/styles.scss": {
+    "file": "styles.css",
+    "src": "scss/styles.scss",
     "isEntry": true
   }
 }
