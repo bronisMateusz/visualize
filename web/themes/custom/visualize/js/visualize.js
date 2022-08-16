@@ -78,13 +78,10 @@
       return Array.prototype.indexOf.call(details.parentNode.children, details);
     };
 
-    const getProductsQuantity = (gallery) =>
-      gallery.querySelectorAll(
+    const getNextProductIndex = (gallery, direction) => {
+      const productsQuantity = gallery.querySelectorAll(
         "[class*='product-details']:not([class$='__active'])"
       ).length;
-
-    const getNextProductIndex = (gallery, direction) => {
-      const productsQuantity = getProductsQuantity(gallery);
       const currentIndex = getActiveProductIndex(gallery);
 
       if (direction === "prev") {
@@ -108,10 +105,13 @@
     };
 
     const updateProductsProgress = (gallery, nextIndex) => {
-      const productsQuantity = getProductsQuantity(gallery);
+      const productsQuantity = gallery.querySelectorAll(
+        "[class*='product-details']"
+      ).length;
       const progressSlide = gallery.querySelector(".progress-slide");
 
-      progressSlide.style.width = (100 / productsQuantity) * nextIndex + "%";
+      progressSlide.style.width =
+        (100 * (nextIndex + 1)) / productsQuantity + "%";
     };
 
     const isSomeProductAnimated = (gallery) =>
