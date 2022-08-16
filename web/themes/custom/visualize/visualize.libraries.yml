@@ -26,5 +26,5 @@ full-page:
 hot-module-replacement:
   header: true
   js:
-    http://localhost:${VITE_PORT}/@vite/client:
+    http://localhost:12320/@vite/client:
       { type: external, attributes: { type: "module" } }
