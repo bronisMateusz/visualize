@@ -9,7 +9,7 @@
       const maxValue = productsQuantity - 2;
 
       imageWrappers.forEach((wrapper, wrapperIndex) => {
-        const shiftValueComputed = wrapperIndex - shiftValue;
+        const shiftValueComputed = wrapperIndex + shiftValue;
 
         Array.from(wrapper.children).forEach((image, imageIndex) => {
           let rightValue = imageIndex - shiftValueComputed;
@@ -25,7 +25,27 @@
           }
 
           rightValue *= 100;
+
+          image.classList.add("active");
           image.style.right = rightValue + "%";
+
+          setTimeout(() => {
+            image.classList.remove("active");
+          }, 1000);
+
+          switch (rightValue) {
+            case 0:
+              image.style.setProperty("z-index", "3");
+              break;
+            case 100:
+              image.style.setProperty("z-index", "2");
+              break;
+            case 200:
+              image.style.setProperty("z-index", "0");
+              break;
+            default:
+              image.style.setProperty("z-index", "1");
+          }
         });
       });
     };
@@ -72,8 +92,7 @@
       hideProductDetails(currentProduct);
       showProductDetails(productsDetails[nextIndex]);
 
-      const shiftValue = productsQuantity - nextIndex;
-      setVisibleProductsImage(gallery, shiftValue);
+      setVisibleProductsImage(gallery, nextIndex);
     };
 
     productGalleries.forEach((gallery) => {

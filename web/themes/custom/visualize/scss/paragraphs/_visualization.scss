@@ -26,12 +26,16 @@
           }
         }
 
-        [class*='product-image'] {
+        .product-image {
           object-fit: cover;
           height: 100%;
           width: 100%;
           position: absolute;
-          // transition: right .5s ease-in-out;
+          transition: right .75s ease-in-out;
+
+          &.active {
+            animation: change-product .75s ease-in-out;
+          }
         }
       }
 
@@ -101,6 +105,20 @@
         }
       }
     }
+  }
+}
+
+@keyframes change-product {
+  0% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.5, 1.1)
+  }
+
+  100% {
+    transform: scale(1)
   }
 }
 
