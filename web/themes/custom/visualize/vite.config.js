@@ -1,9 +1,9 @@
 import liveReload from "vite-plugin-live-reload";
-import path from "path";
 
 const fs = require("fs");
-let files = fs.readdirSync("./js").map((file) => `./js/${file}`);
-files = files.concat(["/scss/styles.scss"]);
+const scriptsDir = "./js";
+const scriptsFIles = fs.readdirSync(scriptsDir).map((file) => `${scriptsDir}/${file}`);
+const files = scriptsFIles.concat(["/scss/styles.scss"]);
 
 export default {
   plugins: [liveReload(__dirname + "/**/*.(php|inc|theme|twig|scss)")],
