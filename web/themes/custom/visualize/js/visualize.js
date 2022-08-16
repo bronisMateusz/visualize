@@ -2,6 +2,50 @@
   const productGalleries = document.querySelectorAll(".products-gallery");
 
   if (productGalleries) {
+    const correctRightValue = (
+      rightValue,
+      productsQuantity,
+      minValue,
+      maxValue
+    ) => {
+      if (rightValue > maxValue) {
+        rightValue = rightValue - productsQuantity;
+      }
+      if (rightValue < minValue) {
+        rightValue = rightValue + productsQuantity;
+      }
+      if (rightValue == minValue) {
+        rightValue = maxValue;
+      }
+
+      return (rightValue *= 100);
+    };
+
+    const setImageAnimation = (image, rightValue) => {
+      image.classList.add("animated");
+      image.style.right = rightValue + "%";
+
+      image.addEventListener("animationend", () =>
+        image.classList.remove("animated")
+      );
+    };
+
+    const setImagesIndex = (image, rightValue) => {
+      switch (rightValue) {
+        case 0:
+          image.style.setProperty("z-index", "3");
+          break;
+        case 100:
+          image.style.setProperty("z-index", "2");
+          break;
+        case 200:
+          image.style.setProperty("z-index", "0");
+          break;
+        default:
+          image.style.setProperty("z-index", "1");
+      }
+    };
+
     const setVisibleProductsImage = (gallery, shiftValue) => {
       const imageWrappers = gallery.querySelectorAll(".product-image__wrapper");
       const productsQuantity = imageWrappers.length;
@@ -13,85 +57,61 @@
 
         Array.from(wrapper.children).forEach((image, imageIndex) => {
           let rightValue = imageIndex - shiftValueComputed;
+          rightValue = correctRightValue(
+            rightValue,
+            productsQuantity,
+            minValue,
+            maxValue
+          );
 
-          if (rightValue > maxValue) {
-            rightValue = rightValue - productsQuantity;
-          }
-          if (rightValue < minValue) {
-            rightValue = rightValue + productsQuantity;
-          }
-          if (rightValue == minValue) {
-            rightValue = maxValue;
-          }
-
-          rightValue *= 100;
-
-          image.classList.add("active");
-          image.style.right = rightValue + "%";
-
-          setTimeout(() => {
-            image.classList.remove("active");
-          }, 1000);
-
-          switch (rightValue) {
-            case 0:
-              image.style.setProperty("z-index", "3");
-              break;
-            case 100:
-              image.style.setProperty("z-index", "2");
-              break;
-            case 200:
-              image.style.setProperty("z-index", "0");
-              break;
-            default:
-              image.style.setProperty("z-index", "1");
-          }
+          setImageAnimation(image, rightValue);
+          setImagesIndex(image, rightValue);
         });
       });
     };
 
-    const getCurrentProductIndex = (product) =>
-      Array.prototype.indexOf.call(product.parentNode.children, product);
+    const getActiveProductDetails = (gallery) =>
+      gallery.querySelector(".product-details__active");
 
-    const getNextProductIndex = (
-      currentProduct,
-      productsQuantity,
-      direction
-    ) => {
-      let currentIndex = getCurrentProductIndex(currentProduct);
-      productsQuantity--;
-
-      if (direction === "prev") {
-        currentIndex !== 0 ? currentIndex-- : (currentIndex = productsQuantity);
-      }
-      if (direction === "next") {
-        currentIndex !== productsQuantity ? currentIndex++ : (currentIndex = 0);
-      }
-
-      return currentIndex;
+    const getActiveProductIndex = (gallery) => {
+      const details = getActiveProductDetails(gallery);
+      return Array.prototype.indexOf.call(details.parentNode.children, details);
     };
 
-    const hideProductDetails = (element) =>
-      (element.className = element.className.replace("__active", ""));
+    const getNextProductIndex = (gallery, direction) => {
+      const productsQuantity = gallery.querySelectorAll(
+        "[class*='product-details']:not([class$='__active'])"
+      ).length;
+      const currentIndex = getActiveProductIndex(gallery);
 
-    const showProductDetails = (element) =>
-      (element.className = element.className + "__active");
+      if (direction === "prev") {
+        return currentIndex > 0 ? currentIndex - 1 : productsQuantity;
+      }
+      if (direction === "next") {
+        return currentIndex < productsQuantity ? currentIndex + 1 : 0;
+      }
+    };
+
+    const hideProductDetails = (gallery) => {
+      const details = getActiveProductDetails(gallery);
+      details.className = details.className.replace("__active", "");
+    };
+
+    const showProductDetails = (gallery, index) => {
+      const details = gallery.querySelector(
+        `[class*='product-details']:nth-child(${index + 1})`
+      );
+      details.className = details.className + "__active";
+    };
+
+    const isSomeProductAnimated = (gallery) =>
+      !!gallery.querySelector(".animated");
 
     const changeCurrentProduct = (gallery, direction) => {
-      const productsDetails = gallery.querySelectorAll(
-        "[class*='product-details']"
-      );
-      const productsQuantity = productsDetails.length;
-      const currentProduct = gallery.querySelector(".product-details__active");
-      const nextIndex = getNextProductIndex(
-        currentProduct,
-        productsQuantity,
-        direction
-      );
+      const nextIndex = getNextProductIndex(gallery, direction);
 
-      hideProductDetails(currentProduct);
-      showProductDetails(productsDetails[nextIndex]);
-
+      hideProductDetails(gallery);
+      showProductDetails(gallery, nextIndex);
       setVisibleProductsImage(gallery, nextIndex);
     };
 
@@ -102,11 +122,13 @@
       const nextButton = gallery.querySelector(".next-product");
 
       prevButton.addEventListener("click", () => {
-        changeCurrentProduct(gallery, "prev");
+        if (!isSomeProductAnimated(gallery))
+          changeCurrentProduct(gallery, "prev");
       });
 
       nextButton.addEventListener("click", () => {
-        changeCurrentProduct(gallery, "next");
+        if (!isSomeProductAnimated(gallery))
+          changeCurrentProduct(gallery, "next");
       });
     });
   }
