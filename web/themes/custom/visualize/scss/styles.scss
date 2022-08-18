@@ -5,15 +5,17 @@
 @import "blocks/site-branding";
 @import "blocks/status-messages";
 
-// Components
-@import "components/buttons";
-
 // Core
 @import "core/typography";
 @import "core/reset";
 
-// Field
+// Fields
+@import "fields/hero_subtitle";
+@import "fields/hero_title";
+@import "fields/link-primary";
 @import "fields/paragraph-background";
+@import "fields/products";
+@import "fields/replace-bg-with-product";
 
 // Layouts
 @import "layouts/body";
