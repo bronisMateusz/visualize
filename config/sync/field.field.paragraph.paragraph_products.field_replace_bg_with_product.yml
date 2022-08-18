@@ -1,14 +1,14 @@
-uuid: 9a4c33d5-9d6b-4af5-84fe-48e311849995
+uuid: 6006770e-f768-4b7b-9078-b0bd177d910b
 langcode: pl
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_replace_bg_with_product
-    - paragraphs.paragraphs_type.paragraph_visualizations
-id: paragraph.paragraph_visualizations.field_replace_bg_with_product
+    - paragraphs.paragraphs_type.paragraph_products
+id: paragraph.paragraph_products.field_replace_bg_with_product
 field_name: field_replace_bg_with_product
 entity_type: paragraph
-bundle: paragraph_visualizations
+bundle: paragraph_products
 label: 'Zastępuj tło produktem'
 description: ''
 required: false

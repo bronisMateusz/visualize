@@ -1,0 +1,10 @@
+uuid: f33e928c-15b5-4b4b-a4fa-88883ddf5689
+langcode: pl
+status: true
+dependencies: {  }
+id: paragraph_products
+label: Produkty
+icon_uuid: null
+icon_default: null
+description: 'Dodaje akapit będący kontenerem na akapity typu Produkt'
+behavior_plugins: {  }
