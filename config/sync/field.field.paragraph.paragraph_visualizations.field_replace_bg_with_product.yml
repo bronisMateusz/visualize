@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_replace_bg_with_product
-    - paragraphs.paragraphs_type.paragraph_visualization
-id: paragraph.paragraph_visualization.field_replace_bg_with_product
+    - paragraphs.paragraphs_type.paragraph_visualizations
+id: paragraph.paragraph_visualizations.field_replace_bg_with_product
 field_name: field_replace_bg_with_product
 entity_type: paragraph
-bundle: paragraph_visualization
+bundle: paragraph_visualizations
 label: 'Zastępuj tło produktem'
 description: ''
 required: false

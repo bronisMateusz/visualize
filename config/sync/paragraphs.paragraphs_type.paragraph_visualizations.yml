@@ -2,7 +2,7 @@ uuid: 95721056-41f7-4e2b-898d-4cae3f6120a0
 langcode: pl
 status: true
 dependencies: {  }
-id: paragraph_visualization
+id: paragraph_visualizations
 label: Wizualizacje
 icon_uuid: null
 icon_default: null

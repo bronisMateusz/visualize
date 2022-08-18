@@ -3,15 +3,15 @@ langcode: pl
 status: true
 dependencies:
   config:
-    - field.field.paragraph.paragraph_visualization.field_layout_reverse
-    - field.field.paragraph.paragraph_visualization.field_products
-    - field.field.paragraph.paragraph_visualization.field_replace_bg_with_product
-    - paragraphs.paragraphs_type.paragraph_visualization
+    - field.field.paragraph.paragraph_visualizations.field_layout_reverse
+    - field.field.paragraph.paragraph_visualizations.field_products
+    - field.field.paragraph.paragraph_visualizations.field_replace_bg_with_product
+    - paragraphs.paragraphs_type.paragraph_visualizations
   module:
     - entity_reference_revisions
-id: paragraph.paragraph_visualization.default
+id: paragraph.paragraph_visualizations.default
 targetEntityType: paragraph
-bundle: paragraph_visualization
+bundle: paragraph_visualizations
 mode: default
 content:
   field_products:

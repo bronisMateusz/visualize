@@ -1,4 +1,4 @@
-.paragraph--type--paragraph-visualization {
+.paragraph--type--paragraph-visualizations {
   position: relative;
   margin: 0 auto;
   padding: 100px 62.5px;
@@ -138,7 +138,7 @@
 }
 
 @media (min-width: 768px) {
-  .paragraph--type--paragraph-visualization {
+  .paragraph--type--paragraph-visualizations {
     padding-left: 80px;
     padding-right: 80px;
 
@@ -221,7 +221,7 @@
 }
 
 @media (min-width: 992px) {
-  .paragraph--type--paragraph-visualization {
+  .paragraph--type--paragraph-visualizations {
     display: flex;
     align-items: center;
 
@@ -261,7 +261,7 @@
 }
 
 @media (min-width: 1200px) {
-  .paragraph--type--paragraph-visualization .products-gallery {
+  .paragraph--type--paragraph-visualizations .products-gallery {
     max-width: 1920px;
     margin: 0 auto;
 

@@ -4,11 +4,11 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_layout_reverse
-    - paragraphs.paragraphs_type.paragraph_visualization
-id: paragraph.paragraph_visualization.field_layout_reverse
+    - paragraphs.paragraphs_type.paragraph_visualizations
+id: paragraph.paragraph_visualizations.field_layout_reverse
 field_name: field_layout_reverse
 entity_type: paragraph
-bundle: paragraph_visualization
+bundle: paragraph_visualizations
 label: 'Odwrócony układ'
 description: ''
 required: false
