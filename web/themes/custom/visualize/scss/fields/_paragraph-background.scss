@@ -1,9 +1,11 @@
 .field--name-field-paragraph-background {
-  height: 100%;
+  position: absolute;
+  inset: 0;
 
   .media {
     opacity: .6;
     height: 100%;
+    animation: change-background 1s ease-in-out;
 
     .field,
     .field__item {
@@ -15,5 +17,15 @@
       width: 100%;
       object-fit: cover;
     }
+  }
+}
+
+@keyframes change-background {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .6;
   }
 }

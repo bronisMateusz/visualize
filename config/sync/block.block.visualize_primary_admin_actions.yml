@@ -9,7 +9,7 @@ _core:
 id: visualize_primary_admin_actions
 theme: visualize
 region: header
-weight: -5
+weight: -3
 provider: null
 plugin: local_actions_block
 settings:

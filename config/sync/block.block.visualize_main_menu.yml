@@ -1,6 +1,6 @@
 uuid: 9c6bf11d-1678-4a71-82bb-0565b24148e5
 langcode: pl
-status: true
+status: false
 dependencies:
   config:
     - system.menu.main
@@ -12,8 +12,8 @@ _core:
   default_config_hash: KWAiziL39uEzmOJEql_wbUP2RtqGceL3WM2CfxhMelE
 id: visualize_main_menu
 theme: visualize
-region: header
-weight: 0
+region: menu
+weight: -2
 provider: null
 plugin: 'system_menu_block:main'
 settings:

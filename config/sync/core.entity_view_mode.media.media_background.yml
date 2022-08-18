@@ -1,0 +1,10 @@
+uuid: 175cb48f-c59b-4844-a6d0-f94132d3d383
+langcode: pl
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_background
+label: 'Media background'
+targetEntityType: media
+cache: true

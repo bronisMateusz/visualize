@@ -1,0 +1,15 @@
+uuid: bf466f65-86e1-4b74-ad47-4e635bd796c6
+langcode: pl
+status: true
+dependencies: {  }
+name: product_photo
+label: 'Zdjęcie produktu (655)'
+effects:
+  c29f7126-76ab-4f9b-9cf5-2dc722b2e587:
+    uuid: c29f7126-76ab-4f9b-9cf5-2dc722b2e587
+    id: image_scale
+    weight: 1
+    data:
+      width: 655
+      height: null
+      upscale: true

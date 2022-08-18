@@ -1,0 +1,23 @@
+uuid: eb66bb18-f162-4a88-8eeb-fa912d11b00d
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout_reverse
+    - paragraphs.paragraphs_type.paragraph_visualizations
+id: paragraph.paragraph_visualizations.field_layout_reverse
+field_name: field_layout_reverse
+entity_type: paragraph
+bundle: paragraph_visualizations
+label: 'Odwrócony układ'
+description: 'Daje możliwość zamienienia stronami kolumny z tytułem i opisem produktu z kolumną z galerią. <b>(tylko desktop)</b>'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Włączony
+  off_label: Wyłączony
+field_type: boolean

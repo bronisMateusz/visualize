@@ -1,0 +1,23 @@
+uuid: 9a4c33d5-9d6b-4af5-84fe-48e311849995
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_replace_bg_with_product
+    - paragraphs.paragraphs_type.paragraph_visualizations
+id: paragraph.paragraph_visualizations.field_replace_bg_with_product
+field_name: field_replace_bg_with_product
+entity_type: paragraph
+bundle: paragraph_visualizations
+label: 'Zastępuj tło produktem'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Włączony
+  off_label: Wyłączony
+field_type: boolean

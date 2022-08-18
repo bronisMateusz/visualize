@@ -86,7 +86,7 @@ function _vite_replace_library(array &$library, string $path, array $options): v
   unset($library[$path]);
 
   if ($local) {
-    $dir = 'http://localhost:12320';
+    $dir = 'http://localhost:' . $_ENV['VITE_PORT'];
     $options['type'] = 'external';
     if (preg_match('/.m?js$/', $path)) {
       $options['crossorigin'] = TRUE;

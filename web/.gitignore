@@ -17,6 +17,7 @@
 # custom module, theme, etc., are not ignored unless you purposely do so.
 /core/
 /modules/contrib/
+/themes/contrib/
 node_modules/
 
 # Ignore configuration files that may contain sensitive information.

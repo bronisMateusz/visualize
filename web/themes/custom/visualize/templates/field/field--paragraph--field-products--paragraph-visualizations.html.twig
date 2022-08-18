@@ -1,0 +1,104 @@
+{% set product_gallery_class = 'products-gallery' %}
+{% set products_images_class = product_gallery_class ~ '__images' %}
+{% set products_progress_class = product_gallery_class ~ '__progress' %}
+{% set products_details_class = product_gallery_class ~ '__details' %}
+
+{% if label_hidden %}
+	<div {{ attributes.addClass(product_gallery_class) }}>
+		<div class={{ products_images_class }}>
+			{% for item in items %}
+				<div class='product-image__wrapper'>
+					{% for item in items %}
+						{% set product_classes = 'product-image' %}
+						{% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
+						{{ drupal_image(field_media_image.entity.id,'product_photo', { alt: field_media_image.alt | t, class: product_classes }) }}
+					{% endfor %}
+				</div>
+			{% endfor %}
+			<button class='prev-product' type='button' title='{{ 'Previous product' | t }}'>Prev</button>
+			<button class='next-product' type='button' title='{{ 'Next product' | t }}'>Next</button>
+		</div>
+		<div class={{ products_progress_class}}>
+			<div class="progress-slide"></div>
+		</div>
+		<div class={{ products_details_class }}>
+			{% for item in items %}
+				{% set product_classes = 'product-details' %}
+
+
+				{% if loop.index == 1 %}
+					{% set product_classes = product_classes ~ '__active' %}
+				{% endif %}
+
+				<div class={{ product_classes }}>
+					{% set product_name_class = 'product-name' %}
+					{% set field_product_name = item.content['#paragraph'].field_product_name.value %}
+
+					<h2 class={{ product_name_class }}>
+						{{ field_product_name }}
+					</h2>
+
+					{% set product_description_class = 'product-description' %}
+					{% set field_product_description = item.content['#paragraph'].field_product_description.value %}
+
+					<div class={{ product_description_class }}>
+						{{ field_product_description | raw }}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% else %}
+	<div {{ attributes.addClass(product_gallery_class) }}>
+		{%
+			set title_classes = [
+				'field__label',
+				label_display == 'visually_hidden' ? 'visually-hidden',
+			]
+		%}
+
+		<div{{title_attributes.addClass(title_classes)}}>{{ label }}</div>
+		<div class={{ products_images_class }}>
+			{% for item in items %}
+				<div class='product-image__wrapper'>
+					{% for item in items %}
+						{% set product_classes = 'product-image' %}
+						{% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
+						{{ drupal_image(field_media_image.entity.id,'product_photo', { alt: field_media_image.alt | t, class: product_classes }) }}
+					{% endfor %}
+				</div>
+			{% endfor %}
+			<button class='prev-product' type='button' title='{{ 'Previous product' | t }}'>Prev</button>
+			<button class='next-product' type='button' title='{{ 'Next product' | t }}'>Next</button>
+		</div>
+		<div class={{ products_progress_class}}>
+			<div class="progress-slide"></div>
+		</div>
+		<div class={{ products_details_class }}>
+			{% for item in items %}
+				{% set product_classes = 'product-details' %}
+
+
+				{% if loop.index == 1 %}
+					{% set product_classes = product_classes ~ '__active' %}
+				{% endif %}
+
+				<div class={{ product_classes }}>
+					{% set product_name_class = 'product-name' %}
+					{% set field_product_name = item.content['#paragraph'].field_product_name.value %}
+
+					<h2 class={{ product_name_class }}>
+						{{ field_product_name }}
+					</h2>
+
+					{% set product_description_class = 'product-description' %}
+					{% set field_product_description = item.content['#paragraph'].field_product_description.value %}
+
+					<div class={{ product_description_class }}>
+						{{ field_product_description | raw }}
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endif %}

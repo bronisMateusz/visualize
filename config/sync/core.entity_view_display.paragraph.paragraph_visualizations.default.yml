@@ -1,0 +1,37 @@
+uuid: fe938a0e-b099-4e4c-9fb7-78c3dc91953f
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_visualizations.field_layout_reverse
+    - field.field.paragraph.paragraph_visualizations.field_products
+    - field.field.paragraph.paragraph_visualizations.field_replace_bg_with_product
+    - paragraphs.paragraphs_type.paragraph_visualizations
+  module:
+    - entity_reference_revisions
+id: paragraph.paragraph_visualizations.default
+targetEntityType: paragraph
+bundle: paragraph_visualizations
+mode: default
+content:
+  field_products:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_replace_bg_with_product:
+    type: boolean
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_layout_reverse: true
