@@ -1,17 +1,17 @@
-uuid: 9210056d-dce4-480c-b65d-b4e008f87e03
+uuid: 1948a143-6c49-46c8-a3f7-383457954edb
 langcode: pl
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_products
     - paragraphs.paragraphs_type.paragraph_product
-    - paragraphs.paragraphs_type.paragraph_visualizations
+    - paragraphs.paragraphs_type.paragraph_products
   module:
     - entity_reference_revisions
-id: paragraph.paragraph_visualizations.field_products
+id: paragraph.paragraph_products.field_products
 field_name: field_products
 entity_type: paragraph
-bundle: paragraph_visualizations
+bundle: paragraph_products
 label: Produkty
 description: ''
 required: true
@@ -34,7 +34,7 @@ settings:
       paragraph_product:
         weight: 8
         enabled: true
-      paragraph_visualization:
+      paragraph_products:
         weight: 9
         enabled: false
       paragraph_visualizations:
