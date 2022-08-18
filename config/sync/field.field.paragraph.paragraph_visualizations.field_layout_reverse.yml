@@ -1,4 +1,4 @@
-uuid: a1d10a12-6804-409f-a290-118819d4e6b6
+uuid: eb66bb18-f162-4a88-8eeb-fa912d11b00d
 langcode: pl
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_layout_reverse
 entity_type: paragraph
 bundle: paragraph_visualizations
 label: 'Odwrócony układ'
-description: ''
+description: 'Daje możliwość zamienienia stronami kolumny z tytułem i opisem produktu z kolumną z galerią. <b>(tylko desktop)</b>'
 required: false
 translatable: true
 default_value:
