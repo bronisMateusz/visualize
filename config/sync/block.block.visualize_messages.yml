@@ -11,7 +11,7 @@ _core:
 id: visualize_messages
 theme: visualize
 region: header
-weight: -5
+weight: -2
 provider: null
 plugin: system_messages_block
 settings:

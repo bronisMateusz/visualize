@@ -34,7 +34,7 @@ settings:
       paragraph_product:
         weight: 7
         enabled: false
-      wizualizacje:
+      paragraph_visualization:
         weight: 8
         enabled: false
 field_type: entity_reference_revisions

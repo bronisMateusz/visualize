@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_paragraph
     - paragraphs.paragraphs_type.paragraph_full_page
     - paragraphs.paragraphs_type.paragraph_hero
+    - paragraphs.paragraphs_type.paragraph_visualization
   module:
     - entity_reference_revisions
 id: paragraph.paragraph_full_page.field_paragraph
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       paragraph_hero: paragraph_hero
+      paragraph_visualization: paragraph_visualization
     negate: 0
     target_bundles_drag_drop:
       paragraph_full_page:
@@ -34,7 +36,7 @@ settings:
       paragraph_product:
         weight: 7
         enabled: false
-      wizualizacje:
+      paragraph_visualization:
         weight: 8
         enabled: true
 field_type: entity_reference_revisions
