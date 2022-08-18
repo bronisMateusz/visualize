@@ -2,6 +2,53 @@
   const productGalleries = document.querySelectorAll(".products-gallery");
 
   if (productGalleries) {
+    const setImagesIndex = (image, rightValue) => {
+      switch (rightValue) {
+        case 0:
+          image.style.setProperty("z-index", "3");
+          break;
+        case 100:
+          image.style.setProperty("z-index", "2");
+          break;
+        case 200:
+          image.style.setProperty("z-index", "0");
+          break;
+        default:
+          image.style.setProperty("z-index", "1");
+      }
+    };
+
+    const getActiveProductIndex = (gallery) => {
+      const details = gallery.querySelector(".product-details__active");
+      return Array.prototype.indexOf.call(details.parentNode.children, details);
+    };
+
+    const getNextProductIndex = (gallery, direction) => {
+      const productsQuantity = gallery.querySelectorAll(
+        "[class*='product-details']:not([class$='__active'])"
+      ).length;
+      const currentIndex = getActiveProductIndex(gallery);
+
+      if (direction === "prev") {
+        return currentIndex > 0 ? currentIndex - 1 : productsQuantity;
+      }
+      if (direction === "next") {
+        return currentIndex < productsQuantity ? currentIndex + 1 : 0;
+      }
+    };
+
+    const hideProductDetails = (gallery) => {
+      const details = gallery.querySelector(".product-details__active");
+      details.className = details.className.replace("__active", "");
+    };
+
+    const showProductDetails = (gallery, index) => {
+      const details = gallery.querySelector(
+        `[class*='product-details']:nth-child(${index + 1})`
+      );
+      details.className = details.className + "__active";
+    };
+
     const correctRightValue = (
       rightValue,
       productsQuantity,
@@ -21,32 +68,15 @@
       return (rightValue *= 100);
     };
 
-    const setImageAnimation = (image, rightValue) => {
-      image.classList.add("animated");
-      image.style.right = rightValue + "%";
+    const setElementAnimation = (element) => {
+      element.classList.add("animated");
 
-      image.addEventListener("animationend", () =>
-        image.classList.remove("animated")
+      element.addEventListener("animationend", () =>
+        element.classList.remove("animated")
       );
     };
 
-    const setImagesIndex = (image, rightValue) => {
-      switch (rightValue) {
-        case 0:
-          image.style.setProperty("z-index", "3");
-          break;
-        case 100:
-          image.style.setProperty("z-index", "2");
-          break;
-        case 200:
-          image.style.setProperty("z-index", "0");
-          break;
-        default:
-          image.style.setProperty("z-index", "1");
-      }
-    };
-
-    const setVisibleProductsImage = (gallery, shiftValue) => {
+    const updateProductsImage = (gallery, shiftValue) => {
       const imageWrappers = gallery.querySelectorAll(".product-image__wrapper");
       const productsQuantity = imageWrappers.length;
       const minValue = -2;
@@ -64,54 +94,43 @@
             maxValue
           );
 
-          setImageAnimation(image, rightValue);
+          image.style.right = rightValue + "%";
+          setElementAnimation(image);
           setImagesIndex(image, rightValue);
         });
       });
     };
 
-    const getActiveProductDetails = (gallery) =>
-      gallery.querySelector(".product-details__active");
-
-    const getActiveProductIndex = (gallery) => {
-      const details = getActiveProductDetails(gallery);
-      return Array.prototype.indexOf.call(details.parentNode.children, details);
-    };
-
-    const getNextProductIndex = (gallery, direction) => {
-      const productsQuantity = gallery.querySelectorAll(
-        "[class*='product-details']:not([class$='__active'])"
-      ).length;
-      const currentIndex = getActiveProductIndex(gallery);
-
-      if (direction === "prev") {
-        return currentIndex > 0 ? currentIndex - 1 : productsQuantity;
-      }
-      if (direction === "next") {
-        return currentIndex < productsQuantity ? currentIndex + 1 : 0;
-      }
-    };
-
-    const hideProductDetails = (gallery) => {
-      const details = getActiveProductDetails(gallery);
-      details.className = details.className.replace("__active", "");
-    };
-
-    const showProductDetails = (gallery, index) => {
-      const details = gallery.querySelector(
-        `[class*='product-details']:nth-child(${index + 1})`
+    const getActiveProductImage = (gallery, childNumber) => {
+      const image = gallery.querySelector(
+        `.product-image:nth-child(${childNumber})`
       );
-      details.className = details.className + "__active";
+
+      return image.src
+        .split("?")[0]
+        .replace("styles/product_photo/public/", "");
     };
 
-    const updateProductsProgress = (gallery, nextIndex) => {
+    const updateProductsBackground = (gallery, index) => {
+      const productsBackground = gallery.parentNode.querySelector(
+        ".products-background"
+      );
+
+      if (productsBackground) {
+        setElementAnimation(productsBackground);
+
+        const image = getActiveProductImage(gallery, index + 1);
+        productsBackground.style.backgroundImage = `url(${image})`;
+      }
+    };
+
+    const updateProductsProgress = (gallery, index) => {
       const productsQuantity = gallery.querySelectorAll(
         "[class*='product-details']"
       ).length;
       const progressSlide = gallery.querySelector(".progress-slide");
 
-      progressSlide.style.width =
-        (100 * (nextIndex + 1)) / productsQuantity + "%";
+      progressSlide.style.width = (100 * (index + 1)) / productsQuantity + "%";
     };
 
     const isSomeProductAnimated = (gallery) =>
@@ -122,12 +141,14 @@
 
       hideProductDetails(gallery);
       showProductDetails(gallery, nextIndex);
-      setVisibleProductsImage(gallery, nextIndex);
+      updateProductsImage(gallery, nextIndex);
+      updateProductsBackground(gallery, nextIndex);
       updateProductsProgress(gallery, nextIndex);
     };
 
     productGalleries.forEach((gallery) => {
-      setVisibleProductsImage(gallery, 0);
+      updateProductsImage(gallery, 0);
+      updateProductsBackground(gallery, 0);
       updateProductsProgress(gallery, 0);
 
       const prevButton = gallery.querySelector(".prev-product");

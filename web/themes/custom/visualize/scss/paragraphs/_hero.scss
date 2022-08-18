@@ -1,12 +1,13 @@
 .paragraph--type--paragraph-hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  align-self: center;
-  width: calc(100% - 125px);
+  position: relative;
   margin: 0 auto;
+  padding: 100px 62.5px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
   .field--name-field-hero-title {
     font-size: 4.5rem;
@@ -24,8 +25,9 @@
 
 @media (min-width: 768px) {
   .paragraph--type--paragraph-hero {
-    width: calc(100% - 160px);
-    max-width: 1980px;
+    align-items: flex-end;
+    padding-left: 80px;
+    padding-right: 80px;
     text-align: right;
 
     .field--name-field-hero-title {

@@ -1,10 +1,25 @@
 .paragraph--type--paragraph-visualization {
+  position: relative;
   margin: 0 auto;
-  padding: 100px 0;
-  width: calc(100% - 125px);
+  padding: 100px 62.5px;
   min-height: 100vh;
 
+  .products-background {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: .3;
+
+    &.animated {
+      animation: change-products-background .75s ease-in-out;
+    }
+  }
+
   .products-gallery {
+    z-index: 1;
+    position: relative;
 
     .products-gallery__images {
       position: relative;
@@ -118,24 +133,10 @@
   }
 }
 
-@keyframes change-product {
-  0% {
-    transform: scale(1)
-  }
-
-  50% {
-    transform: scale(1.5, 1.1)
-  }
-
-  100% {
-    transform: scale(1)
-  }
-}
-
 @media (min-width: 768px) {
   .paragraph--type--paragraph-visualization {
-    max-width: 1980px;
-    width: calc(100% - 160px);
+    padding-left: 80px;
+    padding-right: 80px;
 
     .products-gallery {
       .products-gallery__images {
@@ -223,7 +224,7 @@
     .products-gallery {
       display: grid;
       column-gap: 50px;
-      grid-template-columns: 60% 40%;
+      grid-template-columns: 1.5fr 1fr;
       width: 100%;
 
       .products-gallery__images {
@@ -256,12 +257,41 @@
 }
 
 @media (min-width: 1200px) {
-  .paragraph--type--paragraph-visualization .products-gallery .products-gallery__details {
-    [class*='product-details'] {
-      .product-name {
-        font-size: 5rem;
-        line-height: 5rem;
+  .paragraph--type--paragraph-visualization .products-gallery {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    .products-gallery__details {
+      [class*='product-details'] {
+        .product-name {
+          font-size: 5rem;
+          line-height: 5rem;
+        }
       }
     }
+  }
+}
+
+@keyframes change-product {
+  0% {
+    transform: scale(1)
+  }
+
+  50% {
+    transform: scale(1.5, 1.1)
+  }
+
+  100% {
+    transform: scale(1)
+  }
+}
+
+@keyframes change-products-background {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: .3;
   }
 }
