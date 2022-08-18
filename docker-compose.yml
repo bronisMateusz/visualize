@@ -16,8 +16,9 @@ services:
       DB_PASS: ${DB_USER}
       DOMAIN: ${DOMAIN}
     ports:
-      - "9080:80"
-      - "12320:12320"
+      - "${HTTP_PORT}:80"
+      - "${HTTPS_PORT}:443"
+      - "${VITE_PORT}:12321"
   db:
     image: mariadb:10.8
     volumes:
@@ -29,7 +30,7 @@ services:
       MARIADB_USER: ${DB_USER}
       MARIADB_PASSWORD: ${DB_PASS}
     ports:
-      - "9306:3306"
+      - "${DB_PORT}:3306"
   pma:
     image: phpmyadmin/phpmyadmin
     restart: unless-stopped
@@ -40,6 +41,6 @@ services:
       PHP_UPLOAD_MAX_FILESIZE: 1G
       PHP_MAX_INPUT_VARS: 1G
     ports:
-      - "9081:80"
+      - "${PMA_PORT}:80"
 volumes:
   db_data:
