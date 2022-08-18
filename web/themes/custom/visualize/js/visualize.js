@@ -2,19 +2,22 @@
   const productGalleries = document.querySelectorAll(".products-gallery");
 
   if (productGalleries) {
-    const setImagesIndex = (image, rightValue) => {
+    const setImagesIndex = (image, rightValue, productsQuantity) => {
       switch (rightValue) {
         case 0:
-          image.style.setProperty("z-index", "3");
+          image.style.setProperty("z-index", productsQuantity + 1);
           break;
         case 100:
-          image.style.setProperty("z-index", "2");
+          image.style.setProperty("z-index", productsQuantity);
           break;
         case 200:
-          image.style.setProperty("z-index", "0");
+          image.style.setProperty("z-index", productsQuantity - 2);
+          break;
+        case -100:
+          image.style.setProperty("z-index", productsQuantity - 1);
           break;
         default:
-          image.style.setProperty("z-index", "1");
+          image.style.setProperty("z-index", productsQuantity - 2);
       }
     };
 
@@ -85,19 +88,21 @@
       imageWrappers.forEach((wrapper, wrapperIndex) => {
         const shiftValueComputed = wrapperIndex + shiftValue;
 
-        Array.from(wrapper.children).forEach((image, imageIndex) => {
-          let rightValue = imageIndex - shiftValueComputed;
-          rightValue = correctRightValue(
-            rightValue,
-            productsQuantity,
-            minValue,
-            maxValue
-          );
+        if (wrapperIndex < 4) {
+          Array.from(wrapper.children).forEach((image, imageIndex) => {
+            let rightValue = imageIndex - shiftValueComputed;
+            rightValue = correctRightValue(
+              rightValue,
+              productsQuantity,
+              minValue,
+              maxValue
+            );
 
-          image.style.right = rightValue + "%";
-          setElementAnimation(image);
-          setImagesIndex(image, rightValue);
-        });
+            image.style.right = rightValue + "%";
+            setElementAnimation(image);
+            setImagesIndex(image, rightValue, productsQuantity);
+          });
+        }
       });
     };
 
@@ -134,11 +139,10 @@
     };
 
     const isSomeProductAnimated = (gallery) =>
-      !!gallery.querySelector(".animated");
+      gallery.querySelector(".product-image.animated");
 
     const changeCurrentProduct = (gallery, direction) => {
       const nextIndex = getNextProductIndex(gallery, direction);
-
       hideProductDetails(gallery);
       showProductDetails(gallery, nextIndex);
       updateProductsImage(gallery, nextIndex);
@@ -155,6 +159,8 @@
       const nextButton = gallery.querySelector(".next-product");
 
       prevButton.addEventListener("click", () => {
+        isSomeProductAnimated(gallery);
+
         if (!isSomeProductAnimated(gallery))
           changeCurrentProduct(gallery, "prev");
       });
