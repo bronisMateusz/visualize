@@ -228,6 +228,19 @@
       }
     }
   }
+
+  .layout-reverse .products-gallery {
+    grid-template-columns: 1fr 1.5fr;
+
+    .products-gallery__images,
+    .products-gallery__progress {
+      grid-column: 2;
+    }
+
+    .products-gallery__details {
+      grid-column: 1;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
