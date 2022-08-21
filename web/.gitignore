@@ -18,6 +18,7 @@
 /core/
 /modules/contrib/
 /themes/contrib/
+dist/
 node_modules/
 
 # Ignore configuration files that may contain sensitive information.

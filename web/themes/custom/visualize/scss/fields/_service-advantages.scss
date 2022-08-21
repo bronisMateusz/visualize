@@ -1,0 +1,21 @@
+.field.field--name-field-service-advantages {
+  color: #fff;
+  margin-bottom: 36px;
+
+  ul {
+    margin-left: 12px;
+
+    &>li {
+      margin-bottom: 16px;
+      padding-left: 8px;
+      font-size: .75rem;
+      line-height: 1.75rem;
+      margin-bottom: 0;
+
+      &::marker {
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+}
