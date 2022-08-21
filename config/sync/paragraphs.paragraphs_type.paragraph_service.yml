@@ -1,0 +1,10 @@
+uuid: 787f1ab2-8026-4d60-9dcd-fcc7d3fec6da
+langcode: pl
+status: true
+dependencies: {  }
+id: paragraph_service
+label: Usługa
+icon_uuid: null
+icon_default: null
+description: 'Definiuje pola wyświetlane w paragrafie Usługa'
+behavior_plugins: {  }
