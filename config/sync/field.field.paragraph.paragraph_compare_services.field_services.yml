@@ -1,20 +1,18 @@
-uuid: 1fccf72c-8ee3-4500-852b-f46dcca2249d
+uuid: 62c59046-7e1b-4305-acef-6e60e0209dc8
 langcode: pl
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_paragraph
+    - field.storage.paragraph.field_services
     - paragraphs.paragraphs_type.paragraph_compare_services
-    - paragraphs.paragraphs_type.paragraph_full_page
-    - paragraphs.paragraphs_type.paragraph_hero
-    - paragraphs.paragraphs_type.paragraph_products
+    - paragraphs.paragraphs_type.paragraph_service
   module:
     - entity_reference_revisions
-id: paragraph.paragraph_full_page.field_paragraph
-field_name: field_paragraph
+id: paragraph.paragraph_compare_services.field_services
+field_name: field_services
 entity_type: paragraph
-bundle: paragraph_full_page
-label: Akapit
+bundle: paragraph_compare_services
+label: Usługi
 description: ''
 required: false
 translatable: false
@@ -24,27 +22,25 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      paragraph_hero: paragraph_hero
-      paragraph_compare_services: paragraph_compare_services
-      paragraph_products: paragraph_products
+      paragraph_service: paragraph_service
     negate: 0
     target_bundles_drag_drop:
       paragraph_compare_services:
         weight: 7
-        enabled: true
+        enabled: false
       paragraph_full_page:
-        weight: 5
+        weight: 8
         enabled: false
       paragraph_hero:
-        weight: 6
-        enabled: true
+        weight: 9
+        enabled: false
       paragraph_product:
-        weight: 7
+        weight: 10
         enabled: false
       paragraph_products:
-        weight: 9
-        enabled: true
+        weight: 11
+        enabled: false
       paragraph_service:
         weight: 12
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

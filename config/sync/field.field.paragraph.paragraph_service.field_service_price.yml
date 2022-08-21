@@ -1,0 +1,23 @@
+uuid: 13c58ebb-d560-4162-b21b-027ba52fe849
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_price
+    - paragraphs.paragraphs_type.paragraph_service
+id: paragraph.paragraph_service.field_service_price
+field_name: field_service_price
+entity_type: paragraph
+bundle: paragraph_service
+label: Cena
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: ' PLN'
+field_type: float
