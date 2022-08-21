@@ -1,6 +1,6 @@
 #block-visualize-site-branding {
   position: absolute;
-  top: 25px;
+  top: 24px;
   left: 0;
   right: 0;
   z-index: 1;
@@ -10,7 +10,7 @@
     justify-content: center;
 
     .site-name {
-      clip-path: inset(0px 0px 99.9% 99.9%);
+      clip-path: inset(0 0 99.9% 99.9%);
       height: 1px;
       overflow: hidden;
       position: absolute;
