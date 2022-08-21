@@ -1,0 +1,21 @@
+uuid: 06f16f8a-4041-443c-be47-f126988477ae
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_service_advantages
+    - paragraphs.paragraphs_type.paragraph_service
+  module:
+    - text
+id: paragraph.paragraph_service.field_service_advantages
+field_name: field_service_advantages
+entity_type: paragraph
+bundle: paragraph_service
+label: 'Zalety usługi'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
