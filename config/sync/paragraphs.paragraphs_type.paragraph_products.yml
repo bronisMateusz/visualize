@@ -6,5 +6,5 @@ id: paragraph_products
 label: Produkty
 icon_uuid: null
 icon_default: null
-description: 'Dodaje akapit będący kontenerem na akapity typu Produkt'
+description: 'Dodaje akapit będący kontenerem na akapity Produkt'
 behavior_plugins: {  }
