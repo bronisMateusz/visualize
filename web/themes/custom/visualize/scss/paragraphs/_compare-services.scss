@@ -1,0 +1,21 @@
+.paragraph--type--paragraph-compare-services {
+  padding: 100px 0 100px 62.6px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .paragraph--type--paragraph-compare-services {
+    margin: 0 auto;
+    padding-left: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .paragraph--type--paragraph-compare-services {
+    margin: 0 auto;
+    padding-right: 80px;
+    max-width: 1760px;
+  }
+}
