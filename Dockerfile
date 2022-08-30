@@ -36,6 +36,8 @@ RUN \
   # Enable apache modules.
   && a2enmod rewrite headers ssl \
   # Fix file permissions.
+  && addgroup --gid ${GID} www-data || true \
+  && adduser --uid ${UID} --gid ${GID} || true \
   && chown -R ${UID}:${GID} /var/www/
 FROM base
 
