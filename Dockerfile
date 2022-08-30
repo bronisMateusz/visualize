@@ -42,7 +42,7 @@ RUN \
 FROM base
 
 WORKDIR /var/www/html
-COPY --chown=${UID}:${GID} www .
+COPY --chown=www-data:www-data www .
 # Mount 000-default.conf under sites-available
 COPY ./config/vhost.apache2.conf /etc/apache2/sites-available/000-default.conf
 
