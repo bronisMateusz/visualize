@@ -1,28 +1,59 @@
 # Install php.
-FROM php:8.1-apache as php
+FROM php:8.1-apache as base
 
-WORKDIR /app
+ARG UID=1000
+ARG GID=1000
 
 # Get php extensions installer.
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN \
+  apt-get update \
+  # Install utils.
+  && apt-get install -y --no-install-recommends \
+    apt-transport-https \
+    git \
+    unzip \
+    zip \
   # Install php extensions.
-  chmod +x /usr/local/bin/install-php-extensions && \
-  IPE_GD_WITHOUTAVIF=1 install-php-extensions gd opcache apcu pdo_mysql memcached uploadprogress && \
+  && chmod +x /usr/local/bin/install-php-extensions \
+  && install-php-extensions \
+    apcu \
+    gd \
+    memcached \
+    opcache \
+    pdo_mysql \
+    uploadprogress \
   # Install composer.
-  apt-get update && apt-get install --assume-yes zip unzip git && \
-  install-php-extensions @composer && \
+  && install-php-extensions @composer \
   # Install Node.js
-  curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-  apt-get install -y nodejs && \
-  apt-get install -y build-essential && \
+  && curl -fsSL https://deb.nodesource.com/setup_18.x | bash \
+  && apt-get install -y nodejs \
+  && corepack enable \
   # Install drush launcher.
-  curl -OL https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar && \
-  chmod +x drush.phar && mv drush.phar /usr/local/bin/drush && \
-  # Enable apache mod_rewrite.
-  a2enmod rewrite
+  && curl -OL https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar \
+  && chmod +x drush.phar && mv drush.phar /usr/local/bin/drush \
+  # Enable apache modules.
+  && a2enmod rewrite headers ssl \
+  # Fix file permissions.
+  && usermod -u $UID www-data && groupmod -g $GID www-data \
+  && chown -R $UID:$GID /var/www/
+FROM base
 
-# Point apache document root to drupal.
-ENV APACHE_DOCUMENT_ROOT /app/web
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf && sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+WORKDIR /var/www/html
+COPY --chown=$UID:$GID www .
+# Mount 000-default.conf under sites-available
+COPY ./config/vhost.apache2.conf /etc/apache2/sites-available/000-default.conf
+
+RUN \
+  # Install composer dependecies.
+  composer install --no-cache
+
+WORKDIR /var/www/html/web/themes/custom/visualize
+RUN \
+  # Install node dependencies and build theme.
+  npm install \
+  && npm run build \
+  && rm -rf node_modules
+
+WORKDIR /var/www/html

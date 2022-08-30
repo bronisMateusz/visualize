@@ -4,10 +4,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
     depends_on:
       - db
+    env_file: .env
     volumes:
-      - .:/app/
+      - ./www:/var/www/html
+      - ./config/vhost.apache2.conf:/etc/apache2/sites-available/000-default.conf
     restart: unless-stopped
     environment:
       DB_HOST: ${DB_NAME}
