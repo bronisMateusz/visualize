@@ -37,7 +37,7 @@ RUN \
   && a2enmod rewrite headers ssl \
   # Fix file permissions.
   && addgroup --gid ${GID} www-data || true \
-  && adduser --uid ${UID} --gid ${GID} || true \
+  && adduser --uid ${UID} --gid ${GID} www-data || true \
   && chown -R ${UID}:${GID} /var/www/
 FROM base
 
