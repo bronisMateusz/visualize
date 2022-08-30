@@ -36,12 +36,11 @@ RUN \
   # Enable apache modules.
   && a2enmod rewrite headers ssl \
   # Fix file permissions.
-  && usermod -u $UID www-data && groupmod -g $GID www-data \
-  && chown -R $UID:$GID /var/www/
+  && chown -R ${UID}:${GID} /var/www/
 FROM base
 
 WORKDIR /var/www/html
-COPY --chown=$UID:$GID www .
+COPY --chown=${UID}:${GID} www .
 # Mount 000-default.conf under sites-available
 COPY ./config/vhost.apache2.conf /etc/apache2/sites-available/000-default.conf
 
