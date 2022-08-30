@@ -32,4 +32,10 @@ jobs:
       run: |
         cp .env.example .env
         docker compose build
+  run:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run the Docker container
+      run: |
         docker compose up -d
