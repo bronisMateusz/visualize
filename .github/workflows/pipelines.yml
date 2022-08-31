@@ -36,9 +36,15 @@ jobs:
         cp .env.example .env
         docker compose build
   
-  connect:
+  deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Connect with server
-      run: ssh ${{ secrets.SSH_USER }}@{{ secrets.SSH_HOST }} -p {{ secrets.SSH_PORT }}
+    - name: Deploy app on production server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        password: ${{ secrets.SSH_PASS }}
+        port: ${{ secrets.SSH_PORT }}
+        script: git clone https://github.com/bronisMateusz/visualize.git
