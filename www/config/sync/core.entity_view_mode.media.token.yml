@@ -1,0 +1,10 @@
+uuid: 34bdf419-6108-444e-a7e1-761b384db59b
+langcode: pl
+status: true
+dependencies:
+  module:
+    - media
+id: media.token
+label: Wzorzec
+targetEntityType: media
+cache: true
