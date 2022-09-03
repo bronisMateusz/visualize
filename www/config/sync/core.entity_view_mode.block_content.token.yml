@@ -1,0 +1,10 @@
+uuid: c1a8598d-b922-4851-82fc-9834cdf24472
+langcode: pl
+status: true
+dependencies:
+  module:
+    - block_content
+id: block_content.token
+label: Wzorzec
+targetEntityType: block_content
+cache: true
