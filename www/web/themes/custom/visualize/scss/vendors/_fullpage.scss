@@ -1,5 +1,13 @@
 #fullpage {
   background-color: #333;
+
+  .fp-auto-height #block-visualize-footer-with-partners .block__content {
+    padding-top: 0;
+
+    h2 {
+      margin-top: 0;
+    }
+  }
 }
 
 #fp-nav {
