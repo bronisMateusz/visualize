@@ -126,6 +126,8 @@ function visualize_preprocess_html(&$variables) {
     array_push($menu_links, $menu_item_link);
   }
 
+  array_push($menu_links, t('footer'));
+
   $variables['#attached']['drupalSettings']['menuTitles'] = $menu_titles;
   $variables['#attached']['drupalSettings']['menuLinks'] = $menu_links;
 }

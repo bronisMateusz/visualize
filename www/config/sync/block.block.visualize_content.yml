@@ -1,0 +1,22 @@
+uuid: 50a312b6-0bd4-40d7-a04c-fecbe6deb1be
+langcode: pl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - visualize
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: visualize_content
+theme: visualize
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Zawartość główna'
+  label_display: '0'
+  provider: system
+visibility: {  }

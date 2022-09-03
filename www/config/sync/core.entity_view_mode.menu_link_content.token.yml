@@ -1,0 +1,10 @@
+uuid: 3f86a8b9-6430-4e0b-9b3d-3d605f90d0f2
+langcode: pl
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.token
+label: Wzorzec
+targetEntityType: menu_link_content
+cache: true

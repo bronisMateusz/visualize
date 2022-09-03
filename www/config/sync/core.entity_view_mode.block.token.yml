@@ -1,0 +1,10 @@
+uuid: fb6e1d75-ffcb-469e-9ffe-6613ced5ae04
+langcode: pl
+status: true
+dependencies:
+  module:
+    - block
+id: block.token
+label: Wzorzec
+targetEntityType: block
+cache: true

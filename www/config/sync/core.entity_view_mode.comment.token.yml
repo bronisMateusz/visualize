@@ -1,0 +1,10 @@
+uuid: 6da69729-8e1e-4e5a-81aa-a670c085c7b7
+langcode: pl
+status: true
+dependencies:
+  module:
+    - comment
+id: comment.token
+label: Wzorzec
+targetEntityType: comment
+cache: true
