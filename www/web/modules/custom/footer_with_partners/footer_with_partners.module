@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function footer_with_partners_theme($existing, $type, $theme, $path) {
+  return [
+    'footer_with_partners' => [
+      'variables' => [
+        'title' => '',
+        'partners_image' => NULL,
+        'privacy_policy_address' => NULL,
+      ]
+    ]
+  ];
+}

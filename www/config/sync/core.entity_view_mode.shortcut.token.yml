@@ -1,0 +1,10 @@
+uuid: e597ae09-412d-462b-87f6-4dabbe63ace7
+langcode: pl
+status: true
+dependencies:
+  module:
+    - shortcut
+id: shortcut.token
+label: Wzorzec
+targetEntityType: shortcut
+cache: true

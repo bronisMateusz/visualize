@@ -1,0 +1,5 @@
+name: Footer with partners
+type: module
+description: Add a footer to your page with partner information
+package: Visualize
+core_version_requirement: ^9 || ^10
