@@ -1,0 +1,43 @@
+#block-visualize-cookie-notice {
+  background-color: #707070;
+  border-radius: 15px;
+  bottom: 48px;
+  font-size: .875rem;
+  left: 62.5px;
+  line-height: 1.125rem;
+  margin: 0;
+  max-width: 370px;
+  position: absolute;
+
+  .block__content {
+    align-items: center;
+    display: inline-flex;
+    gap: 15px;
+
+    svg {
+      margin-left: 20px;
+    }
+
+    p {
+      margin: 14px 0;
+    }
+
+    #cookie-notice-close-btn {
+      background: unset;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      height: 48px;
+      margin-right: 12px;
+      padding: 0;
+      width: 48px;
+    }
+
+  }
+}
+
+@media (min-width: 768px) {
+  #block-visualize-cookie-notice {
+    left: 80px;
+  }
+}
