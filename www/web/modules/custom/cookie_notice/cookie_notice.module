@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Cookie notice module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function cookie_notice_theme($existing, $type, $theme, $path) {
+  return [
+    'cookie_notice' => [
+      'variables' => [
+        'cookie_notice' => '',
+      ]
+    ]
+  ];
+}
