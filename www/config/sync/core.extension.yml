@@ -14,6 +14,7 @@ module:
   config: 0
   contact: 0
   contextual: 0
+  cookie_notice: 0
   datetime: 0
   dblog: 0
   devel: 0
