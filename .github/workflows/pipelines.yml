@@ -3,10 +3,10 @@ name: Visualize pipeline
 on:
   push:
     branches:
-      - "main"
+      - 'main'
   pull_request:
     branches:
-      - "main"
+      - 'main'
 
 jobs:
   # build:
@@ -18,27 +18,25 @@ jobs:
   #       export DOCKER_BUILDKIT=1
   #       cp .env.example .env
   #       docker compose build
-  
+
   deploy:
     # needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy app on production server
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SSH_HOST }}
-        username: ${{ secrets.SSH_USER }}
-        password: ${{ secrets.
-SSH_PASSWORD
- }}
-        script: |
-          cd domains/visualize
-          git pull
-          docker compose build
-          docker exec -it visualize-drupal-1 bash
-          composer install
-          drush cim
-          drush cr
-          cd web/themes/custom/visualize
-          npm install
-          npm run build
+      - name: Deploy app on production server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            cd domains/visualize
+            git pull
+            docker compose build
+            docker exec -it visualize-drupal-1 bash
+            composer install
+            drush cim
+            drush cr
+            cd web/themes/custom/visualize
+            npm install
+            npm run build
