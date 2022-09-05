@@ -7,8 +7,8 @@ ARG GID=1000
 # Get php extensions installer.
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-RUN \
-  apt-get update \
+RUN set -xe \
+  && apt-get update \
   # Install utils.
   && apt-get install -y --no-install-recommends \
     apt-transport-https \
@@ -35,7 +35,9 @@ RUN \
   && chmod +x drush.phar && mv drush.phar /usr/local/bin/drush \
   # Enable apache modules.
   && a2enmod rewrite headers ssl \
-  # Fix file permissions.
+  # Add non root user:
+  && usermod -u ${UID} www-data \
+  && groupmod -g ${GID} www-data \
   && chown -R ${UID}:${GID} /var/www/
 FROM base
 
@@ -44,15 +46,5 @@ COPY --chown=${UID}:${GID} www .
 # Mount 000-default.conf under sites-available
 COPY ./config/vhost.apache2.conf /etc/apache2/sites-available/000-default.conf
 
-RUN \
-  # Install composer dependecies.
-  composer install --no-cache
-
-WORKDIR /var/www/html/web/themes/custom/visualize
-RUN \
-  # Install node dependencies and build theme.
-  npm install \
-  && npm run build \
-  && rm -rf node_modules
-
-WORKDIR /var/www/html
+# Switch to use a non root user.
+USER ${UID}:${GID}
