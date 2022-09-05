@@ -16,18 +16,17 @@
     ).toGMTString()};`);
 
   const hashedCookieValue = drupalSettings.cookieNotice.hashedValue;
-  const hideNotice = () =>
-    document
-      .getElementById("block-visualize-cookie-notice")
-      .classList.add("hidden");
+  const cookieNoticeClasses = document.getElementById(
+    "block-visualize-cookie-notice"
+  ).classList;
 
   if (hashedCookieValue === getCookieValue()) {
-    hideNotice();
+    cookieNoticeClasses.add("hidden");
   } else {
     document
       .getElementById("cookie-notice-close-btn")
       .addEventListener("click", () => {
-        hideNotice();
+        cookieNoticeClasses.add("closing");
         setCookie(hashedCookieValue);
       });
   }
