@@ -7,8 +7,8 @@ global-styling:
 
 global-js:
   js:
-    js/fullpage.js: {}
-    js/visualize.js: {}
+    dist/fullpage.js: {}
+    dist/visualize.js: {}
   dependencies:
     - core/drupalSettings
 
