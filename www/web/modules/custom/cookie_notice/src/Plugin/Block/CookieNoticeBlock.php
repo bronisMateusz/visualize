@@ -47,9 +47,17 @@ class CookieNoticeBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+    $cookie_notice = $this->configuration['cookie_notice'];
+
     return [
-      '#theme' => 'cookie_notice',
-      '#cookie_notice' => $this->configuration['cookie_notice'],
+      '#theme' => 'block__cookie_notice__cookie_notice',
+      '#cookie_notice' => $cookie_notice,
+      '#hashed_value' => hash('sha512', $this->configuration['cookie_notice']),
+      '#attached' => [
+        'library' => [
+          'cookie_notice/cookie_notice',
+        ],
+      ],
     ];
   }
 }
