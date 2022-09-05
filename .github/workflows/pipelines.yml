@@ -33,7 +33,7 @@ jobs:
             cd domains/visualize
             git pull
             docker compose build
-            docker exec -it visualize-drupal-1 bash
+            docker exec -i visualize-drupal-1 bash
             composer install
             drush cim
             drush cr
