@@ -113,7 +113,8 @@
 
       return image.src
         .split("?")[0]
-        .replace("styles/product_photo/public/", "");
+        .replace("styles/product_photo/public/", "")
+        .replace(".webp", "");
     };
 
     const updateProductsBackground = (gallery, index) => {
