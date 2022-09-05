@@ -20,9 +20,8 @@
     "block-visualize-cookie-notice"
   ).classList;
 
-  if (hashedCookieValue === getCookieValue()) {
-    cookieNoticeClasses.add("hidden");
-  } else {
+  if (hashedCookieValue !== getCookieValue()) {
+    cookieNoticeClasses.remove("hidden");
     document
       .getElementById("cookie-notice-close-btn")
       .addEventListener("click", () => {

@@ -10,7 +10,7 @@
  */
 function cookie_notice_theme($existing, $type, $theme, $path) {
   return [
-    'block__cookie_notice__cookie_notice' => [
+    'cookie_notice_block' => [
       'variables' => [
         'cookie_notice' => '',
         'hashed_notice' => '',

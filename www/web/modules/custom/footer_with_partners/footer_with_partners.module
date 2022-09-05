@@ -5,7 +5,7 @@
  */
 function footer_with_partners_theme($existing, $type, $theme, $path) {
   return [
-    'block__footer_with_partners__footer_with_partners' => [
+    'footer_with_partners_block' => [
       'variables' => [
         'title' => '',
         'partners_image' => NULL,
