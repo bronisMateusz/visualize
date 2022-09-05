@@ -1,5 +1,5 @@
 cookie_notice:
   js:
-    js/cookie-notice.js: {}
+    dist/cookie-notice.js: {}
   dependencies:
     - core/drupalSettings

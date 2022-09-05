@@ -50,7 +50,7 @@ class CookieNoticeBlock extends BlockBase {
     $cookie_notice = $this->configuration['cookie_notice'];
 
     return [
-      '#theme' => 'block__cookie_notice__cookie_notice',
+      '#theme' => 'cookie_notice_block',
       '#cookie_notice' => $cookie_notice,
       '#hashed_value' => hash('sha512', $this->configuration['cookie_notice']),
       '#attached' => [
