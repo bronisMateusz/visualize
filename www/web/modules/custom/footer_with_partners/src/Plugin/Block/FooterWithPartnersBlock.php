@@ -143,7 +143,7 @@ class FooterWithPartnersBlock extends BlockBase implements ContainerFactoryPlugi
    */
   public function build() {
     return [
-      '#theme' => 'footer_with_partners',
+      '#theme' => 'block__footer_with_partners__footer_with_partners',
       '#title' => $this->configuration['title'],
       '#partners_image' => $this->configuration['partners_image'],
       '#privacy_policy_address' => $this->nodeStorage->load($this->configuration['privacy_policy_page'])->toUrl()->toString(),
