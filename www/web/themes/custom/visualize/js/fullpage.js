@@ -40,11 +40,21 @@
         const fullPageParagraphs = document.querySelectorAll(
           ".paragraph--type--paragraph-full-page"
         );
-        const paragraphBefore = fullPageParagraphs[index - 1];
-        const paragraphNext = fullPageParagraphs[nextIndex - 1];
 
-        addOutAnimation(direction, paragraphBefore);
-        setEnterActions(paragraphNext);
+        if (direction === "up" && index <= fullPageParagraphs.length) {
+          const paragraphBefore = fullPageParagraphs[index - 1];
+          addOutAnimation(direction, paragraphBefore);
+        }
+
+        if (direction === "down" && index < fullPageParagraphs.length) {
+          const paragraphBefore = fullPageParagraphs[index - 1];
+          addOutAnimation(direction, paragraphBefore);
+        }
+
+        if (nextIndex < fullPageParagraphs.length) {
+          const paragraphNext = fullPageParagraphs[nextIndex - 1];
+          setEnterActions(paragraphNext);
+        }
       },
     });
   });

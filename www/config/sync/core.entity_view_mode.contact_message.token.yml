@@ -1,0 +1,10 @@
+uuid: 64efa48e-0d6c-4a7f-a378-088d842d4993
+langcode: pl
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.token
+label: Wzorzec
+targetEntityType: contact_message
+cache: true
