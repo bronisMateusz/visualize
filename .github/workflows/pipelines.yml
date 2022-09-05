@@ -8,22 +8,22 @@ on:
     branches:
       - "main"
     
-env:
-  DOMAIN: ${{ secrets.DOMAIN }}
-  # database config
-  DB_HOST: ${{ secrets.DB_HOST }}
-  DB_NAME: ${{ secrets.DB_NAME }}
-  DB_USER: ${{ secrets.DB_USER }}
-  DB_PASS: ${{ secrets.DB_PASS }}
-  # ports config
-  DB_PORT: ${{ secrets.DB_PORT }}
-  HTTP_PORT: ${{ secrets.HTTP_PORT }}
-  HTTPS_PORT: ${{ secrets.HTTPS_PORT }}
-  PMA_PORT: ${{ secrets.PMA_PORT }}
-  VITE_PORT: ${{ secrets.VITE_PORT }}
-  # ubuntu image config
-  UID: ${{ secrets.UID }}
-  GID: ${{ secrets.GID }}
+# env:
+#   DOMAIN: ${{ secrets.DOMAIN }}
+#   # database config
+#   DB_HOST: ${{ secrets.DB_HOST }}
+#   DB_NAME: ${{ secrets.DB_NAME }}
+#   DB_USER: ${{ secrets.DB_USER }}
+#   DB_PASS: ${{ secrets.DB_PASS }}
+#   # ports config
+#   DB_PORT: ${{ secrets.DB_PORT }}
+#   HTTP_PORT: ${{ secrets.HTTP_PORT }}
+#   HTTPS_PORT: ${{ secrets.HTTPS_PORT }}
+#   PMA_PORT: ${{ secrets.PMA_PORT }}
+#   VITE_PORT: ${{ secrets.VITE_PORT }}
+#   # ubuntu image config
+#   UID: ${{ secrets.UID }}
+#   GID: ${{ secrets.GID }}
 
 jobs:
   build:
@@ -33,6 +33,7 @@ jobs:
     - name: Build the Docker image
       run: |
         export DOCKER_BUILDKIT=1
+        cp .env.example .env
         docker compose build
   
   deploy:
