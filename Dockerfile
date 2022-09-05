@@ -7,8 +7,8 @@ ARG GID=1000
 # Get php extensions installer.
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-RUN \
-  apt-get update \
+RUN set -xe \
+  && apt-get update \
   # Install utils.
   && apt-get install -y --no-install-recommends \
     apt-transport-https \
@@ -35,13 +35,16 @@ RUN \
   && chmod +x drush.phar && mv drush.phar /usr/local/bin/drush \
   # Enable apache modules.
   && a2enmod rewrite headers ssl \
-  # Fix file permissions.
-  && addgroup --gid ${GID} www-data || true \
-  && adduser --uid ${UID} --gid ${GID} www-data || true \
+  # Add non root user:
+  && usermod -u ${UID} www-data \
+  && groupmod -g ${GID} www-data \
   && chown -R ${UID}:${GID} /var/www/
 FROM base
 
 WORKDIR /var/www/html
-COPY --chown=www-data:www-data www .
+COPY --chown=${UID}:${GID} www .
 # Mount 000-default.conf under sites-available
 COPY ./config/vhost.apache2.conf /etc/apache2/sites-available/000-default.conf
+
+# Switch to use a non root user.
+USER ${UID}:${GID}
