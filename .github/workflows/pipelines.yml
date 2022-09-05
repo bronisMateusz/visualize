@@ -33,7 +33,6 @@ jobs:
     - name: Build the Docker image
       run: |
         export DOCKER_BUILDKIT=1
-        cp .env.example .env
         docker compose build
   
   deploy:
@@ -45,6 +44,14 @@ jobs:
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
-        password: ${{ secrets.SSH_PASS }}
-        port: ${{ secrets.SSH_PORT }}
-        script: git clone https://github.com/bronisMateusz/visualize.git
+        script: |
+          cd domains/visualize
+          git pull
+          docker compose build
+          docker exec -it visualize-drupal-1 bash
+          composer install
+          drush cim
+          drush cr
+          cd web/themes/custom/visualize
+          npm run build
+          exit
