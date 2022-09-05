@@ -1,0 +1,21 @@
+uuid: e0f4ac21-2134-4f98-be51-93efb11c0ab1
+langcode: pl
+status: true
+dependencies:
+  module:
+    - cookie_notice
+  theme:
+    - visualize
+id: visualize_cookie_notice
+theme: visualize
+region: content
+weight: 0
+provider: null
+plugin: cookie_notice
+settings:
+  id: cookie_notice
+  label: 'Informacja o plikach cookie'
+  label_display: '0'
+  provider: cookie_notice
+  cookie_notice: 'Używamy ciasteczek by poprawić Twoje wrażenia z użytkowania strony.'
+visibility: {  }
