@@ -45,16 +45,3 @@ WORKDIR /var/www/html
 COPY --chown=www-data:www-data www .
 # Mount 000-default.conf under sites-available
 COPY ./config/vhost.apache2.conf /etc/apache2/sites-available/000-default.conf
-
-RUN \
-  # Install composer dependecies.
-  composer install --no-cache
-
-WORKDIR /var/www/html/web/themes/custom/visualize
-RUN \
-  # Install node dependencies and build theme.
-  npm install \
-  && npm run build \
-  && rm -rf node_modules
-
-WORKDIR /var/www/html
