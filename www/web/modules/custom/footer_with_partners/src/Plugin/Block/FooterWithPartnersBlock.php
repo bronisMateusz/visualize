@@ -7,7 +7,6 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\Element\EntityAutocomplete;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
-use Drupal\path_alias\AliasManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
@@ -144,7 +143,7 @@ class FooterWithPartnersBlock extends BlockBase implements ContainerFactoryPlugi
    */
   public function build() {
     return [
-      '#theme' => 'footer_with_partners',
+      '#theme' => 'footer_with_partners_block',
       '#title' => $this->configuration['title'],
       '#partners_image' => $this->configuration['partners_image'],
       '#privacy_policy_address' => $this->nodeStorage->load($this->configuration['privacy_policy_page'])->toUrl()->toString(),
