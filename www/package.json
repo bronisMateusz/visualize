@@ -5,7 +5,8 @@
     "web/modules/custom/*"
   ],
   "scripts": {
-    "build": "npm run build -w visualize-theme",
-    "start": "npm start -w visualize-theme"
-  }
+    "build": "yarn workspaces foreach --parallel --exclude visualize run build",
+    "dev": "yarn workspace visualize-theme dev"
+  },
+  "packageManager": "yarn@3.2.3"
 }
