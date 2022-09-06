@@ -36,16 +36,5 @@ services:
       MARIADB_PASSWORD: ${DB_PASS}
     ports:
       - "${DB_PORT}:3306"
-  pma:
-    image: phpmyadmin/phpmyadmin
-    restart: unless-stopped
-    environment:
-      PMA_HOST: ${DB_HOST}
-      PMA_USER: ${DB_USER}
-      PMA_PASSWORD: ${DB_PASS}
-      PHP_UPLOAD_MAX_FILESIZE: 1G
-      PHP_MAX_INPUT_VARS: 1G
-    ports:
-      - "${PMA_PORT}:80"
 volumes:
   db_data:

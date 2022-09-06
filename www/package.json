@@ -1,0 +1,11 @@
+{
+  "name": "visualize",
+  "workspaces": [
+    "web/themes/custom/*",
+    "web/modules/custom/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w visualize-theme",
+    "start": "npm start -w visualize-theme"
+  }
+}
