@@ -210,14 +210,11 @@ $databases = [];
  */
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'namespace' => 'Drupal\\mysql\\Driver\\Database\\mysql',
-  'autoload' => 'core/modules/mysql/src/Driver/Database/mysql/',
   'database' => $_ENV['DB_NAME'],
   'username' => $_ENV['DB_USER'],
   'password' => $_ENV['DB_PASS'],
-  'host' => 'db',
-  'prefix' => '',
-  'port' => '3306',
+  'host' => $_ENV['DB_HOST'],
+  'port' => $_ENV['DB_HOST'],
 );
 
 /**
