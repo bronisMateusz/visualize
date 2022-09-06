@@ -28,6 +28,7 @@
         "drupal/paragraphs": "^1.14",
         "drupal/pathauto": "^1.11",
         "drupal/twig_tweak": "^3.1",
+        "drupal/vite": "^1.0@beta",
         "drush/drush": "^11.1",
         "vlucas/phpdotenv": "^5.4"
     },
