@@ -43,6 +43,8 @@
             "drupal/core-project-message": true,
             "dealerdirect/phpcodesniffer-composer-installer": true
         },
+        "preferred-install": "dist",
+        "process-timeout": 0,
         "sort-packages": true
     },
     "extra": {
