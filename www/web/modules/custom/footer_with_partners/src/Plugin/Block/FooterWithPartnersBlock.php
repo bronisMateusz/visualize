@@ -67,7 +67,7 @@ class FooterWithPartnersBlock extends BlockBase implements ContainerFactoryPlugi
     $form['partners_image']['partner_first'] = [
       '#type' => 'media_library',
       '#allowed_bundles' => ['image'],
-      '#title' => $this->t('Upload partner logo'),
+      '#title' => $this->t('Partner logo'),
       '#description' => $this->t('Upload or select partner logo.'),
       '#default_value' => $config['partners_image']['partner_first'] ?? NULL,
     ];
@@ -75,7 +75,7 @@ class FooterWithPartnersBlock extends BlockBase implements ContainerFactoryPlugi
     $form['partners_image']['partner_second'] = [
       '#type' => 'media_library',
       '#allowed_bundles' => ['image'],
-      '#title' => $this->t('Upload partner logo'),
+      '#title' => $this->t('Partner logo'),
       '#description' => $this->t('Upload or select partner logo.'),
       '#default_value' => $config['partners_image']['partner_second'] ?? NULL,
     ];
@@ -83,7 +83,7 @@ class FooterWithPartnersBlock extends BlockBase implements ContainerFactoryPlugi
     $form['partners_image']['partner_third'] = [
       '#type' => 'media_library',
       '#allowed_bundles' => ['image'],
-      '#title' => $this->t('Upload partner logo'),
+      '#title' => $this->t('Partner logo'),
       '#description' => $this->t('Upload or select partner logo.'),
       '#default_value' => $config['partners_image']['partner_third'] ?? NULL,
     ];
@@ -91,7 +91,7 @@ class FooterWithPartnersBlock extends BlockBase implements ContainerFactoryPlugi
     $form['partners_image']['partner_fourth'] = [
       '#type' => 'media_library',
       '#allowed_bundles' => ['image'],
-      '#title' => $this->t('Upload partner logo'),
+      '#title' => $this->t('Partner logo'),
       '#description' => $this->t('Upload or select partner logo.'),
       '#default_value' => $config['partners_image']['partner_fourth'] ?? NULL,
     ];
@@ -99,7 +99,7 @@ class FooterWithPartnersBlock extends BlockBase implements ContainerFactoryPlugi
     $form['partners_image']['partner_fifth'] = [
       '#type' => 'media_library',
       '#allowed_bundles' => ['image'],
-      '#title' => $this->t('Upload partner logo'),
+      '#title' => $this->t('Partner logo'),
       '#description' => $this->t('Upload or select partner logo.'),
       '#default_value' => $config['partners_image']['partner_fifth'] ?? NULL,
     ];
