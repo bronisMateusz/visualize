@@ -1,7 +1,6 @@
 global-styling:
   vite: true
   js:
-    js/fullpage.js: {}
     js/visualize.js: {}
   css:
     component:
@@ -17,5 +16,6 @@ full-page:
   js:
     libraries/fullPage/scrolloverflow.min.js: {}
     libraries/fullPage/jquery.fullpage.min.js: {}
+    js/fullpage.js: {}
   dependencies:
     - core/jquery
