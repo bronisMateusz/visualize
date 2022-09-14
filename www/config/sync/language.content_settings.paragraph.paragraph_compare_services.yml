@@ -1,0 +1,11 @@
+uuid: 38db048f-0c3b-4e81-8c12-4f6737809713
+langcode: pl
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.paragraph_compare_services
+id: paragraph.paragraph_compare_services
+target_entity_type_id: paragraph
+target_bundle: paragraph_compare_services
+default_langcode: site_default
+language_alterable: false
