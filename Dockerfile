@@ -24,6 +24,7 @@ RUN set -xe \
     opcache \
     pdo_mysql \
     uploadprogress \
+    zip \
   # Install composer.
   && install-php-extensions @composer \
   # Install Node.js
