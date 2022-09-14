@@ -27,6 +27,7 @@
         "drupal/media_library_form_element": "^2.0",
         "drupal/paragraphs": "^1.14",
         "drupal/pathauto": "^1.11",
+        "drupal/responsive_favicons": "^1.7",
         "drupal/smtp": "^1.1",
         "drupal/themable_forms": "^1.0@beta",
         "drupal/twig_tweak": "^3.1",

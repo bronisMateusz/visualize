@@ -47,6 +47,7 @@ module:
   path_alias: 0
   project_contact: 0
   rdf: 0
+  responsive_favicons: 0
   responsive_image: 0
   search: 0
   shortcut: 0
