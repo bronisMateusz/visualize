@@ -1,8 +1,8 @@
 #block-visualize-cookie-notice {
-  background-color: rgba(255, 255, 255, .2);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   bottom: 48px;
-  font-size: .875rem;
+  font-size: 0.875rem;
   left: 30px;
   line-height: 1.125rem;
   margin: 0;
@@ -12,16 +12,16 @@
 
   &.closing {
     opacity: 0;
-    transition: width .375s ease-in-out .25s, opacity .5s ease-out .75s;
+    transition: width 0.375s ease-in-out 0.25s, opacity 0.5s ease-out 0.75s;
     width: 70px;
 
     .block__content {
-      transition-delay: .25s;
+      transition-delay: 0.25s;
 
       p,
-      #cookie-notice-close-btn {
+      .close-button {
         opacity: 0;
-        transition: opacity .25s ease-in;
+        transition: opacity 0.25s ease-in;
       }
     }
   }
@@ -41,18 +41,9 @@
       margin: 17px 20px;
     }
 
-    #cookie-notice-close-btn {
-      background: unset;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      height: 48px;
+    .close-button {
       margin-right: 12px;
-      padding: 0;
-      width: 48px;
-      cursor: pointer;
     }
-
   }
 }
 

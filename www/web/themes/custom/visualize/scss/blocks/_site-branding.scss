@@ -1,9 +1,9 @@
 #block-visualize-site-branding {
   position: absolute;
   top: 24px;
-  left: 0;
-  right: 0;
+  left: 50%;
   z-index: 1;
+  transform: translateX(-50%);
 
   .block__content {
     display: flex;

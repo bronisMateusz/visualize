@@ -1,0 +1,3 @@
+project-contact:
+  js:
+    dist/project-contact.js: {}
