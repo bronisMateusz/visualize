@@ -1,0 +1,256 @@
+#block-visualize-project-contact {
+  position: fixed;
+  margin: 0;
+  bottom: 48px;
+  right: 80px;
+  width: 60px;
+  height: 60px;
+
+  .block__content {
+    height: 60px;
+    .send-icon {
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50px;
+      position: absolute;
+      background: none;
+      stroke: 10;
+      cursor: pointer;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+
+      circle {
+        fill: transparent;
+        stroke-width: 2;
+        stroke: white;
+        stroke-dasharray: 190;
+        stroke-dashoffset: 1;
+        transform: rotate(-90deg) translateX(-60px);
+        transition: all 0.5s ease-in-out;
+      }
+
+      &:hover circle {
+        stroke-dasharray: 182;
+        stroke-dashoffset: -182;
+      }
+
+      path {
+        fill: white;
+      }
+    }
+
+    #project-contact-body {
+      border-radius: 15px;
+      height: calc(100vh - 48px);
+      left: calc(100% + 104px);
+      margin-left: -100vw;
+      margin-top: -100vh;
+      overflow: hidden;
+      position: relative;
+      top: calc(100% + 72px);
+      width: calc(100vw - 48px);
+
+      &:not(.hidden) {
+        display: block;
+      }
+
+      .close-button {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        z-index: 1;
+      }
+
+      .welcome-message {
+        position: absolute;
+        width: 40%;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        font-size: 4.5rem;
+        font-family: "Everett", sans-serif;
+        line-height: 4.5rem;
+      }
+
+      .media {
+        height: 100%;
+        // display: none;
+
+        .field {
+          width: 100%;
+          margin: 0;
+          height: 100%;
+
+          .field__item {
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .project-contact-form-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        background-color: black;
+        padding: 72px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #contact-message-project-contact-form {
+          max-width: 750px;
+          width: 100%;
+
+          #edit-field-project-type-wrapper {
+            #edit-field-project-type--wrapper {
+              .fieldset__legend {
+                background: none;
+                margin-bottom: 24px;
+
+                .fieldset__label {
+                  padding: 0;
+                  font-size: 1rem;
+                  font-weight: 500;
+                }
+              }
+              .fieldset__wrapper {
+                border: none;
+                padding: 0;
+
+                .form-boolean-group {
+                  display: inline-flex;
+                  flex-wrap: wrap;
+                  gap: 16px;
+
+                  .js-form-type-radio {
+                    position: relative;
+                    margin: 0;
+                    padding: 10px 30px;
+
+                    .form-radio {
+                      cursor: pointer;
+                      width: 100%;
+                      height: 100%;
+                      border-radius: 50px;
+                      background: none;
+                      border: 2px solid #898989;
+                      position: absolute;
+                      inset: 0;
+
+                      &:focus {
+                        box-shadow: none;
+                      }
+
+                      &:checked {
+                        border-color: white;
+                      }
+
+                      &:checked + .form-item__label {
+                        color: white;
+                      }
+                    }
+
+                    .form-item__label {
+                      padding: 0;
+                      white-space: nowrap;
+                      color: #898989;
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .js-form-type-textfield,
+          .js-form-type-email,
+          .js-form-type-textarea {
+            &:focus-within .form-item__label {
+              opacity: 0.5;
+            }
+
+            .form-item__label {
+              transform: translateY(8px);
+              font-size: 0.875rem;
+              color: #898989;
+              cursor: default;
+              margin: 0;
+              opacity: 0;
+
+              &::after {
+                display: none;
+              }
+            }
+
+            .form-text,
+            .form-email,
+            .form-textarea {
+              background: none;
+              border: none;
+              border-bottom: 2px solid #898989;
+              position: relative;
+              z-index: 0;
+              border-radius: 0;
+              padding: 0;
+              color: white;
+              width: 100%;
+
+              &:focus {
+                border-color: white;
+                outline: none;
+              }
+
+              &::placeholder {
+                color: #898989;
+                opacity: 0.5;
+              }
+
+              &:focus::placeholder {
+                opacity: 0;
+              }
+            }
+          }
+
+          #edit-message-wrapper {
+            .js-form-type-textarea {
+              .form-textarea {
+                padding: 0;
+                margin-top: 15px;
+                min-height: 39px;
+                max-height: 9rem;
+                resize: none;
+              }
+            }
+          }
+
+          #edit-actions {
+            margin-top: 48px;
+            justify-content: flex-end;
+
+            #edit-submit {
+              margin: 0;
+              background-color: white;
+              border-radius: 50px;
+              border: none;
+              color: black;
+              font-family: "Everett", sans-serif;
+              font-size: 1rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}

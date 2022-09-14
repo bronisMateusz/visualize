@@ -39,7 +39,7 @@ function visualize_preprocess_media(array &$variables) {
     $video_file = $variables['content']['field_media_video_file'];
     $attributes = $video_file[0]['#attributes'];
 
-    //update background video attributes
+    // Update background video attributes
     unset($attributes['controls']);
     $attributes['autoplay'] = 'autoplay';
     $attributes['loop'] = 'loop';
