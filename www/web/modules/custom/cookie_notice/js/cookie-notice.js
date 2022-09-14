@@ -23,7 +23,7 @@
   if (hashedCookieValue !== getCookieValue()) {
     cookieNoticeClasses.remove("hidden");
     document
-      .getElementById("cookie-notice-close-btn")
+      .querySelector("#block-visualize-cookie-notice .close-button")
       .addEventListener("click", () => {
         cookieNoticeClasses.add("closing");
         setCookie(hashedCookieValue);
