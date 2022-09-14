@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
 
     server: {
       host: true,
-      port: process.env.VITE_PORT || 12321,
+      port: 12321,
       strictPort: true,
     },
   };
