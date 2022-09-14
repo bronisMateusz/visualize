@@ -1,14 +1,14 @@
 #block-visualize-cookie-notice {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #666666;
   border-radius: 15px;
-  bottom: 48px;
+  bottom: 43px;
   font-size: 0.875rem;
   left: 30px;
   line-height: 1.125rem;
   margin: 0;
   max-width: 290px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 
   &.closing {
     opacity: 0;
@@ -47,9 +47,10 @@
   }
 }
 
-@media (min-width: 575px) {
+@media (min-width: 576px) {
   #block-visualize-cookie-notice {
     left: 62.5px;
+    bottom: 45px;
     max-width: 365px;
 
     .block__content {
