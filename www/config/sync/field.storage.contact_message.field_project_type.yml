@@ -1,0 +1,30 @@
+uuid: ab965517-faa0-4b8d-8ea3-73f301e47383
+langcode: pl
+status: true
+dependencies:
+  module:
+    - contact
+    - options
+id: contact_message.field_project_type
+field_name: field_project_type
+entity_type: contact_message
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Visualization
+      label: Wizualizacje
+    -
+      value: Animations
+      label: Animacje
+    -
+      value: Product-animations
+      label: 'Animacje produktowe'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

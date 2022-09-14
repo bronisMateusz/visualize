@@ -1,0 +1,35 @@
+uuid: 3916cdfa-c591-41ec-a5d3-e96ef216e0a6
+langcode: pl
+status: true
+dependencies:
+  config:
+    - contact.form.project_contact
+    - field.storage.contact_message.field_attachments
+    - media.type.document
+    - media.type.image
+    - media.type.remote_video
+    - media.type.video
+id: contact_message.project_contact.field_attachments
+field_name: field_attachments
+entity_type: contact_message
+bundle: project_contact
+label: 'Dodaj załączniki'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+      image: image
+      remote_video: remote_video
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference
