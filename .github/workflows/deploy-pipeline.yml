@@ -23,4 +23,4 @@ jobs:
             docker compose build
             docker exec -t visualize-drupal-1 composer install --no-cache
             docker exec -t visualize-drupal-1 drush -y cim && drush cr
-            docker exec -t visualize-drupal-1 yarn && yarn build && rm -rf node_modules
+            docker exec -t visualize-drupal-1 yarn install && yarn build && rm -rf node_modules
