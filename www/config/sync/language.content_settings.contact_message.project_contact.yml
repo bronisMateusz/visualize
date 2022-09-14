@@ -1,0 +1,11 @@
+uuid: 7a001df9-523e-46e1-9e6a-7631763d23f9
+langcode: pl
+status: true
+dependencies:
+  config:
+    - contact.form.project_contact
+id: contact_message.project_contact
+target_entity_type_id: contact_message
+target_bundle: project_contact
+default_langcode: site_default
+language_alterable: false
