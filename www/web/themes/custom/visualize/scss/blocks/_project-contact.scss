@@ -1,0 +1,340 @@
+#block-visualize-project-contact {
+  position: fixed;
+  margin: 0;
+  bottom: 48px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+
+  .block__content {
+    height: 60px;
+    .send-icon {
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50px;
+      position: absolute;
+      background: none;
+      stroke: 10;
+      cursor: pointer;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+
+      circle {
+        fill: transparent;
+        stroke-width: 2;
+        stroke: white;
+        stroke-dasharray: 190;
+        stroke-dashoffset: 1;
+        transform: rotate(-90deg) translateX(-60px);
+        transition: stroke-dasharray 0.5s ease-in-out,
+          stroke-dashoffset 0.5s ease-in-out;
+      }
+
+      &:hover circle {
+        stroke-dasharray: 182;
+        stroke-dashoffset: -182;
+      }
+
+      path {
+        fill: white;
+      }
+    }
+
+    #project-contact-body {
+      border-radius: 15px;
+      height: calc(100vh - 48px);
+      left: calc(100% + 54px);
+      margin-left: -100vw;
+      margin-top: -100vh;
+      overflow: hidden;
+      position: relative;
+      top: calc(100% + 72px);
+      width: calc(100vw - 48px);
+
+      &:not(.hidden) {
+        display: block;
+      }
+
+      .close-button {
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        z-index: 1;
+      }
+
+      .welcome-message {
+        position: absolute;
+        font-family: "Everett", sans-serif;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        margin: 0;
+        text-align: center;
+        z-index: 1;
+        font-size: 8vw;
+        line-height: 8vw;
+      }
+
+      .media {
+        height: 40%;
+        filter: brightness(70%);
+
+        .field {
+          width: 100%;
+          margin: 0;
+          height: 100%;
+
+          .field__item {
+            height: 100%;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .project-contact-form-wrapper {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 60%;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #contact-message-project-contact-form {
+          height: fit-content;
+          max-width: 750px;
+          overflow-y: auto;
+          padding: 48px;
+          width: 100%;
+
+          #edit-field-project-type-wrapper {
+            #edit-field-project-type--wrapper {
+              margin: 0;
+
+              .fieldset__legend {
+                background: none;
+                margin-bottom: 36px;
+                text-align: center;
+
+                .fieldset__label {
+                  font-size: 1rem;
+                  font-weight: 500;
+                  padding: 0;
+                }
+              }
+              .fieldset__wrapper {
+                border: none;
+                margin: 0 auto;
+                padding: 0;
+                width: fit-content;
+
+                .form-boolean-group {
+                  display: inline-flex;
+                  flex-wrap: wrap;
+                  gap: 16px;
+                  justify-content: center;
+                  max-width: 220px;
+
+                  .js-form-type-radio {
+                    position: relative;
+                    margin: 0;
+                    padding: 10px 30px;
+                    width: 100%;
+
+                    .form-radio {
+                      cursor: pointer;
+                      width: 100%;
+                      height: 100%;
+                      border-radius: 50px;
+                      background: none;
+                      border: 2px solid #898989;
+                      position: absolute;
+                      inset: 0;
+
+                      &:focus {
+                        box-shadow: none;
+                      }
+
+                      &:checked {
+                        border-color: white;
+                      }
+
+                      &:checked + .form-item__label {
+                        color: white;
+                      }
+                    }
+
+                    .form-item__label {
+                      padding: 0;
+                      white-space: nowrap;
+                      color: #898989;
+                      margin: 0;
+                      display: block;
+                      text-align: center;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .js-form-type-textfield,
+          .js-form-type-email,
+          .js-form-type-textarea {
+            &:focus-within .form-item__label {
+              opacity: 0.5;
+            }
+
+            .form-item__label {
+              transform: translateY(8px);
+              font-size: 0.875rem;
+              color: #898989;
+              cursor: default;
+              margin: 0;
+              opacity: 0;
+
+              &::after {
+                display: none;
+              }
+            }
+
+            .form-text,
+            .form-email,
+            .form-textarea {
+              background: none;
+              border: none;
+              border-bottom: 2px solid #898989;
+              position: relative;
+              z-index: 0;
+              border-radius: 0;
+              padding: 0;
+              color: white;
+              width: 100%;
+
+              &:focus {
+                border-color: white;
+                outline: none;
+              }
+
+              &::placeholder {
+                color: #898989;
+                opacity: 0.5;
+              }
+
+              &:focus::placeholder {
+                opacity: 0;
+              }
+            }
+          }
+
+          #edit-message-wrapper {
+            .js-form-type-textarea {
+              .form-textarea {
+                padding: 0;
+                margin-top: 15px;
+                min-height: 39px;
+                max-height: 9rem;
+                resize: none;
+              }
+            }
+          }
+
+          #edit-actions {
+            margin-top: 48px;
+            justify-content: flex-end;
+
+            #edit-submit {
+              margin: 0;
+              background-color: white;
+              border-radius: 50px;
+              border: none;
+              color: black;
+              font-family: "Everett", sans-serif;
+              font-size: 1rem;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  #block-visualize-project-contact {
+    right: 62.5px;
+
+    .block__content
+    #project-contact-body{
+        left: calc(100% + 86px);
+
+        .project-contact-form-wrapper
+        #contact-message-project-contact-form
+        #edit-field-project-type-wrapper
+        #edit-field-project-type--wrapper
+        .fieldset__wrapper
+        .form-boolean-group {
+        max-width: none;
+  
+        .js-form-type-radio {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #block-visualize-project-contact .block__content #project-contact-body {
+    .welcome-message {
+      width: 40%;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -50%);
+      font-size: 5.25vw;
+      line-height: 5.25vw;
+      text-align: left;
+    }
+
+    .media,
+    .project-contact-form-wrapper {
+      height: 100%;
+    }
+
+    .project-contact-form-wrapper {
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #block-visualize-project-contact
+    .block__content
+    #project-contact-body
+    .project-contact-form-wrapper
+    #contact-message-project-contact-form {
+    padding: 72px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #block-visualize-project-contact
+    .block__content
+    #project-contact-body
+    .welcome-message {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}

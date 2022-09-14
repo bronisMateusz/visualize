@@ -1,8 +1,8 @@
 _core:
   default_config_hash: U69DBeuvXuNVOC15rVNaBjDPK2fWFbo9v4takdYSSO8
 langcode: pl
-default_form: feedback
+default_form: null
 flood:
-  limit: 5
+  limit: 100
   interval: 3600
 user_default_enabled: true

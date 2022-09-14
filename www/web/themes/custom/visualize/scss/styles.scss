@@ -4,8 +4,12 @@
 // Blocks
 @import "blocks/cookie-notice";
 @import "blocks/footer-with-partners";
+@import "blocks/project-contact";
 @import "blocks/site-branding";
 @import "blocks/status-messages";
+
+// Components
+@import "components/close-button";
 
 // Core
 @import "core/typography";
@@ -37,4 +41,4 @@
 @import "paragraphs/service";
 
 // Vendor
-@import "vendors/fullpage"
+@import "vendors/fullpage";

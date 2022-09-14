@@ -20,7 +20,9 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             cd domains/visualize && git pull
+            docker compose down
             docker compose build
+            docker compose up -d
             docker exec -t visualize-drupal-1 composer install --no-cache
             docker exec -t visualize-drupal-1 drush -y cim && drush cr
             docker exec -t visualize-drupal-1 yarn && yarn build && rm -rf node_modules
