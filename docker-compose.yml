@@ -1,4 +1,10 @@
 version: '3'
+networks:
+  traefik:
+    name: traefik
+  backend:
+volumes:
+  db_data:
 services:
   drupal:
     build:
@@ -9,32 +15,62 @@ services:
         GID: ${GID:-1000}
     depends_on:
       - db
-    env_file: .env
-    volumes:
-      - ./www:/var/www/html
-      - ./config/vhost.apache2.conf:/etc/apache2/sites-available/000-default.conf
-    restart: unless-stopped
     environment:
       DB_HOST: ${DB_NAME}
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASS: ${DB_USER}
       DOMAIN: ${DOMAIN}
+    env_file: .env
+    networks:
+      - traefik
+      - backend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.entrypoints=web-secure"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.service=${PROJECT_NAME}-drupal"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.tls=true"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.entrypoints=web"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.service=${PROJECT_NAME}-drupal"
+      - "traefik.http.services.${PROJECT_NAME}-drupal.loadbalancer.server.port=80"
+      - "traefik.docker.network=traefik"
     ports:
-      - "${HTTP_PORT}:80"
-      - "${HTTPS_PORT}:443"
       - "${VITE_PORT}:12321"
-  db:
-    image: mariadb:10.8
-    volumes:
-      - "db_data:/var/lib/mysql"
     restart: unless-stopped
+    volumes:
+      - ./www:/var/www/html
+      - ./config/vhost.apache2.conf:/etc/apache2/sites-available/000-default.conf
+  db:
     environment:
       MARIADB_ROOT_PASSWORD: ${DB_PASS}
       MARIADB_DATABASE: ${DB_NAME}
       MARIADB_USER: ${DB_USER}
       MARIADB_PASSWORD: ${DB_PASS}
+    image: mariadb:10.8
+    networks:
+      - backend
+    restart: unless-stopped
+    volumes:
+      - "db_data:/var/lib/mysql"
+  traefik:
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=traefik"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web-secure.address=:443"
+      - "--entrypoints.dba.address=:81"
+    image: traefik:2.8
+    networks:
+      - traefik
     ports:
-      - "${DB_PORT}:3306"
-volumes:
-  db_data:
+      - "${HTTP_PORT}:80"
+      - "${HTTPS_PORT}:443"
+      - "${DB_PORT}:81"
+    profiles: [ "traefik" ]
+    restart: unless-stopped
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
