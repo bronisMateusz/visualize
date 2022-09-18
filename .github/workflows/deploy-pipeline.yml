@@ -22,5 +22,6 @@ jobs:
             cd domains/visualize && git pull
             docker compose build
             docker exec -t visualize-drupal-1 composer install --no-cache
-            docker exec -t visualize-drupal-1 drush -y cim && drush cr
-            docker exec -t visualize-drupal-1 yarn install && yarn build && rm -rf node_modules
+            docker exec -t visualize-drupal-1 drush deploy
+            docker exec -t visualize-drupal-1 yarn
+            docker exec -t visualize-drupal-1 yarn build && rm -rf node_modules
