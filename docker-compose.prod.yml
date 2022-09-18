@@ -1,0 +1,28 @@
+version: '3'
+services:
+  drupal:
+    labels:
+      - "traefik.docker.network=traefik"
+      - "traefik.enable=true"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.entrypoints=web-secure"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.service=${PROJECT_NAME}-drupal"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.tls.certresolver=letsencrypt"
+      - "traefik.http.services.${PROJECT_NAME}-drupal.loadbalancer.server.port=80"
+  traefik:
+    command:
+      - "--api.insecure=true"
+      - "--entrypoints.dba.address=:81"
+      - "--entrypoints.web.address=:80"
+      - '--entrypoints.web.http.redirections.entrypoint.to=web-secure'
+      - '--entrypoints.web.http.redirections.entrypoint.scheme=https'
+      - "--entrypoints.web-secure.address=:443"
+      - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+      - '--certificatesResolvers.letsencrypt.acme.email=${ACME_EMAIL}'
+      - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./letsencrypt:/letsencrypt"

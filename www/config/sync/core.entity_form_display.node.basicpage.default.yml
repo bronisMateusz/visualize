@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.basicpage.body
+    - field.field.node.basicpage.field_meta_tags
     - node.type.basicpage
   module:
+    - metatag
     - path
     - text
 id: node.basicpage.default
@@ -28,6 +30,14 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_meta_tags:
+    type: metatag_firehose
+    weight: 122
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   langcode:
     type: language_select
