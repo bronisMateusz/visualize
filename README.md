@@ -3,7 +3,8 @@
 ## Start project
 1. Create `.env` based on `.env.example`.
 2. Start docker containers:
-    - base command: `docker compose up -d`
+    - for prod: `docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d`
+    - for local-dev: `docker compose up -d`
     - after changes to Dockerfile `docker compose build` is required to rebuild image
 3. Install composer dependencies: `docker exec -it <drupal_container> composer install`
 
