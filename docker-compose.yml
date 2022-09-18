@@ -11,31 +11,31 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        UID: ${UID:-1000}
         GID: ${GID:-1000}
+        UID: ${UID:-1000}
     depends_on:
       - db
     environment:
       DB_HOST: ${DB_NAME}
       DB_NAME: ${DB_NAME}
-      DB_USER: ${DB_USER}
       DB_PASS: ${DB_USER}
+      DB_USER: ${DB_USER}
       DOMAIN: ${DOMAIN}
     env_file: .env
     networks:
-      - traefik
       - backend
+      - traefik
     labels:
+      - "traefik.docker.network=traefik"
       - "traefik.enable=true"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.entrypoints=web"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.service=${PROJECT_NAME}-drupal"
       - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.entrypoints=web-secure"
       - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.service=${PROJECT_NAME}-drupal"
       - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.tls=true"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal.entrypoints=web"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal.service=${PROJECT_NAME}-drupal"
       - "traefik.http.services.${PROJECT_NAME}-drupal.loadbalancer.server.port=80"
-      - "traefik.docker.network=traefik"
     ports:
       - "${VITE_PORT}:12321"
     restart: unless-stopped
@@ -44,10 +44,10 @@ services:
       - ./config/vhost.apache2.conf:/etc/apache2/sites-available/000-default.conf
   db:
     environment:
-      MARIADB_ROOT_PASSWORD: ${DB_PASS}
       MARIADB_DATABASE: ${DB_NAME}
-      MARIADB_USER: ${DB_USER}
       MARIADB_PASSWORD: ${DB_PASS}
+      MARIADB_ROOT_PASSWORD: ${DB_PASS}
+      MARIADB_USER: ${DB_USER}
     image: mariadb:10.8
     networks:
       - backend
@@ -57,12 +57,12 @@ services:
   traefik:
     command:
       - "--api.insecure=true"
+      - "--entrypoints.dba.address=:81"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web-secure.address=:443"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--providers.docker.network=traefik"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.web-secure.address=:443"
-      - "--entrypoints.dba.address=:81"
     image: traefik:2.8
     networks:
       - traefik
