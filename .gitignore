@@ -7,3 +7,6 @@
 
 # Ignore .DS_Store file
 .DS_Store*
+
+# Ignore traefik letsencrypt
+/letsencrypt/
