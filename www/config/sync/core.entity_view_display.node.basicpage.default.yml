@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.basicpage.body
+    - field.field.node.basicpage.field_meta_tags
     - node.type.basicpage
   module:
+    - metatag
     - text
     - user
 id: node.basicpage.default
@@ -19,6 +21,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }
