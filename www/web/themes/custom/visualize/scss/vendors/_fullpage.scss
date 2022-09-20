@@ -11,21 +11,21 @@
 }
 
 #fp-nav {
-  z-index: 0;
-
   &.left {
-    left: 10px;
+    left: 8px !important;
     padding-left: inherit;
   }
 
   ul {
     li {
-      height: 100%;
-      width: 100%;
-      margin: 0;
+      height: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
 
       &:hover {
         a {
+          position: relative;
+
           &.active {
             span {
               height: 12px;
@@ -51,7 +51,9 @@
         }
 
         .fp-tooltip.left {
+          left: 100%;
           padding-left: 45px;
+          position: absolute;
           transition: padding-left 0.25s ease-out;
 
           &::before {
@@ -66,7 +68,7 @@
       }
 
       a {
-        padding: 21px;
+        padding: 24px;
 
         &.active {
           span {
@@ -136,6 +138,6 @@
 
 @media (min-width: 768px) {
   #fp-nav.left {
-    left: 18px;
+    left: 16px !important;
   }
 }
