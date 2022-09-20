@@ -35,6 +35,7 @@
       navigationPosition: "left",
       navigationTooltips: drupalSettings.menuTitles,
       scrollOverflow: true,
+      normalScrollElements: ".field--name-field-services",
 
       onLeave: (index, nextIndex, direction) => {
         const fullPageParagraphs = document.querySelectorAll(
