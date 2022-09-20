@@ -5,11 +5,11 @@
   ul {
     margin-left: 12px;
 
-    &>li {
-      margin-bottom: 16px;
-      padding-left: 8px;
+    >li {
+      font-family: 'Everett', sans-serif;
       font-size: .75rem;
       line-height: 1.75rem;
+      padding-left: 8px;
       margin-bottom: 0;
 
       &::marker {
