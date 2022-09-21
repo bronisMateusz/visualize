@@ -163,7 +163,7 @@ display:
           entity_type: block_content
           entity_field: changed
           plugin_id: field
-          label: Updated
+          label: Zaktualizowano
           exclude: false
           alter:
             alter_text: false
@@ -218,7 +218,7 @@ display:
           admin_label: ''
           entity_type: block_content
           plugin_id: entity_operations
-          label: Operations
+          label: Operacje
           exclude: false
           alter:
             alter_text: false
@@ -283,7 +283,7 @@ display:
         options:
           submit_button: Zastosuj
           reset_button: true
-          reset_button_label: Reset
+          reset_button_label: Resetuj
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc

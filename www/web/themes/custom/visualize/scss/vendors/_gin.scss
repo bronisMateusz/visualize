@@ -3,8 +3,10 @@
 [dir="ltr"] body.gin--classic-toolbar {
   #page {
     >header {
-      padding-left: var(--ginVerticalToolbarOffset, 240px);
-      top: 100px;
+      #block-visualize-site-branding {
+        padding-left: var(--ginVerticalToolbarOffset, 240px);
+        top: 100px;
+      }
     }
   }
 }

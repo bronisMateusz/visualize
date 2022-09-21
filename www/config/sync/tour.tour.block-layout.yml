@@ -39,7 +39,7 @@ tips:
     label: 'Konfiguruj Blok'
     weight: 4
     selector: .dropbutton-widget
-    body: 'By Clicking on "Configure" you can go ahead and edit the contents of the block, deal with the visibility settings and even change the placement of where it is on your theme.'
+    body: 'Klikając na "Konfiguracja" możesz przejść do edycji zawartości bloku, zająć się ustawieniami widoczności, a nawet zmienić umiejscowienie, w którym znajduje się on w Twoim motywie.'
   custom-block-library:
     id: custom-block-library
     plugin: text

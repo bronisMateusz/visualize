@@ -85,7 +85,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: Author
+          label: Autor
           exclude: false
           alter:
             alter_text: false
@@ -206,7 +206,7 @@ display:
         options:
           submit_button: Zastosuj
           reset_button: false
-          reset_button_label: Reset
+          reset_button_label: Resetuj
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc

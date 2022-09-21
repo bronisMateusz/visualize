@@ -16,7 +16,7 @@ dependencies:
 _core:
   default_config_hash: GDIFCs-lTKQIMvaNZ95zofFcqpTxDYakxx02_zZFkmM
 id: media_library
-label: 'Media library'
+label: 'Biblioteka multimediów'
 module: views
 description: 'Find and manage media.'
 tag: ''
@@ -158,7 +158,7 @@ display:
         options:
           submit_button: 'Apply filters'
           reset_button: false
-          reset_button_label: Reset
+          reset_button_label: Resetuj
           exposed_sorts_label: 'Sort by'
           expose_sort_order: false
           sort_asc_label: Asc
@@ -195,7 +195,7 @@ display:
           plugin_id: date
           order: DESC
           expose:
-            label: 'Newest first'
+            label: 'Najpierw najświeższe'
             field_identifier: created
           exposed: true
           granularity: second
@@ -211,7 +211,7 @@ display:
           plugin_id: standard
           order: ASC
           expose:
-            label: 'Name (A-Z)'
+            label: 'Nazwa (A-Z)'
             field_identifier: name
           exposed: true
         name_1:
@@ -226,7 +226,7 @@ display:
           plugin_id: standard
           order: DESC
           expose:
-            label: 'Name (Z-A)'
+            label: 'Nazwa (Z-A)'
             field_identifier: name_1
           exposed: true
       filters:
@@ -260,7 +260,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: Published
+            label: Opublikowane
             description: ''
             identifier: status
             optional: true
@@ -271,11 +271,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Opublikowane
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: Niepublikowane
                 operator: '='
                 value: '0'
         name:
@@ -294,7 +294,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Nazwa
             description: ''
             use_operator: false
             operator: name_op
@@ -421,7 +421,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Język
             description: ''
             use_operator: false
             operator: langcode_op
@@ -660,7 +660,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: Edit
+          text: Edytuj
           output_url_as_text: false
           absolute: false
         delete_media:
@@ -713,7 +713,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          text: Delete
+          text: Usuń
           output_url_as_text: false
           absolute: false
         rendered_entity:
@@ -993,7 +993,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Nazwa
             description: ''
             use_operator: false
             operator: name_op
@@ -1079,7 +1079,7 @@ display:
           table: views
           field: display_link
           plugin_id: display_link
-          label: Grid
+          label: Siatka
           empty: true
           display_id: widget
         display_link_table:
@@ -1087,7 +1087,7 @@ display:
           table: views
           field: display_link
           plugin_id: display_link
-          label: Table
+          label: Tabela
           empty: true
           display_id: widget_table
       rendering_language: '***LANGUAGE_language_interface***'
@@ -1142,7 +1142,7 @@ display:
           entity_type: media
           entity_field: name
           plugin_id: field
-          label: Name
+          label: Nazwa
           type: string
           settings:
             link_to_entity: false
@@ -1154,7 +1154,7 @@ display:
           entity_type: media
           entity_field: uid
           plugin_id: field
-          label: Author
+          label: Autor
           type: entity_reference_label
           settings:
             link: true
@@ -1166,7 +1166,7 @@ display:
           entity_type: media
           entity_field: changed
           plugin_id: field
-          label: Updated
+          label: Zaktualizowano
           type: timestamp
           settings:
             date_format: short
@@ -1275,7 +1275,7 @@ display:
           exposed: true
           expose:
             operator_id: name_op
-            label: Name
+            label: Nazwa
             description: ''
             use_operator: false
             operator: name_op
@@ -1369,7 +1369,7 @@ display:
           table: views
           field: display_link
           plugin_id: display_link
-          label: Grid
+          label: Siatka
           empty: true
           display_id: widget
         display_link_table:
@@ -1377,7 +1377,7 @@ display:
           table: views
           field: display_link
           plugin_id: display_link
-          label: Table
+          label: Tabela
           empty: true
           display_id: widget_table
       rendering_language: '***LANGUAGE_language_interface***'
