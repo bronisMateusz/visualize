@@ -66,7 +66,7 @@ display:
           entity_type: file
           entity_field: filename
           plugin_id: field
-          label: Name
+          label: Nazwa
           exclude: false
           alter:
             alter_text: false
@@ -445,7 +445,7 @@ display:
           decimal: .
           separator: ','
           format_plural: true
-          format_plural_string: !!binary MSBwbGFjZQNAY291bnQgcGxhY2Vz
+          format_plural_string: !!binary MSBtaWVqc2NlA0Bjb3VudCBtaWVqc2NhY2gDMCBtaWVqc2M=
           prefix: ''
           suffix: ''
       pager:
@@ -469,9 +469,9 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Filtruj
           reset_button: false
-          reset_button_label: Reset
+          reset_button_label: Resetuj
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
