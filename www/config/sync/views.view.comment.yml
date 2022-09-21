@@ -218,7 +218,7 @@ display:
           entity_type: comment
           entity_field: name
           plugin_id: field
-          label: Author
+          label: Autor
           exclude: false
           alter:
             alter_text: false
@@ -347,7 +347,7 @@ display:
           entity_type: comment
           entity_field: changed
           plugin_id: field
-          label: Updated
+          label: Zaktualizowano
           exclude: false
           alter:
             alter_text: false
@@ -413,7 +413,7 @@ display:
           admin_label: ''
           entity_type: comment
           plugin_id: entity_operations
-          label: Operations
+          label: Operacje
           exclude: false
           alter:
             alter_text: false
@@ -544,9 +544,9 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Filtruj
           reset_button: false
-          reset_button_label: Reset
+          reset_button_label: Resetuj
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -730,7 +730,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Język
             description: ''
             use_operator: false
             operator: langcode_op
@@ -1096,7 +1096,7 @@ display:
           entity_type: comment
           entity_field: name
           plugin_id: field
-          label: Author
+          label: Autor
           exclude: false
           alter:
             alter_text: false
@@ -1225,7 +1225,7 @@ display:
           entity_type: comment
           entity_field: changed
           plugin_id: field
-          label: Updated
+          label: Zaktualizowano
           exclude: false
           alter:
             alter_text: false
@@ -1291,7 +1291,7 @@ display:
           admin_label: ''
           entity_type: comment
           plugin_id: entity_operations
-          label: Operations
+          label: Operacje
           exclude: false
           alter:
             alter_text: false
@@ -1540,7 +1540,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Język
             description: ''
             use_operator: false
             operator: langcode_op

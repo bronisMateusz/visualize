@@ -132,7 +132,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: Author
+          label: Autor
           exclude: false
           alter:
             alter_text: false
@@ -163,8 +163,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_false: Unpublished
-            format_custom_true: Published
+            format_custom_false: Niepublikowane
+            format_custom_true: Opublikowane
         changed:
           id: changed
           table: node_field_data
@@ -172,7 +172,7 @@ display:
           entity_type: node
           entity_field: changed
           plugin_id: field
-          label: Updated
+          label: Zaktualizowano
           exclude: false
           alter:
             alter_text: false
@@ -195,7 +195,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: entity_operations
-          label: Operations
+          label: Operacje
           exclude: false
           alter:
             alter_text: false
@@ -249,9 +249,9 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Filter
+          submit_button: Filtruj
           reset_button: true
-          reset_button_label: Reset
+          reset_button_label: Resetuj
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
@@ -388,7 +388,7 @@ display:
               authenticated: authenticated
           is_grouped: true
           group_info:
-            label: 'Published status'
+            label: 'Status publikacji'
             description: ''
             identifier: status
             optional: true
@@ -399,11 +399,11 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: Published
+                title: Opublikowane
                 operator: '='
                 value: '1'
               2:
-                title: Unpublished
+                title: Niepublikowane
                 operator: '='
                 value: '0'
         langcode:
@@ -422,7 +422,7 @@ display:
           exposed: true
           expose:
             operator_id: langcode_op
-            label: Language
+            label: Język
             description: ''
             use_operator: false
             operator: langcode_op
