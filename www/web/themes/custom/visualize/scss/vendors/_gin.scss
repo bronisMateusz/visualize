@@ -4,7 +4,7 @@
   #page {
     >header {
       #block-visualize-site-branding {
-        padding-left: var(--ginVerticalToolbarOffset, 240px);
+        left: calc(50% + var(--ginVerticalToolbarOffset, 240px) / 2);
         top: 100px;
       }
     }
