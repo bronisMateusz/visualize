@@ -9,7 +9,7 @@ dependencies:
 id: visualize_project_contact
 theme: visualize
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: project_contact
 settings:
