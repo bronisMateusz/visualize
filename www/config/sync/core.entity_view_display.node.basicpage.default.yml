@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.basicpage.field_meta_tags
     - node.type.basicpage
   module:
-    - metatag
     - text
     - user
 id: node.basicpage.default
@@ -20,19 +19,13 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 102
+    weight: 1
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
+  field_meta_tags: true
   langcode: true
