@@ -2,9 +2,15 @@
 
 <div id="fullpage">
 	{% for item in items %}
-		<div{{item.attributes.addClass('field__item','section')}}>
-			{{ item.content }}
-		</div>
+		{% if loop.index < loop.last %}
+			<div{{item.attributes.addClass('field__item','section')}}>
+				{{ item.content }}
+			</div>
+		{% else %}
+			<div{{item.attributes.addClass('field__item','section','fp-auto-height')}}>
+				{{ item.content }}
+			</div>
+		{% endif %}
 	{% endfor %}
 	{% set footer_block = drupal_entity('block', 'visualize_footer_with_partners') %}
 	{% if footer_block is not empty %}
