@@ -7,8 +7,15 @@
   height: 60px;
   z-index: 1;
 
+  >.contextual {
+    right: -18px;
+    top: -18px;
+    z-index: 0;
+  }
+
   .block__content {
     height: 60px;
+
     .send-icon {
       width: 60px;
       height: 60px;
@@ -51,7 +58,7 @@
       margin-top: -100vh;
       overflow: hidden;
       position: relative;
-      top: calc(100% + 72px);
+      top: calc(100% + 74px);
       width: calc(100vw - 48px);
 
       &:not(.hidden) {
@@ -134,6 +141,7 @@
                   padding: 0;
                 }
               }
+
               .fieldset__wrapper {
                 border: none;
                 margin: 0 auto;
@@ -171,7 +179,7 @@
                         border-color: white;
                       }
 
-                      &:checked + .form-item__label {
+                      &:checked+.form-item__label {
                         color: white;
                       }
                     }
@@ -276,18 +284,12 @@
   #block-visualize-project-contact {
     right: 62.5px;
 
-    .block__content
-    #project-contact-body{
-        left: calc(100% + 86px);
+    .block__content #project-contact-body {
+      left: calc(100% + 87px);
 
-        .project-contact-form-wrapper
-        #contact-message-project-contact-form
-        #edit-field-project-type-wrapper
-        #edit-field-project-type--wrapper
-        .fieldset__wrapper
-        .form-boolean-group {
+      .project-contact-form-wrapper #contact-message-project-contact-form #edit-field-project-type-wrapper #edit-field-project-type--wrapper .fieldset__wrapper .form-boolean-group {
         max-width: none;
-  
+
         .js-form-type-radio {
           width: auto;
         }
@@ -320,20 +322,13 @@
 }
 
 @media (min-width: 992px) {
-  #block-visualize-project-contact
-    .block__content
-    #project-contact-body
-    .project-contact-form-wrapper
-    #contact-message-project-contact-form {
+  #block-visualize-project-contact .block__content #project-contact-body .project-contact-form-wrapper #contact-message-project-contact-form {
     padding: 72px;
   }
 }
 
 @media (min-width: 1200px) {
-  #block-visualize-project-contact
-    .block__content
-    #project-contact-body
-    .welcome-message {
+  #block-visualize-project-contact .block__content #project-contact-body .welcome-message {
     font-size: 4rem;
     line-height: 4rem;
   }
