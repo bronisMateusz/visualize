@@ -44,5 +44,6 @@ function visualize_preprocess_media(array &$variables) {
     $attributes['autoplay'] = 'autoplay';
     $attributes['loop'] = 'loop';
     $attributes['muted'] = 'muted';
+    $attributes['nofullscreen'] = 'nofullscreen';
   }
 }
