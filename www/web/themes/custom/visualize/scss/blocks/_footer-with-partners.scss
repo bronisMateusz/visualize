@@ -3,7 +3,7 @@
   margin-bottom: 0;
 
   .block__content {
-    padding: 136px 62.5px;
+    padding: 136px 62.5px 48px;
 
     .partners-images {
       display: inline-flex;
@@ -22,6 +22,10 @@
 
     a {
       color: #fff;
+    }
+
+    .copy {
+      margin-bottom: 0;
     }
   }
 }
