@@ -21,13 +21,16 @@
     };
 
     const setEnterActions = (paragraph) => {
-      paragraph.classList.add("active");
-
       const paragraphBackgroundVideo = paragraph.getElementsByTagName("video");
       const isHasVideo = !!paragraphBackgroundVideo.length;
 
       if (isHasVideo) paragraphBackgroundVideo[0].play();
     };
+
+    const fullPageParagraphs = document.querySelectorAll(
+      ".paragraph--type--paragraph-full-page"
+    );
+    const paragraphQuantity = fullPageParagraphs.length;
 
     $("#fullpage").fullpage({
       anchors: drupalSettings.menuLinks,
@@ -35,24 +38,19 @@
       navigationPosition: "left",
       navigationTooltips: drupalSettings.menuTitles,
       scrollOverflow: true,
-      normalScrollElements: ".field--name-field-services",
 
       onLeave: (index, nextIndex, direction) => {
-        const fullPageParagraphs = document.querySelectorAll(
-          ".paragraph--type--paragraph-full-page"
-        );
+        const paragraphBefore = fullPageParagraphs[index - 1];
 
-        if (direction === "up" && index <= fullPageParagraphs.length) {
-          const paragraphBefore = fullPageParagraphs[index - 1];
+        if (direction === "up" && index <= paragraphQuantity) {
           addOutAnimation(direction, paragraphBefore);
         }
 
-        if (direction === "down" && index < fullPageParagraphs.length) {
-          const paragraphBefore = fullPageParagraphs[index - 1];
+        if (direction === "down" && index < paragraphQuantity) {
           addOutAnimation(direction, paragraphBefore);
         }
 
-        if (nextIndex < fullPageParagraphs.length) {
+        if (nextIndex < paragraphQuantity) {
           const paragraphNext = fullPageParagraphs[nextIndex - 1];
           setEnterActions(paragraphNext);
         }
