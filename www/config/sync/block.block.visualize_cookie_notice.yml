@@ -9,7 +9,7 @@ dependencies:
 id: visualize_cookie_notice
 theme: visualize
 region: content
-weight: 0
+weight: -2
 provider: null
 plugin: cookie_notice
 settings:
