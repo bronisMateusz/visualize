@@ -45,6 +45,10 @@
         stroke-dashoffset: -182;
       }
 
+      &:focus {
+        transition: none;
+      }
+
       path {
         fill: white;
       }
