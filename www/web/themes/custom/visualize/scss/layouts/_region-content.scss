@@ -25,7 +25,14 @@
 }
 
 .page-node-type-homepage {
-  #content {
-    padding: 0;
+  #page {
+    #content {
+      padding: 0;
+    }
+
+    // Hide footer from page because it is in fullpage section
+    >footer {
+      display: none;
+    }
   }
 }

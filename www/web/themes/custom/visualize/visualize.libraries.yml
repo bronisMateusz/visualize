@@ -16,7 +16,6 @@ full-page:
       libraries/fullPage/jquery.fullpage.min.css: {}
   js:
     libraries/fullPage/scrolloverflow.min.js: {}
-    libraries/fullPage/jquery.fullpage.extensions.min.js: {}
     libraries/fullPage/jquery.fullpage.min.js: {}
     js/fullpage.js: {}
   dependencies:
