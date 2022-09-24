@@ -38,7 +38,7 @@
       navigation: true,
       navigationPosition: "left",
       navigationTooltips: drupalSettings.menuTitles,
-      // normalScrollElements: ".inside-scrollable",
+      normalScrollElements: ".inside-scrollable",
       scrollHorizontally: true,
       scrollOverflow: true,
 
