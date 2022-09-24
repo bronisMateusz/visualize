@@ -37,8 +37,8 @@
       navigation: true,
       navigationPosition: "left",
       navigationTooltips: drupalSettings.menuTitles,
+      normalScrollElements: ".inside-scrollable",
       scrollOverflow: true,
-      normalScrollElements: ".field--name-field-services",
 
       onLeave: (index, nextIndex, direction) => {
         const paragraphBefore = fullPageParagraphs[index - 1];
@@ -58,4 +58,15 @@
       },
     });
   });
+
+  // const isTouchDevice = () =>
+  //   "ontouchstart" in window ||
+  //   navigator.maxTouchPoints > 0 ||
+  //   navigator.msMaxTouchPoints > 0;
+
+  // const insideScrollableSection = document.querySelector(".inside-scrollable");
+
+  // if (!isTouchDevice()) {
+  //   insideScrollableSection.classList.remove("inside-scrollable");
+  // }
 })(jQuery);
