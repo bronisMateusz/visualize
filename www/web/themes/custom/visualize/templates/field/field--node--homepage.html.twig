@@ -2,12 +2,12 @@
 
 <div id="fullpage">
 	{% for item in items %}
-		{% if loop.index < loop.last %}
+		{% if loop.index < items | length %}
 			<div{{item.attributes.addClass('field__item','section')}}>
 				{{ item.content }}
 			</div>
 		{% else %}
-			<div{{item.attributes.addClass('field__item','section','fp-auto-height')}}>
+			<div{{item.attributes.addClass('section','fp-auto-height','inside-scrollable')}}>
 				{{ item.content }}
 			</div>
 		{% endif %}
