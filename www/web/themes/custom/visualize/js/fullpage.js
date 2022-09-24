@@ -34,10 +34,12 @@
 
     $("#fullpage").fullpage({
       anchors: drupalSettings.menuLinks,
+      dragAndMove: false,
       navigation: true,
       navigationPosition: "left",
       navigationTooltips: drupalSettings.menuTitles,
-      normalScrollElements: ".inside-scrollable",
+      // normalScrollElements: ".inside-scrollable",
+      scrollHorizontally: true,
       scrollOverflow: true,
 
       onLeave: (index, nextIndex, direction) => {
