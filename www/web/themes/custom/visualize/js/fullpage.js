@@ -34,12 +34,10 @@
 
     $("#fullpage").fullpage({
       anchors: drupalSettings.menuLinks,
-      dragAndMove: false,
       navigation: true,
       navigationPosition: "left",
       navigationTooltips: drupalSettings.menuTitles,
       normalScrollElements: ".inside-scrollable",
-      scrollHorizontally: true,
       scrollOverflow: true,
 
       onLeave: (index, nextIndex, direction) => {
@@ -60,15 +58,4 @@
       },
     });
   });
-
-  // const isTouchDevice = () =>
-  //   "ontouchstart" in window ||
-  //   navigator.maxTouchPoints > 0 ||
-  //   navigator.msMaxTouchPoints > 0;
-
-  // const insideScrollableSection = document.querySelector(".inside-scrollable");
-
-  // if (!isTouchDevice()) {
-  //   insideScrollableSection.classList.remove("inside-scrollable");
-  // }
 })(jQuery);
