@@ -44,7 +44,6 @@
       height: 48px;
       position: absolute;
       width: 48px;
-      border-radius: unset;
       border: none;
       color: transparent;
       right: -52px;
@@ -154,23 +153,16 @@
 
       .prev-product,
       .next-product {
-        top: 50%;
+        top: calc(50% - 24px);
+        transform: rotate(270deg);
       }
 
       .prev-product {
         left: 0;
-
-        &::after {
-          transform: translateX(-50%) rotate(-135deg)
-        }
       }
 
       .next-product {
         right: 0;
-
-        &::after {
-          transform: translateX(-50%) rotate(45deg)
-        }
       }
     }
 
