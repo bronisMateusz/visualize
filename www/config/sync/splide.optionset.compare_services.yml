@@ -1,0 +1,126 @@
+uuid: 80459589-c488-4728-928a-7dab65d64db9
+langcode: pl
+status: true
+dependencies: {  }
+id: compare_services
+name: compare_services
+weight: 0
+label: 'Porównaj usługi'
+group: ''
+skin: ''
+breakpoint: 3
+optimized: false
+options:
+  settings:
+    type: loop
+    mediaQuery: min
+    rewind: false
+    speed: 700
+    rewindSpeed: 0
+    waitForTransition: true
+    width: 225px
+    height: '0'
+    fixedWidth: ''
+    fixedHeight: '0'
+    heightRatio: '0'
+    autoWidth: false
+    autoHeight: false
+    perPage: 1
+    perMove: 1
+    clones: 2
+    start: 0
+    focus: '0'
+    gap: 24px
+    padding: ''
+    easing: 'cubic-bezier(.42,.65,.27,.99)'
+    arrows: 'true'
+    arrowPath: ''
+    pagination: 'false'
+    autoplay: false
+    interval: 5000
+    pauseOnHover: true
+    pauseOnFocus: true
+    resetProgress: true
+    lazyLoad: blazy
+    preloadPages: 1
+    keyboard: 'true'
+    drag: 'true'
+    dragMinThreshold: 15
+    swipeDistanceThreshold: 150
+    flickVelocityThreshold: 0.6
+    flickPower: 600
+    flickMaxPages: 1
+    direction: ltr
+    cover: false
+    slideFocus: false
+    isNavigation: false
+    trimSpace: 'true'
+    updateOnMove: false
+    classes: ''
+    i18n: ''
+    autoScroll: ''
+    intersection: ''
+    down: false
+    downTarget: ''
+    downOffset: 0
+    easingOverride: ''
+    randomize: false
+    wheel: false
+  breakpoints:
+    -
+      breakpoint: 768
+      unsplide: false
+      settings:
+        rewind: false
+        speed: 700
+        width: 475px
+        height: '0'
+        fixedWidth: '0'
+        fixedHeight: '0'
+        heightRatio: '0'
+        perPage: 2
+        perMove: 1
+        focus: '0'
+        gap: 24px
+        padding: ''
+        easing: 'cubic-bezier(.42,.65,.27,.99)'
+        pagination: 'false'
+        drag: 'true'
+    -
+      breakpoint: 992
+      unsplide: false
+      settings:
+        rewind: false
+        speed: 700
+        width: 725px
+        height: '0'
+        fixedWidth: '0'
+        fixedHeight: '0'
+        heightRatio: '0'
+        perPage: 3
+        perMove: 1
+        focus: '0'
+        gap: 24px
+        padding: ''
+        easing: 'cubic-bezier(.42,.65,.27,.99)'
+        pagination: 'false'
+        drag: 'true'
+    -
+      breakpoint: 1200
+      unsplide: true
+      settings:
+        rewind: false
+        speed: 400
+        width: 975px
+        height: '0'
+        fixedWidth: '0'
+        fixedHeight: '0'
+        heightRatio: '0'
+        perPage: 4
+        perMove: 1
+        focus: '0'
+        gap: 24px
+        padding: ''
+        easing: 'cubic-bezier(.42,.65,.27,.99)'
+        pagination: 'false'
+        drag: 'true'
