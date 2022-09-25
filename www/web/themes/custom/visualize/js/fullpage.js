@@ -39,6 +39,7 @@
       navigationTooltips: drupalSettings.menuTitles,
       normalScrollElements: ".inside-scrollable",
       scrollOverflow: true,
+      slideSelector: ".fullpage-slide",
 
       onLeave: (index, nextIndex, direction) => {
         const paragraphBefore = fullPageParagraphs[index - 1];
