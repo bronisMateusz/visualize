@@ -6,6 +6,64 @@
 
   .splide {
     margin: 0 auto;
+
+    .splide__arrows {
+      .splide__arrow {
+        height: 48px;
+        position: absolute;
+        width: 48px;
+        color: transparent;
+        transform: translateY(-50%);
+        padding: 0;
+        background: none;
+        cursor: pointer;
+        top: calc(50% - 24px);
+        transform: rotate(270deg);
+
+        &:hover {
+          &::after {
+            border-color: $white;
+          }
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          border-top: 2px solid rgba($white, .4);
+          border-right: 2px solid rgba($white, .4);
+          height: 30%;
+          width: 30%;
+          position: absolute;
+          left: 50%;
+        }
+
+        &.splide__arrow--prev {
+          left: -48px;
+
+          &::after {
+            top: 40%;
+            transform: translateX(-50%) rotate(-45deg);
+          }
+        }
+
+        &.splide__arrow--next {
+          right: -48px;
+
+          &::after {
+            top: 25%;
+            transform: translateX(-50%) rotate(135deg);
+          }
+        }
+
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    .splide__track {
+      border-radius: 12px;
+    }
   }
 }
 
@@ -20,5 +78,33 @@
   .paragraph--type--paragraph-compare-services {
     margin: 0 auto;
     max-width: 1760px;
+
+    .splide {
+      .splide__arrows {
+        display: none;
+      }
+
+      .splide__track {
+        >.splide__list {
+          display: inline-flex;
+          gap: 24px;
+
+          @for $i from 1 through 5 {
+            >li:nth-of-type(#{$i}) {
+              margin-top: $i * 24px;
+
+              &:hover {
+                margin-top: ($i - 1) * 24px;
+                transition: margin .25s ease-in-out;
+
+                @if $i ==4 {
+                  margin-bottom: 24px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
