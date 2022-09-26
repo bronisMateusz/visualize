@@ -23,7 +23,6 @@
       border-radius: 50px;
       position: absolute;
       background: none;
-      stroke: 10;
       cursor: pointer;
       right: 0;
       bottom: 0;
@@ -36,13 +35,13 @@
         stroke-dasharray: 190;
         stroke-dashoffset: 1;
         transform: rotate(-90deg) translateX(-60px);
+        transition: stroke-dasharray 0.5s ease-in-out,
+          stroke-dashoffset 0.5s ease-in-out;
       }
 
       &:hover circle {
         stroke-dasharray: 182;
         stroke-dashoffset: -182;
-        transition: stroke-dasharray 0.5s ease-in-out,
-          stroke-dashoffset 0.5s ease-in-out;
       }
 
       path {
@@ -52,14 +51,14 @@
 
     #project-contact-body {
       border-radius: 15px;
-      height: calc(100vh - 48px);
-      left: calc(100% + 54px);
+      height: calc(100% - 48px);
+      left: calc(100% + 24px);
       margin-left: -100vw;
       margin-top: -100vh;
       overflow: hidden;
-      position: relative;
-      top: calc(100% + 74px);
-      width: calc(100vw - 48px);
+      position: fixed;
+      top: calc(100% + 24px);
+      width: calc(100% - 48px);
 
       &:not(.hidden) {
         display: block;
@@ -67,8 +66,8 @@
 
       .close-button {
         position: absolute;
-        right: 24px;
-        top: 24px;
+        right: 12px;
+        top: 12px;
         z-index: 1;
       }
 
@@ -284,15 +283,11 @@
   #block-visualize-project-contact {
     right: 62.5px;
 
-    .block__content #project-contact-body {
-      left: calc(100% + 87px);
+    .block__content #project-contact-body .project-contact-form-wrapper #contact-message-project-contact-form #edit-field-project-type-wrapper #edit-field-project-type--wrapper .fieldset__wrapper .form-boolean-group {
+      max-width: none;
 
-      .project-contact-form-wrapper #contact-message-project-contact-form #edit-field-project-type-wrapper #edit-field-project-type--wrapper .fieldset__wrapper .form-boolean-group {
-        max-width: none;
-
-        .js-form-type-radio {
-          width: auto;
-        }
+      .js-form-type-radio {
+        width: auto;
       }
     }
   }
@@ -331,5 +326,11 @@
   #block-visualize-project-contact .block__content #project-contact-body .welcome-message {
     font-size: 4rem;
     line-height: 4rem;
+  }
+}
+
+@media (any-pointer: none) {
+  #block-visualize-project-contact .block__content .send-icon circle {
+    transition: none;
   }
 }
