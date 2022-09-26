@@ -35,13 +35,7 @@
         stroke-dasharray: 190;
         stroke-dashoffset: 1;
         transform: rotate(-90deg) translateX(-60px);
-        transition: stroke-dasharray 0.5s ease-in-out,
-          stroke-dashoffset 0.5s ease-in-out;
-      }
-
-      &:hover circle {
-        stroke-dasharray: 182;
-        stroke-dashoffset: -182;
+        transition: none;
       }
 
       path {
@@ -329,7 +323,15 @@
 }
 
 @media (pointer: fine) {
-  #block-visualize-project-contact .block__content .send-icon circle {
-    transition: none;
+  #block-visualize-project-contact .block__content .send-icon {
+    circle {
+      transition: stroke-dasharray 0.5s ease-in-out,
+        stroke-dashoffset 0.5s ease-in-out;
+    }
+
+    &:hover circle {
+      stroke-dasharray: 182;
+      stroke-dashoffset: -182;
+    }
   }
 }
