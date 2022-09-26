@@ -46,6 +46,7 @@ WORKDIR /var/www/html
 COPY --chown=${UID}:${GID} www .
 # Mount 000-default.conf under sites-available
 COPY ./config/vhost.apache2.conf /etc/apache2/sites-available/000-default.conf
+COPY ./config/php.local.ini /usr/local/etc/php/conf.d/php.local.ini
 
 # Switch to use a non root user.
 USER ${UID}:${GID}
