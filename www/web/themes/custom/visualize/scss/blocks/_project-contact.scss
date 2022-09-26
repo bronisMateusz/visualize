@@ -53,11 +53,10 @@
       border-radius: 15px;
       height: calc(100% - 48px);
       left: calc(100% + 24px);
-      margin-left: -100vw;
-      margin-top: -100vh;
+      margin-left: -100%;
       overflow: hidden;
       position: fixed;
-      top: calc(100% + 24px);
+      top: 24px;
       width: calc(100% - 48px);
 
       &:not(.hidden) {
@@ -329,7 +328,7 @@
   }
 }
 
-@media (any-pointer: none) {
+@media (pointer: fine) {
   #block-visualize-project-contact .block__content .send-icon circle {
     transition: none;
   }
