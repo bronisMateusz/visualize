@@ -51,13 +51,13 @@
       padding: 0;
       background: none;
       cursor: pointer;
-
+      
       &:hover {
         &::after {
           border-color: $white;
         }
       }
-
+      
       &::after {
         content: '';
         display: block;
@@ -67,6 +67,7 @@
         width: 30%;
         position: absolute;
         left: 50%;
+        transition: .25s ease-in-out;
       }
     }
 
