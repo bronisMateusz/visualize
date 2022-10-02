@@ -1,5 +1,5 @@
 #block-visualize-footer-with-partners {
-  background-color: $black;
+  background-color: $color-canvas;
   margin-bottom: 0;
 
   .block__content {
@@ -21,7 +21,7 @@
     }
 
     a {
-      color: #fff;
+      color: $color-text-primary;
     }
 
     .copy {

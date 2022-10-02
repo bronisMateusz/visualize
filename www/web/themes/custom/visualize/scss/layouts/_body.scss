@@ -1,6 +1,6 @@
 body {
-  background-color: $black;
-  color: $white;
+  background-color: $color-canvas;
+  color: $color-text-primary;
   background-image: none;
   font-family: 'Everett', sans-serif;
 
@@ -10,7 +10,7 @@ body {
   h4,
   h5,
   h6 {
-    color: #fff;
+    color: $color-text-primary;
     font-family: "Everett Jana";
     font-weight: 400;
   }

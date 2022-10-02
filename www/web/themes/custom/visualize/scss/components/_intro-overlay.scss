@@ -3,12 +3,14 @@
   inset: 0;
   height: 100vh;
   z-index: 3;
-  background-color: black;
+  background-color: $color-canvas;
 
   &.loaded {
     background-color: transparent;
     z-index: 0;
-    transition: background-color 1s ease-in-out, z-index .1s ease-in-out .7s;
+    transition:
+      background-color 1s ease-in-out,
+      z-index .1s ease-in-out .7s;
   }
 
   svg {
@@ -23,11 +25,13 @@
       left: 50%;
       top: 67px;
       opacity: 0;
-      transition: top .75s ease-in-out, opacity .2s ease .75s;
+      transition:
+        top .75s ease-in-out,
+        opacity .2s ease .75s;
     }
 
     path {
-      stroke: white;
+      stroke: $color-canvas-inverted;
       stroke-dasharray: 190;
       stroke-dashoffset: 1;
       stroke-width: 1;
@@ -52,17 +56,18 @@
   100% {
     stroke-dasharray: 190;
     stroke-dashoffset: 1;
-    fill: white;
+    fill: $color-canvas-inverted;
   }
 }
 
 @keyframes hide-overlay {
   0% {
-    background-color: black;
+    background-color: $color-canvas;
     z-index: 3;
   }
 
   50% {
     background-color: transparent;
+    z-index: 3;
   }
 }
