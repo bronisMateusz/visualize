@@ -1,0 +1,66 @@
+#intro-overlay {
+  position: absolute;
+  inset: 0;
+  height: 100vh;
+  z-index: 3;
+  background-color: black;
+
+  &.loaded {
+    background-color: transparent;
+    z-index: 0;
+    transition: background-color 1s ease-in-out, z-index .1s ease-in-out 1s;
+  }
+
+  svg {
+    position: absolute;
+    left: calc(50% + 13px);
+    top: 50%;
+    stroke-width: 1;
+    stroke: white;
+    scale: 1.5;
+    transform: translate(-50%, -50%);
+
+    &.loaded {
+      scale: 1;
+      left: 50%;
+      top: 67px;
+      opacity: 0;
+      transition: top .75s ease-in-out, opacity .2s ease .75s;
+    }
+
+    path {
+      stroke-dasharray: 190;
+      stroke-dashoffset: 1;
+      animation: stroke-loading 1.75s ease-in-out;
+    }
+  }
+}
+
+@keyframes stroke-loading {
+  0% {
+    stroke-dasharray: 182;
+    stroke-dashoffset: -182;
+    fill: transparent;
+  }
+
+  50% {
+    stroke-dasharray: 190;
+    stroke-dashoffset: 1;
+    fill: transparent;
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+@keyframes hide-overlay {
+  0% {
+    background-color: black;
+    z-index: 3;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+}
