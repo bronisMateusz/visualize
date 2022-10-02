@@ -1,6 +1,6 @@
 .messages-list {
   position: absolute;
   z-index: 3;
-  width: calc(100% - var(--ginVerticalToolbarOffset, 240px));
+  width: 100%;
   margin: 0;
 }
