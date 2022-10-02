@@ -18,23 +18,24 @@
       cursor: pointer;
       right: -52px;
       left: unset;
+      opacity: 1;
 
       &:hover {
         &::after {
-          border-color: $white;
+          border-color: $color-canvas-inverted;
         }
       }
 
       &::after {
         content: '';
         display: block;
-        border-top: 2px solid rgba($white, .4);
-        border-right: 2px solid rgba($white, .4);
+        border-top: 2px solid $color-canvas-secondary;
+        border-right: 2px solid $color-canvas-secondary;
         height: 30%;
         width: 30%;
         position: absolute;
         left: 50%;
-        transition: .25s ease-in-out;
+        transition: .2s ease-in-out;
       }
 
       &.splide__arrow--prev {
@@ -108,7 +109,7 @@
 
               &:hover {
                 margin-top: ($i - 1) * 24px;
-                transition: margin .25s ease-in-out;
+                transition: margin .2s ease-in-out;
 
                 @if $i ==4 {
                   margin-bottom: 24px;

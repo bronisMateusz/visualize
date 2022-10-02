@@ -51,23 +51,23 @@
       padding: 0;
       background: none;
       cursor: pointer;
-      
+
       &:hover {
         &::after {
-          border-color: $white;
+          border-color: $color-canvas-inverted;
         }
       }
-      
+
       &::after {
         content: '';
         display: block;
-        border-top: 2px solid rgba($white, .4);
-        border-right: 2px solid rgba($white, .4);
+        border-top: 2px solid $color-canvas-secondary;
+        border-right: 2px solid $color-canvas-secondary;
         height: 30%;
         width: 30%;
         position: absolute;
         left: 50%;
-        transition: .25s ease-in-out;
+        transition: .2s ease-in-out;
       }
     }
 
@@ -108,7 +108,7 @@
       }
 
       .product-name {
-        color: $white;
+        color: $color-text-primary;
         margin: 0;
         font-size: 3rem;
         line-height: 3rem;
@@ -136,19 +136,8 @@
             transform: translateY(-50%);
             width: initial;
             left: initial;
+            right: calc(10% + ($i - 1) * 17.5%);
           }
-        }
-
-        &:nth-of-type(2) {
-          right: 27.5%;
-        }
-
-        &:nth-of-type(3) {
-          right: 45%;
-        }
-
-        &:nth-of-type(4) {
-          right: 62.5%;
         }
       }
 
@@ -171,7 +160,7 @@
       display: block;
       height: 2px;
       margin: 48px 0 80px;
-      background-color: rgba($white, .4);
+      background-color: $color-canvas-secondary;
       position: relative;
 
       .progress-slide {
@@ -180,7 +169,7 @@
         position: absolute;
         top: 50%;
         left: 0%;
-        background-color: $white;
+        background-color: $color-canvas-inverted;
         transform: translateY(-50%);
         transition: width .75s ease-in-out;
       }
