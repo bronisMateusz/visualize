@@ -25,6 +25,10 @@
   [dir="ltr"] body.gin--horizontal-toolbar,
   [dir="ltr"] body.gin--classic-toolbar {
     #page {
+      #intro-overlay {
+        top: -27px;
+      }
+
       #block-visualize-project-contact {
         .block__content #project-contact-body {
           left: calc(100% + 86px);
@@ -40,6 +44,10 @@
   [dir="ltr"] body.gin--horizontal-toolbar,
   [dir="ltr"] body.gin--classic-toolbar {
     #page {
+      #intro-overlay {
+        top: 0px;
+      }
+
       #block-visualize-project-contact {
         .block__content #project-contact-body {
           height: calc(100vh - 108px);
