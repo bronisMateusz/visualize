@@ -1,0 +1,10 @@
+vendor/
+node_modules/
+dist/
+www/web/core/
+www/web/libraries/
+www/web/modules/contrib/
+www/web/themes/contrib/
+www/private_files/
+www/web/sites/default/files/
+!www/private_files/.htaccess
