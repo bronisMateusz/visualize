@@ -45,5 +45,6 @@ function visualize_preprocess_media(array &$variables) {
     $attributes['loop'] = 'loop';
     $attributes['muted'] = 'muted';
     $attributes['nofullscreen'] = 'nofullscreen';
+    $attributes['playsinline'] = 'playsinline';
   }
 }

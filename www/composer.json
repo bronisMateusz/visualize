@@ -12,11 +12,36 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "dinbror/blazy",
+                "version": "master",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/dinbror/blazy/archive/refs/heads/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "splidejs/splide",
+                "version": "master",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/Splidejs/splide/archive/refs/heads/master.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "~1.0",
+        "dinbror/blazy": "master",
         "drupal/admin_toolbar": "^3.1",
         "drupal/core-composer-scaffold": "^9.4",
         "drupal/core-project-message": "^9.4",
@@ -31,10 +56,13 @@
         "drupal/pathauto": "^1.11",
         "drupal/responsive_favicons": "^1.7",
         "drupal/smtp": "^1.1",
+        "drupal/splide": "^1.0",
         "drupal/themable_forms": "^1.0@beta",
         "drupal/twig_tweak": "^3.1",
         "drupal/vite": "^1.0@beta",
         "drush/drush": "^11.1",
+        
+        "splidejs/splide": "master",
         "vlucas/phpdotenv": "^5.4"
     },
     "conflict": {

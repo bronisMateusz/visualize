@@ -11,6 +11,7 @@
 
 // Components
 @import "components/close-button";
+@import "components/intro-overlay";
 
 // Core
 @import "core/typography";
@@ -22,12 +23,11 @@
 @import "fields/link-primary";
 @import "fields/link-secondary";
 @import "fields/paragraph-background";
-@import "fields/products";
+@import "fields/products-gallery";
 @import "fields/replace-bg-with-product";
 @import "fields/service-advantages";
 @import "fields/service-name";
 @import "fields/service-price";
-@import "fields/services";
 
 // Layouts
 @import "layouts/body";

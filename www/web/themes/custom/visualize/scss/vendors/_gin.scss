@@ -3,6 +3,10 @@
 [dir="ltr"] body.gin--classic-toolbar {
   #page {
     >header {
+      .messages-list {
+        width: calc(100% - var(--ginVerticalToolbarOffset, 240px));
+      }
+
       #block-visualize-site-branding {
         left: calc(50% + var(--ginVerticalToolbarOffset, 240px) / 2);
         top: 100px;
@@ -25,6 +29,10 @@
   [dir="ltr"] body.gin--horizontal-toolbar,
   [dir="ltr"] body.gin--classic-toolbar {
     #page {
+      #intro-overlay {
+        top: -27px;
+      }
+
       #block-visualize-project-contact {
         .block__content #project-contact-body {
           left: calc(100% + 86px);
@@ -40,6 +48,10 @@
   [dir="ltr"] body.gin--horizontal-toolbar,
   [dir="ltr"] body.gin--classic-toolbar {
     #page {
+      #intro-overlay {
+        top: 0px;
+      }
+
       #block-visualize-project-contact {
         .block__content #project-contact-body {
           height: calc(100vh - 108px);

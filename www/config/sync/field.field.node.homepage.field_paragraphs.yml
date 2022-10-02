@@ -25,6 +25,9 @@ settings:
       paragraph_full_page: paragraph_full_page
     negate: 0
     target_bundles_drag_drop:
+      paragraph_compare_services:
+        weight: 7
+        enabled: false
       paragraph_full_page:
         weight: 5
         enabled: true
@@ -34,7 +37,10 @@ settings:
       paragraph_product:
         weight: 7
         enabled: false
-      paragraph_visualizations:
-        weight: 8
+      paragraph_products:
+        weight: 11
+        enabled: false
+      paragraph_service:
+        weight: 12
         enabled: false
 field_type: entity_reference_revisions
