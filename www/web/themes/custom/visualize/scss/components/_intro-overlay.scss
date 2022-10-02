@@ -8,15 +8,13 @@
   &.loaded {
     background-color: transparent;
     z-index: 0;
-    transition: background-color 1s ease-in-out, z-index .1s ease-in-out 1s;
+    transition: background-color 1s ease-in-out, z-index .1s ease-in-out .7s;
   }
 
   svg {
     position: absolute;
     left: calc(50% + 13px);
     top: 50%;
-    stroke-width: 1;
-    stroke: white;
     scale: 1.5;
     transform: translate(-50%, -50%);
 
@@ -29,8 +27,10 @@
     }
 
     path {
+      stroke: white;
       stroke-dasharray: 190;
       stroke-dashoffset: 1;
+      stroke-width: 1;
       animation: stroke-loading 1.75s ease-in-out;
     }
   }
@@ -50,6 +50,8 @@
   }
 
   100% {
+    stroke-dasharray: 190;
+    stroke-dashoffset: 1;
     fill: white;
   }
 }
