@@ -57,11 +57,11 @@
         "drupal/responsive_favicons": "^1.7",
         "drupal/smtp": "^1.1",
         "drupal/splide": "^1.0.5",
+        "drupal/splidebox": "^1.0",
         "drupal/themable_forms": "^1.0@beta",
         "drupal/twig_tweak": "^3.2",
         "drupal/vite": "^1.0@beta",
         "drush/drush": "^11.2.1",
-        
         "splidejs/splide": "master",
         "vlucas/phpdotenv": "^5.5"
     },
