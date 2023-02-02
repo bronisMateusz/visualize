@@ -9,7 +9,7 @@ dependencies:
 _core:
   default_config_hash: E9Pvy75e7AcNQi7TBRvoG0DU2FI8mjFcLARqfB-rlIU
 id: narrow
-label: Narrow
+label: Wąsko
 image_style_mappings:
   -
     image_mapping_type: sizes

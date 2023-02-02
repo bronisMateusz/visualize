@@ -10,7 +10,7 @@ dependencies:
 _core:
   default_config_hash: Pvik9YqtjA9ALn5ccla1mwTIE4gN5fQ-dK1B0zX0b1o
 id: wide
-label: Wide
+label: Szeroki
 image_style_mappings:
   -
     image_mapping_type: sizes

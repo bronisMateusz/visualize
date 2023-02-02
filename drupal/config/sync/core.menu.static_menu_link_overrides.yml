@@ -9,8 +9,8 @@ definitions:
     expanded: false
     enabled: true
   standard__front_page:
-    weight: -44
     menu_name: main
     parent: ''
-    enabled: false
+    weight: -44
     expanded: false
+    enabled: false

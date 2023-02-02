@@ -5,7 +5,7 @@ dependencies: {  }
 id: project_contact
 label: 'Kontakt w sprawie projektu'
 recipients:
-  - mateusz.bronis@hotmail.com
+  - f.u.kacperchecinski@gmail.com
 reply: ''
 weight: 0
 message: ''

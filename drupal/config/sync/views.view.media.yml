@@ -13,14 +13,14 @@ _core:
 id: media
 label: Media
 module: views
-description: 'Find and manage media.'
+description: 'Znajdź i zarządzaj mediami.'
 tag: ''
 base_table: media_field_data
 base_field: mid
 display:
   default:
     id: default
-    display_title: Default
+    display_title: Domyślnie
     display_plugin: default
     position: 0
     display_options:
@@ -76,7 +76,7 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          action_title: Action
+          action_title: Akcja
           include_exclude: exclude
           selected_actions: {  }
         thumbnail__target_id:
@@ -89,7 +89,7 @@ display:
           entity_type: media
           entity_field: thumbnail
           plugin_id: field
-          label: Thumbnail
+          label: Miniaturka
           exclude: false
           alter:
             alter_text: false
@@ -379,7 +379,7 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_false: Niepublikowane
+            format_custom_false: Nieopublikowane
             format_custom_true: Opublikowane
           group_column: value
           group_columns: {  }
@@ -517,18 +517,18 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: 'Next ›'
-            previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
+            next: 'Następna ›'
+            previous: '‹ Poprzednia'
+            first: '« Pierwsza'
+            last: 'Ostatnia »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Elementów na stronie'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Wszystko -'
             offset: false
-            offset_label: Offset
+            offset_label: Przesunięcie
           quantity: 9
       exposed_form:
         type: basic
@@ -536,10 +536,10 @@ display:
           submit_button: Filtruj
           reset_button: false
           reset_button_label: Resetuj
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Sortuj według'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: A-Z
+          sort_desc_label: Z-A
       access:
         type: perm
         options:
@@ -557,7 +557,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'No media available.'
+          content: 'Brak dostępnych mediów.'
           tokenize: false
       sorts:
         created:
@@ -679,7 +679,7 @@ display:
           exposed: true
           expose:
             operator_id: ''
-            label: 'True'
+            label: Prawda
             description: null
             use_operator: false
             operator: status_op
@@ -708,7 +708,7 @@ display:
                 operator: '='
                 value: '1'
               2:
-                title: Niepublikowane
+                title: Nieopublikowane
                 operator: '='
                 value: '0'
         status_extra:
