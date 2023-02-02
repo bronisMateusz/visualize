@@ -17,3 +17,6 @@ data/mysql-staring-script
 *.env
 docker-compose.local.yml
 docker-compose.override.yml
+
+# Ignore traefik letsencrypt
+/letsencrypt/
