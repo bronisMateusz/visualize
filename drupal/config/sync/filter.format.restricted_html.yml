@@ -1,7 +1,10 @@
 uuid: df9fdff0-0b63-49e9-a630-c6ffb28cdfe1
 langcode: pl
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - blazy
+    - splide
 _core:
   default_config_hash: oz6NyPDAB4HB6N9hgH2LwNVtCd-sXbMG1fbn5KsRIDI
 name: 'Ograniczony HTML'
@@ -14,7 +17,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id>'
+      allowed_html: '<br> <p> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <cite> <dl> <dt> <dd> <a hreflang href> <blockquote cite> <ul type> <ol type start> <strong> <em> <code> <li>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_autop:
@@ -30,3 +33,50 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  blazy_filter:
+    id: blazy_filter
+    provider: blazy
+    status: false
+    weight: 3
+    settings:
+      media_switch: ''
+      hybrid_style: ''
+      box_style: ''
+      box_caption: ''
+      filter_tags:
+        img: img
+        iframe: iframe
+      use_data_uri: '0'
+  splide_filter:
+    id: splide_filter
+    provider: splide
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      layout: ''
+      skin: ''
+      background: false
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      image_style: ''
+      media_switch: ''
+      ratio: ''
+      thumbnail_style: ''
+      overridables:
+        arrows: '0'
+        pagination: '0'
+        autoplay: '0'
+        autoWidth: '0'
+        autoHeight: '0'
+        drag: '0'
+        wheel: '0'
+        randomize: '0'
+      optionset_nav: ''
+      skin_nav: ''
+      nav_caption: ''
+      thumbnail_effect: ''
+      navpos: ''
+      override: false
+      pagination_pos: ''
