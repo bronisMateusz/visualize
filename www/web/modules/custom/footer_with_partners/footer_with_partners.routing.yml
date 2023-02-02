@@ -1,7 +1,0 @@
-footer_with_partners.autocomplete.node:
-  path: "/admin/footer_with_partners/autocomplete/{content_type_id}"
-  defaults:
-    _controller: '\Drupal\footer_with_partners\Controller\BasicpageAutocompleteController::handleNode'
-    _format: json
-  requirements:
-    _permission: "access content"

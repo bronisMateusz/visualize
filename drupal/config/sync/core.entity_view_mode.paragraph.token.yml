@@ -1,0 +1,10 @@
+uuid: b4b800e4-081b-40d4-9662-c12ca420cb77
+langcode: pl
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.token
+label: Wzorzec
+targetEntityType: paragraph
+cache: true

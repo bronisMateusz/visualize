@@ -1,0 +1,21 @@
+uuid: 3b9840e7-d3a5-4095-a7ca-708297666b34
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_product_description
+    - paragraphs.paragraphs_type.paragraph_product
+  module:
+    - text
+id: paragraph.paragraph_product.field_product_description
+field_name: field_product_description
+entity_type: paragraph
+bundle: paragraph_product
+label: 'Opis produktu'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

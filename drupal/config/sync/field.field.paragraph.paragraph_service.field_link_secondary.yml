@@ -1,0 +1,23 @@
+uuid: 372ab006-e26a-4611-8c19-694c5950c406
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_secondary
+    - paragraphs.paragraphs_type.paragraph_service
+  module:
+    - link
+id: paragraph.paragraph_service.field_link_secondary
+field_name: field_link_secondary
+entity_type: paragraph
+bundle: paragraph_service
+label: Odnośnik
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

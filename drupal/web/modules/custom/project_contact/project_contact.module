@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_theme().
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ *
+ */
+function project_contact_theme($existing, $type, $theme, $path) {
+  return [
+    'project_contact_block' => [
+      'variables' => [
+        'welcome_message' => '',
+        'background_media' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function project_contact_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'contact_message_project_contact_form') {
+    // Remove "none" element from form fieldset.
+    array_shift($form['field_project_type']['widget']['#options']);
+
+    // Sett form fields attributes.
+    $form['name']['#maxlength'] = 60;
+    $form['name']['#attributes']['placeholder'] = $form['name']['#title'];
+    $form['mail']['#maxlength'] = 60;
+    $form['mail']['#attributes']['placeholder'] = $form['mail']['#title'];
+    $form['message']['widget'][0]['value']['#rows'] = 1;
+    $form['message']['widget'][0]['value']['#title'] = t('Tell us about your project');
+    $form['message']['widget'][0]['value']['#placeholder'] = t('Tell us about your project');
+  }
+}

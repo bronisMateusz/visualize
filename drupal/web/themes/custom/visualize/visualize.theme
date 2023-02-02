@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function visualize_preprocess_html(&$variables) {
+  $variables['#attached']['drupalSettings']['path']['themeUrl'] = \Drupal::theme()->getActiveTheme()->getPath();
+
+  $main_menu_storage = \Drupal::entityTypeManager()
+    ->getStorage('menu_link_content')
+    ->loadByProperties(['menu_name' => 'main']);
+
+  $menu_titles = [];
+  $menu_links = [];
+
+  foreach ($main_menu_storage as $menu_item) {
+    $menu_item_title = $menu_item->getTitle();
+    array_push($menu_titles, $menu_item_title);
+
+    $menu_item_link = str_replace('#', '', $menu_item->getUrlObject()->toString());
+    array_push($menu_links, $menu_item_link);
+  }
+
+  array_push($menu_links, t('footer'));
+
+  $variables['#attached']['drupalSettings']['menuTitles'] = $menu_titles;
+  $variables['#attached']['drupalSettings']['menuLinks'] = $menu_links;
+}
+
+/**
+ * Implements template_preprocess_media().
+ */
+function visualize_preprocess_media(array &$variables) {
+  $view_mode = $variables['view_mode'];
+  $field = array_key_first($variables['content']);
+
+  if ($view_mode === 'media_background' && $field === 'field_media_video_file') {
+    $video_file = $variables['content']['field_media_video_file'];
+    $attributes = $video_file[0]['#attributes'];
+
+    // Update background video attributes.
+    unset($attributes['controls']);
+    $attributes['autoplay'] = 'autoplay';
+    $attributes['loop'] = 'loop';
+    $attributes['muted'] = 'muted';
+    $attributes['nofullscreen'] = 'nofullscreen';
+    $attributes['playsinline'] = 'playsinline';
+  }
+}

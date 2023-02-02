@@ -1,0 +1,10 @@
+uuid: 82802bfe-863c-46c4-b64a-07ebac76cfc7
+langcode: pl
+status: true
+dependencies:
+  module:
+    - tour
+id: tour.token
+label: Wzorzec
+targetEntityType: tour
+cache: true

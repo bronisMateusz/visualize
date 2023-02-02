@@ -1,0 +1,22 @@
+global-styling:
+  vite: true
+  js:
+    js/visualize.js: {}
+  css:
+    component:
+      scss/styles.scss: {}
+  dependencies:
+    - core/drupalSettings
+
+full-page:
+  vite: true
+  version: 2.9.7
+  css:
+    component:
+      libraries/fullPage/jquery.fullpage.min.css: {}
+  js:
+    libraries/fullPage/scrolloverflow.min.js: {}
+    libraries/fullPage/jquery.fullpage.min.js: {}
+    js/fullpage.js: {}
+  dependencies:
+    - core/jquery

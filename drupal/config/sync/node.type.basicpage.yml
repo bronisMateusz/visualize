@@ -1,0 +1,18 @@
+uuid: e5b5b249-a4ba-4f87-af31-c87dae051ba0
+langcode: pl
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Strona podstawowa'
+type: basicpage
+description: ''
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,10 @@
+uuid: b4276295-a0fa-4486-ba79-0fd76ffd54d9
+langcode: pl
+status: true
+dependencies: {  }
+id: paragraph_product
+label: Produkt
+icon_uuid: null
+icon_default: null
+description: 'Definiuje pola wyświetlane w paragrafie Produkt'
+behavior_plugins: {  }

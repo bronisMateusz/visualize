@@ -1,0 +1,19 @@
+uuid: 7ece8793-72b0-49b9-9bfc-65ba823ad667
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_hero_subtitle
+    - paragraphs.paragraphs_type.paragraph_hero
+id: paragraph.paragraph_hero.field_hero_subtitle
+field_name: field_hero_subtitle
+entity_type: paragraph
+bundle: paragraph_hero
+label: Podtytuł
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,22 @@
+uuid: 651fdbc4-7d9a-41fa-8a10-9556799784c9
+langcode: pl
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - visualize
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: visualize_messages
+theme: visualize
+region: header
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Wiadomości statusu'
+  label_display: '0'
+  provider: system
+visibility: {  }

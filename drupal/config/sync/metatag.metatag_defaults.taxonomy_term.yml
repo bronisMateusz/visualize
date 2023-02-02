@@ -1,0 +1,12 @@
+uuid: c26e1ae0-59d6-4a1d-924e-2d2dd28865d5
+langcode: pl
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 92bXZdyYJ5xqukdfmGRr_CYcwm1vfuS8b8aJ7X_G7E0
+id: taxonomy_term
+label: 'Termin taksonomii'
+tags:
+  canonical_url: '[term:url]'
+  description: '[term:description]'
+  title: '[term:name] | [site:name]'

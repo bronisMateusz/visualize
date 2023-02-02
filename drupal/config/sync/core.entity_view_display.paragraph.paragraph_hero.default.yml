@@ -1,0 +1,45 @@
+uuid: 823aacfd-5c7e-479f-97db-f5de4cb3bf63
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.paragraph_hero.field_hero_subtitle
+    - field.field.paragraph.paragraph_hero.field_hero_title
+    - field.field.paragraph.paragraph_hero.field_link_primary
+    - paragraphs.paragraphs_type.paragraph_hero
+  module:
+    - link
+id: paragraph.paragraph_hero.default
+targetEntityType: paragraph
+bundle: paragraph_hero
+mode: default
+content:
+  field_hero_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_hero_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link_primary:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden: {  }

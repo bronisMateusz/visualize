@@ -1,0 +1,65 @@
+[dir="ltr"] body.gin--vertical-toolbar,
+[dir="ltr"] body.gin--horizontal-toolbar,
+[dir="ltr"] body.gin--classic-toolbar {
+  #page {
+    >header {
+      .messages-list {
+        width: calc(100% - var(--ginVerticalToolbarOffset, 240px));
+      }
+
+      #block-visualize-site-branding {
+        left: calc(50% + var(--ginVerticalToolbarOffset, 240px) / 2);
+        top: 100px;
+      }
+    }
+
+    #intro-overlay {
+      top: -27px;
+    }
+
+    #block-visualize-project-contact {
+      .block__content #project-contact-body {
+        height: calc(100vh - 135px);
+        left: calc(100% + 54px);
+        top: calc(100% + 159px);
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+
+  [dir="ltr"] body.gin--vertical-toolbar,
+  [dir="ltr"] body.gin--horizontal-toolbar,
+  [dir="ltr"] body.gin--classic-toolbar {
+    #page {
+      #block-visualize-project-contact {
+        .block__content #project-contact-body {
+          left: calc(100% + 86px);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 976px) {
+
+  [dir="ltr"] body.gin--vertical-toolbar,
+  [dir="ltr"] body.gin--horizontal-toolbar,
+  [dir="ltr"] body.gin--classic-toolbar {
+    #page {
+      #intro-overlay {
+        top: 0px;
+      }
+
+      #block-visualize-project-contact {
+        .block__content #project-contact-body {
+          height: calc(100vh - 108px);
+          width: calc(100vw - 108px);
+          left: calc(100% + 150px);
+          top: calc(100% + 132px);
+        }
+      }
+    }
+  }
+}

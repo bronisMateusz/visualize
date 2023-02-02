@@ -1,0 +1,33 @@
+uuid: 9db60336-54cb-4db1-b847-634774fd7176
+langcode: pl
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.basicpage.body
+    - field.field.node.basicpage.field_meta_tags
+    - node.type.basicpage
+  module:
+    - text
+    - user
+id: node.basicpage.teaser
+targetEntityType: node
+bundle: basicpage
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_meta_tags: true
+  langcode: true

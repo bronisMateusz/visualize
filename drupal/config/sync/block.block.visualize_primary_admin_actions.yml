@@ -1,0 +1,20 @@
+uuid: 9683e326-a976-4be3-bc3d-8d03a4f2ac8d
+langcode: pl
+status: true
+dependencies:
+  theme:
+    - visualize
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: visualize_primary_admin_actions
+theme: visualize
+region: header
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Podstawowe akcje administratora'
+  label_display: '0'
+  provider: core
+visibility: {  }

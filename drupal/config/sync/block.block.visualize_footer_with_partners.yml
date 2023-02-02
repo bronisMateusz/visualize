@@ -1,0 +1,36 @@
+uuid: 2ead8de1-a0d2-4897-b5f1-33ceb79e6653
+langcode: pl
+status: true
+dependencies:
+  module:
+    - footer_with_partners
+  theme:
+    - visualize
+id: visualize_footer_with_partners
+theme: visualize
+region: footer
+weight: -2
+provider: null
+plugin: footer_with_partners
+settings:
+  id: footer_with_partners
+  label: 'Stopka z partnerami'
+  label_display: '0'
+  provider: footer_with_partners
+  hello_block_name: null
+  partner_images:
+    partner_first: '8'
+    partner_second: null
+    partner_third: null
+    partner_fourth: null
+    partner_fifth: null
+  partners_image:
+    partner_first: '8'
+    partner_second: '8'
+    partner_third: '8'
+    partner_fourth: '8'
+    partner_fifth: '8'
+  title: 'Zaufali nam'
+  privacy_policy_page_address: '2'
+  privacy_policy_page: '2'
+visibility: {  }

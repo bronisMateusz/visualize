@@ -1,0 +1,8 @@
+a:focus {
+  outline: none;
+  outline-offset: none;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 0;
+}

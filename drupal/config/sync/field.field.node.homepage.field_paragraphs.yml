@@ -1,0 +1,46 @@
+uuid: cbf1bbe3-a7aa-4fa8-9cc7-05aac76194fd
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_paragraphs
+    - node.type.homepage
+    - paragraphs.paragraphs_type.paragraph_full_page
+  module:
+    - entity_reference_revisions
+id: node.homepage.field_paragraphs
+field_name: field_paragraphs
+entity_type: node
+bundle: homepage
+label: Akapity
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      paragraph_full_page: paragraph_full_page
+    negate: 0
+    target_bundles_drag_drop:
+      paragraph_compare_services:
+        weight: 7
+        enabled: false
+      paragraph_full_page:
+        weight: 5
+        enabled: true
+      paragraph_hero:
+        weight: 6
+        enabled: false
+      paragraph_product:
+        weight: 7
+        enabled: false
+      paragraph_products:
+        weight: 11
+        enabled: false
+      paragraph_service:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

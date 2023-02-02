@@ -1,0 +1,20 @@
+uuid: 19c50db0-7040-4725-9a9e-ed1cc01e1c74
+langcode: pl
+status: true
+dependencies:
+  module:
+    - contact
+    - media
+id: contact_message.field_attachments
+field_name: field_attachments
+entity_type: contact_message
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 10
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

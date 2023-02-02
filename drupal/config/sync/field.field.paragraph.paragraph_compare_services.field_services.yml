@@ -1,0 +1,46 @@
+uuid: 62c59046-7e1b-4305-acef-6e60e0209dc8
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_services
+    - paragraphs.paragraphs_type.paragraph_compare_services
+    - paragraphs.paragraphs_type.paragraph_service
+  module:
+    - entity_reference_revisions
+id: paragraph.paragraph_compare_services.field_services
+field_name: field_services
+entity_type: paragraph
+bundle: paragraph_compare_services
+label: Usługi
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      paragraph_service: paragraph_service
+    negate: 0
+    target_bundles_drag_drop:
+      paragraph_compare_services:
+        weight: 7
+        enabled: false
+      paragraph_full_page:
+        weight: 8
+        enabled: false
+      paragraph_hero:
+        weight: 9
+        enabled: false
+      paragraph_product:
+        weight: 10
+        enabled: false
+      paragraph_products:
+        weight: 11
+        enabled: false
+      paragraph_service:
+        weight: 12
+        enabled: true
+field_type: entity_reference_revisions

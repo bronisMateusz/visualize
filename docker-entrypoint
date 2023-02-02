@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+# If given command run it instead of php-fpm and apache
+if [ $# -gt 0]; then
+  exec "$0"
+fi
+
+/usr/sbin/php-fpm8.2 -D
+
+printenv | grep 'DB' > /var/www/container.env
+service cron start
+
+# Apache gets grumpy about PID files pre-existing
+rm -f /usr/local/apache2/logs/apache2.pid
+
+exec apache2ctl -D FOREGROUND

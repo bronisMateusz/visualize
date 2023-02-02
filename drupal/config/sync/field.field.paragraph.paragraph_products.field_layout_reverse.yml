@@ -1,0 +1,23 @@
+uuid: a04383c5-ef25-4abc-8a32-3e49714b7088
+langcode: pl
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout_reverse
+    - paragraphs.paragraphs_type.paragraph_products
+id: paragraph.paragraph_products.field_layout_reverse
+field_name: field_layout_reverse
+entity_type: paragraph
+bundle: paragraph_products
+label: 'Odwrócony układ'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Włączony
+  off_label: Wyłączony
+field_type: boolean

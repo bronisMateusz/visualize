@@ -1,8 +1,0 @@
-# Schema for the configuration files of the Visualize theme.
-visualize.settings:
-  type: theme_settings
-  label: 'Visualize settings'
-  mapping:
-    font_size:
-      type: integer
-      label: Font size

@@ -1,0 +1,13 @@
+{
+  "name": "visualize",
+  "workspaces": [
+    "web/themes/custom/*",
+    "web/modules/custom/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach --parallel --exclude visualize run build",
+    "dev": "yarn workspace visualize-theme dev",
+    "upgrade": "yarn workspace visualize-theme yarn-upgrade-all"
+  },
+  "packageManager": "yarn@3.2.3"
+}
