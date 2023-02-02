@@ -1,0 +1,12 @@
+uuid: 1e687e47-7c1d-4f34-a132-933df6ffd6ca
+langcode: pl
+status: true
+dependencies: {  }
+id: project_contact
+label: 'Kontakt w sprawie projektu'
+recipients:
+  - f.u.kacperchecinski@gmail.com
+reply: ''
+weight: 0
+message: ''
+redirect: /dziekujemy-za-kontakt

@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 networks:
   traefik:
     name: traefik
@@ -6,7 +6,8 @@ networks:
 volumes:
   db_data:
 services:
-  drupal:
+  visualize-app:
+    container_name: visualize-app
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,11 +17,8 @@ services:
     depends_on:
       - db
     environment:
-      DB_HOST: ${DB_NAME}
-      DB_NAME: ${DB_NAME}
-      DB_PASS: ${DB_USER}
-      DB_USER: ${DB_USER}
-      DOMAIN: ${DOMAIN}
+      - DRUSH_OPTIONS_URI=${DOMAIN}:${TRAEFIK_HTTP_PORT:-80}
+      - ENVIRONMENT=dev
     env_file: .env
     extra_hosts:
       - host.docker.internal:host-gateway
@@ -28,46 +26,71 @@ services:
       - backend
       - traefik
     labels:
-      - "traefik.docker.network=traefik"
       - "traefik.enable=true"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal.entrypoints=web"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.entrypoints=web-secure"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.service=${PROJECT_NAME}-drupal"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.tls=true"
       - "traefik.http.routers.${PROJECT_NAME}-drupal.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-drupal.entrypoints=web"
       - "traefik.http.routers.${PROJECT_NAME}-drupal.service=${PROJECT_NAME}-drupal"
       - "traefik.http.services.${PROJECT_NAME}-drupal.loadbalancer.server.port=80"
+      - "traefik.docker.network=traefik"
     ports:
       - "${VITE_PORT:-12321}:${VITE_PORT:-12321}"
     restart: unless-stopped
     volumes:
-      - ./www:/var/www/html
+      - ./drupal:/var/www/drupal
+      - ./config/php.local.ini:/etc/php/8.2/cli/conf.d/php.local.ini
+      - ./config/php.local.ini:/etc/php/8.2/fpm/conf.d/php.local.ini
       - ./config/vhost.apache2.conf:/etc/apache2/sites-available/000-default.conf
   db:
+    container_name: visualize-db
     environment:
       MARIADB_DATABASE: ${DB_NAME}
       MARIADB_PASSWORD: ${DB_PASS}
       MARIADB_ROOT_PASSWORD: ${DB_PASS}
       MARIADB_USER: ${DB_USER}
-    image: mariadb:10.8
+    image: mariadb:10.10
     networks:
       - backend
     restart: unless-stopped
     volumes:
       - "db_data:/var/lib/mysql"
   traefik:
+    container_name: visualize-traefik
     command:
       - "--api.insecure=true"
-      - "--entrypoints.dba.address=:81"
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.web-secure.address=:443"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--providers.docker.network=traefik"
+      - "--providers.file.filename=/etc/traefik/dynamic.yml"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web-secure.address=:443"
+      - "--entrypoints.dba.address=:81"
     image: traefik:2.8
     networks:
       - traefik
     ports:
-      - "${HTTP_PORT}:80"
-      - "${HTTPS_PORT}:443"
-      - "${DB_PORT}:81"
+      - "${TRAEFIK_HTTP_PORT:-80}:80"
+      - "${TRAEFIK_HTTPS_PORT:-443}:443"
+      - "${TRAEFIK_DBA_PORT:-81}:81"
     restart: unless-stopped
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+  adminer:
+    container_name: visualize-adminer
+    image: adminer
+    profiles: ["adminer"]
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${PROJECT_NAME}-adminer.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-adminer.entrypoints=dba"
+      - "traefik.http.routers.${PROJECT_NAME}-adminer.service=${PROJECT_NAME}-adminer"
+      - "traefik.http.routers.${PROJECT_NAME}-adminer.tls=true"
+      - "traefik.http.services.${PROJECT_NAME}-adminer.loadbalancer.server.port=8080"
+      - "traefik.docker.network=traefik"
+    networks:
+      - traefik
+      - backend

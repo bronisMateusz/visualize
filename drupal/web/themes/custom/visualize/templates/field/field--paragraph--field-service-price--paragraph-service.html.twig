@@ -1,0 +1,51 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% if label_hidden %}
+  {% for item in items %}
+
+    {% set full_price = item.content|render|striptags|split(',') %}
+    {% set price = full_price[0] %}
+    {% set hundredths = full_price[1]|split(' ')[0] %}
+    {% set currency = full_price[1]|split(' ')[1] %}
+
+    <div{{ attributes.addClass(classes, 'field__item') }}>
+      {% if hundredths == 00 %}
+        {{ price }}<span class='currency'>&nbsp;{{ currency }}</span>
+      {% else %}
+        {{ price }}&#44;{{ hundredths }}<span class='currency'>&nbsp;{{ currency }}</span>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% for item in items %}
+      {% set full_price = item.content|render|striptags|split(',') %}
+      {% set price = full_price[0] %}
+      {% set hundredths = full_price[1]|split(' ')[0] %}
+      {% set currency = full_price[1]|split(' ')[1] %}
+
+      <div{{ attributes.addClass(classes, 'field__item') }}>
+        {% if hundredths == 00 %}
+          {{ price }}<span class='currency'>&nbsp;{{ currency }}</span>
+        {% else %}
+          {{ price }}&#44;{{ hundredths }}<span class='currency'>&nbsp;{{ currency }}</span>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

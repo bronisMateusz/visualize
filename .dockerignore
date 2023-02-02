@@ -1,10 +1,10 @@
 vendor/
 node_modules/
 dist/
-www/web/core/
-www/web/libraries/
-www/web/modules/contrib/
-www/web/themes/contrib/
-www/private_files/
-www/web/sites/default/files/
-!www/private_files/.htaccess
+drupal/web/core/
+drupal/web/libraries/
+drupal/web/modules/contrib/
+drupal/web/themes/contrib/
+drupal/private_files/
+drupal/web/sites/default/files/
+!drupal/private_files/.htaccess

@@ -1,8 +1,0 @@
-name: Project contact
-type: module
-description: Add a customizable block with a contact form for the project
-package: Visualize
-core_version_requirement: ^9 || ^10
-dependencies:
-  - "drupal:contact"
-  - "drupal:smtp"

@@ -1,0 +1,16 @@
+<div id="page">
+  {% if page.header or page.menu %}
+    <header>
+      {{ page.header }}
+      {% if page.menu %}
+        {{ page.menu }}
+      {% endif %}
+    </header>
+  {% endif %}
+  <main>
+    {{ page.content }}
+  </main>
+  <footer>
+    {{ page.footer }}
+  </footer>
+</div>

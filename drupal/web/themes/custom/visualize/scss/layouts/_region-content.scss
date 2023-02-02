@@ -1,0 +1,38 @@
+#content {
+  display: block;
+  padding: 136px 24px 0;
+  margin-bottom: 48px;
+
+  .text-content {
+    color: $color-text-primary;
+    font-family: 'Everett', sans-serif;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 576px) {
+  #content {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 992px) {
+  #content {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+.page-node-type-homepage {
+  #page {
+    #content {
+      padding: 0;
+    }
+
+    // Hide footer from page because it is in fullpage section
+    >footer {
+      display: none;
+    }
+  }
+}

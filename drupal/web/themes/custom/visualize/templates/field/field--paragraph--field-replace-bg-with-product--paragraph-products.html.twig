@@ -1,0 +1,35 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+
+{% if label_hidden %}
+  {% for item in items %}
+    {% set item_value = item.content|render|striptags %}
+    {% if item_value == 1 %}
+      <div {{ attributes.addClass(classes, 'products-background') }}></div>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    {%
+      set title_classes = [
+        'field__label',
+        label_display == 'visually_hidden' ? 'visually-hidden',
+      ]
+    %}
+
+    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
+    {% for item in items %}
+      {% set item_value = item.content|render|striptags %}
+      {% if item_value == 1 %}
+        <div {{ attributes.addClass(classes, 'products-background') }}></div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

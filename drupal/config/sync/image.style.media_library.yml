@@ -1,0 +1,26 @@
+uuid: 5ade6581-7517-401d-b28b-d8a53a888c07
+langcode: pl
+status: true
+dependencies:
+  enforced:
+    module:
+      - media_library
+_core:
+  default_config_hash: 7qJqToD1OQLAyeswpmg7M0LRxQlw1URQkJDWUJCnmR8
+name: media_library
+label: 'Miniaturka biblioteki mediów (220×220)'
+effects:
+  75b076a8-1234-4b42-85db-bf377c4d8d5f:
+    uuid: 75b076a8-1234-4b42-85db-bf377c4d8d5f
+    id: image_scale
+    weight: 0
+    data:
+      width: 220
+      height: 220
+      upscale: false
+  7aae9881-452f-4b9f-89a2-2432bf0c892b:
+    uuid: 7aae9881-452f-4b9f-89a2-2432bf0c892b
+    id: image_convert
+    weight: 2
+    data:
+      extension: webp
