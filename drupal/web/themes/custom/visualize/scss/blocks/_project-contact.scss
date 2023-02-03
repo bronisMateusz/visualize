@@ -7,7 +7,7 @@
   height: 60px;
   z-index: 1;
 
-  >.contextual {
+  > .contextual {
     right: -18px;
     top: -18px;
     z-index: 0;
@@ -66,7 +66,7 @@
 
       .welcome-message {
         position: absolute;
-        font-family: "Everett", sans-serif;
+        font-family: Everett, sans-serif;
         top: 20%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -170,7 +170,7 @@
                       &:checked {
                         border-color: $color-canvas-inverted;
 
-                        &+.form-item__label {
+                        & + .form-item__label {
                           color: $color-text-primary;
                         }
                       }
@@ -178,7 +178,7 @@
                       &:hover {
                         border-color: $color-canvas-inverted;
 
-                        &+.form-item__label {
+                        & + .form-item__label {
                           color: $color-text-primary;
                         }
                       }
@@ -269,12 +269,11 @@
               border-radius: 50px;
               border: none;
               color: $color-text-primary-inverted;
-              font-family: "Everett", sans-serif;
+              font-family: Everett, sans-serif;
               font-size: 1rem;
               font-weight: 500;
-              transition:
-                color .2s ease-in-out,
-                background-color .2s ease-in-out;
+              transition: color 0.2s ease-in-out,
+                background-color 0.2s ease-in-out;
 
               &:hover {
                 background-color: $color-canvas-secondary;
@@ -292,7 +291,14 @@
   #block-visualize-project-contact {
     right: 62.5px;
 
-    .block__content #project-contact-body .project-contact-form-wrapper #contact-message-project-contact-form #edit-field-project-type-wrapper #edit-field-project-type--wrapper .fieldset__wrapper .form-boolean-group {
+    .block__content
+      #project-contact-body
+      .project-contact-form-wrapper
+      #contact-message-project-contact-form
+      #edit-field-project-type-wrapper
+      #edit-field-project-type--wrapper
+      .fieldset__wrapper
+      .form-boolean-group {
       max-width: none;
 
       .js-form-type-radio {
@@ -326,13 +332,20 @@
 }
 
 @media (min-width: 992px) {
-  #block-visualize-project-contact .block__content #project-contact-body .project-contact-form-wrapper #contact-message-project-contact-form {
+  #block-visualize-project-contact
+    .block__content
+    #project-contact-body
+    .project-contact-form-wrapper
+    #contact-message-project-contact-form {
     padding: 72px;
   }
 }
 
 @media (min-width: 1200px) {
-  #block-visualize-project-contact .block__content #project-contact-body .welcome-message {
+  #block-visualize-project-contact
+    .block__content
+    #project-contact-body
+    .welcome-message {
     font-size: 4rem;
     line-height: 4rem;
   }

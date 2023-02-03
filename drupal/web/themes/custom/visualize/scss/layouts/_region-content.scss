@@ -5,7 +5,7 @@
 
   .text-content {
     color: $color-text-primary;
-    font-family: 'Everett', sans-serif;
+    font-family: Everett, sans-serif;
     line-height: 1.75rem;
   }
 }
@@ -31,7 +31,7 @@
     }
 
     // Hide footer from page because it is in fullpage section
-    >footer {
+    > footer {
       display: none;
     }
   }

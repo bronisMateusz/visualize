@@ -4,9 +4,9 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: .3;
+  opacity: 0.3;
 
   &.animated {
-    animation: change-products-background .75s ease-in-out;
+    animation: change-products-background 0.75s ease-in-out;
   }
 }

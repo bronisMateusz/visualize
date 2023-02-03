@@ -49,7 +49,7 @@
       const details = gallery.querySelector(
         `[class*='product-details']:nth-child(${index + 1})`
       );
-      details.className = details.className + "__active";
+      details.className += "__active";
     };
 
     const correctRightValue = (
@@ -59,16 +59,17 @@
       maxValue
     ) => {
       if (rightValue > maxValue) {
-        rightValue = rightValue - productsQuantity;
+        rightValue -= productsQuantity;
       }
       if (rightValue < minValue) {
-        rightValue = rightValue + productsQuantity;
+        rightValue += productsQuantity;
       }
-      if (rightValue == minValue) {
+      if (rightValue === minValue) {
         rightValue = maxValue;
       }
 
-      return (rightValue *= 100);
+      rightValue *= 100;
+      return rightValue;
     };
 
     const setElementAnimation = (element) => {
@@ -98,7 +99,7 @@
               maxValue
             );
 
-            image.style.right = rightValue + "%";
+            image.style.right = `${rightValue}%`;
             setElementAnimation(image);
             setImagesIndex(image, rightValue, productsQuantity);
           });
@@ -136,7 +137,7 @@
       ).length;
       const progressSlide = gallery.querySelector(".progress-slide");
 
-      progressSlide.style.width = (100 * (index + 1)) / productsQuantity + "%";
+      progressSlide.style.width = `${(100 * (index + 1)) / productsQuantity}%`;
     };
 
     const isSomeProductAnimated = (gallery) =>

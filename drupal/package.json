@@ -5,9 +5,11 @@
     "web/modules/custom/*"
   ],
   "scripts": {
-    "build": "yarn workspaces foreach --parallel --exclude visualize run build",
+    "build": "yarn workspaces foreach --verbose --parallel --exclude visualize run build",
     "dev": "yarn workspace visualize-theme dev",
-    "upgrade": "yarn workspace visualize-theme yarn-upgrade-all"
+    "format": "yarn workspaces foreach --verbose --exclude visualize run format",
+    "lint": "yarn workspaces foreach --verbose --exclude visualize run lint",
+    "upgrade": "yarn workspaces foreach --verbose --exclude visualize run upgrade"
   },
   "packageManager": "yarn@3.4.1"
 }

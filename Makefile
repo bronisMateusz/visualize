@@ -19,9 +19,11 @@ ssh:
 # Statically analyse custom code for compliance with standars and best pracices.
 check:
 	docker compose exec -it visualize-app composer check
+	docker compose exec -it visualize-app yarn
 
 check-fix:
 	docker compose exec -it visualize-app composer check --fix
+	docker compose exec -it visualize-app yarn format
 
 export-translations:
 	docker compose exec -it visualize-app drush locale:export pl --types=customized > drupal/translations/custom-translations.pl.po --no-interaction

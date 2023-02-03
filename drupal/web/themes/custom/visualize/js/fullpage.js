@@ -1,7 +1,7 @@
-(function ($) {
-  $(document).ready(function () {
+(($) => {
+  $(document).ready(() => {
     const addOutAnimation = (direction, paragraph) => {
-      let paragraphClasses = paragraph.classList;
+      const paragraphClasses = paragraph.classList;
 
       if (direction === "down") {
         paragraphClasses.add("back-from-top");

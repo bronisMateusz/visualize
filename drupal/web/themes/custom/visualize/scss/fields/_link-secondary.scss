@@ -4,7 +4,8 @@
   a {
     border: 1px solid $color-canvas-inverted;
     border-radius: 50px;
-    box-shadow: 0 0 1px 0px $color-canvas-inverted inset, 0 0 1px 0px $color-canvas-inverted;
+    box-shadow: 0 0 1px 0 $color-canvas-inverted inset,
+      0 0 1px 0 $color-canvas-inverted;
     color: $color-text-primary;
     display: inline-block;
     line-height: 1.5rem;
@@ -13,7 +14,7 @@
     white-space: nowrap;
     width: fit-content;
     font-size: 14px;
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
 
     &:hover {
       background-color: $color-canvas-inverted;
