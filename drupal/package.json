@@ -9,5 +9,5 @@
     "dev": "yarn workspace visualize-theme dev",
     "upgrade": "yarn workspace visualize-theme yarn-upgrade-all"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.4.1"
 }
