@@ -1,6 +1,6 @@
-version: '3'
+version: "3"
 services:
-  drupal:
+  visualize-app:
     labels:
       - "traefik.docker.network=traefik"
       - "traefik.enable=true"
@@ -14,8 +14,8 @@ services:
       - "--api.insecure=true"
       - "--entrypoints.dba.address=:81"
       - "--entrypoints.web.address=:80"
-      - '--entrypoints.web.http.redirections.entrypoint.to=web-secure'
-      - '--entrypoints.web.http.redirections.entrypoint.scheme=https'
+      - "--entrypoints.web.http.redirections.entrypoint.to=web-secure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
       - "--entrypoints.web-secure.address=:443"
       - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
       - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
