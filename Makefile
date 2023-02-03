@@ -6,8 +6,12 @@ dev:
 	docker compose exec -it visualize-app yarn build
 
 # Stop local dev environment.
-dev-down:
+down:
 	docker compose down
+
+prod:
+	docker compose -f docker-compose.yml -f docker-compose.prod.yml --profile adminer up -d
+	docker exec -t visualize-app drush deploy
 
 ssh:
 	docker compose exec -it visualize-app bash
