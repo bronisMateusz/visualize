@@ -4,40 +4,43 @@
   #page {
     > header {
       .messages-list {
-        /* stylelint-disable-next-line */
-        width: calc(100% - var(--ginVerticalToolbarOffset, 240px));
+        .messages__content {
+          // vh - padding - gin-toolbar-secondary-height - gin-toolbar-y-offset
+          /* stylelint-disable-next-line */
+          max-height: calc(
+            100vh - 36px - var(--gin-toolbar-secondary-height) -
+              var(--gin-toolbar-y-offset)
+          );
+        }
       }
 
       #block-visualize-site-branding {
         /* stylelint-disable-next-line */
-        left: calc(50% + var(--ginVerticalToolbarOffset, 240px) / 2);
-        top: 100px;
+        top: calc(
+          40px + var(--gin-toolbar-secondary-height) +
+            var(--gin-toolbar-y-offset)
+        );
       }
     }
 
-    #intro-overlay {
-      top: -27px;
+    .paragraph--type--paragraph-hero {
+      top: var(--gin-toolbar-secondary-height);
+      min-height: calc(
+        100vh - var(--gin-toolbar-secondary-height) -
+          var(--gin-toolbar-y-offset)
+      );
     }
 
     #block-visualize-project-contact {
       .block__content #project-contact-body {
-        height: calc(100vh - 135px);
-        left: calc(100% + 54px);
-        top: calc(100% + 159px);
-      }
-    }
-  }
-}
-
-@media (min-width: 576px) {
-  [dir="ltr"] body.gin--vertical-toolbar,
-  [dir="ltr"] body.gin--horizontal-toolbar,
-  [dir="ltr"] body.gin--classic-toolbar {
-    #page {
-      #block-visualize-project-contact {
-        .block__content #project-contact-body {
-          left: calc(100% + 86px);
-        }
+        height: calc(
+          100vh - 48px - var(--gin-toolbar-secondary-height) -
+            var(--gin-toolbar-y-offset)
+        );
+        top: calc(
+          24px + var(--gin-toolbar-secondary-height) +
+            var(--gin-toolbar-y-offset)
+        );
       }
     }
   }
@@ -48,16 +51,22 @@
   [dir="ltr"] body.gin--horizontal-toolbar,
   [dir="ltr"] body.gin--classic-toolbar {
     #page {
-      #intro-overlay {
-        top: 0;
+      > header {
+        .messages-list {
+          /* stylelint-disable-next-line */
+          width: calc(100% - var(--gin-toolbar-width-collapsed));
+        }
+      }
+
+      #block-visualize-site-branding {
+        /* stylelint-disable-next-line */
+        left: calc(50% + var(--gin-toolbar-width-collapsed) / 2);
       }
 
       #block-visualize-project-contact {
         .block__content #project-contact-body {
-          height: calc(100vh - 108px);
-          width: calc(100vw - 108px);
-          left: calc(100% + 150px);
-          top: calc(100% + 132px);
+          width: calc(100vw - 48px - var(--gin-toolbar-width-collapsed));
+          left: calc(100% + 24px + var(--gin-toolbar-width-collapsed));
         }
       }
     }
