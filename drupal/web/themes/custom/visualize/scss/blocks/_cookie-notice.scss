@@ -12,9 +12,7 @@
 
   &.closing {
     opacity: 0;
-    transition:
-      width 0.375s ease-in-out 0.25s,
-      opacity 0.5s ease-out 0.75s,
+    transition: width 0.375s ease-in-out 0.25s, opacity 0.5s ease-out 0.75s,
       z-index 0.1s ease 0.75s;
     width: 70px;
     z-index: -1;

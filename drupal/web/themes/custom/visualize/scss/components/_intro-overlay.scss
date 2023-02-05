@@ -8,9 +8,7 @@
   &.loaded {
     background-color: transparent;
     z-index: 0;
-    transition:
-      background-color 1s ease-in-out,
-      z-index .1s ease-in-out .7s;
+    transition: background-color 1s ease-in-out, z-index 0.1s ease-in-out 0.7s;
   }
 
   svg {
@@ -25,9 +23,7 @@
       left: 50%;
       top: 67px;
       opacity: 0;
-      transition:
-        top .75s ease-in-out,
-        opacity .2s ease .75s;
+      transition: top 0.75s ease-in-out, opacity 0.2s ease 0.75s;
     }
 
     path {

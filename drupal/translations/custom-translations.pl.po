@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2023-02-02 19:47+0100\n"
-"PO-Revision-Date: 2023-02-02 19:47+0100\n"
+"POT-Creation-Date: 2023-02-05 16:20+0100\n"
+"PO-Revision-Date: 2023-02-05 16:20+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,9 @@ msgstr "Akcja"
 msgid "All"
 msgstr "Wszystko"
 
+msgid "All caches cleared."
+msgstr "Wszystkie pamięci podręczne wyczyszczone."
+
 msgid "An uploaded file or document, such as a PDF."
 msgstr "Przesłany plik lub dokument, taki jak PDF."
 
@@ -68,6 +71,9 @@ msgstr ""
 "Klikając na \"Konfiguracja\" możesz przejść do edycji zawartości "
 "bloku, zająć się ustawieniami widoczności, a nawet zmienić "
 "umiejscowienie, w którym znajduje się on w Twoim motywie."
+
+msgid "CSS and JavaScript cache cleared."
+msgstr "Wyczyszczono pamięć podręczną CSS i JavaScript."
 
 msgid "Content"
 msgstr "Zawartość"
@@ -122,6 +128,13 @@ msgstr "Siatka"
 
 msgid "Help"
 msgstr "Pomoc"
+
+msgid ""
+"If %identifier is a valid account, an email will be sent with "
+"instructions to reset your password."
+msgstr ""
+"Jeśli % identifier jest prawidłowym kontem, zostanie wysłany e-mail "
+"z instrukcją resetowania hasła."
 
 msgid "Image"
 msgstr "Obraz"
@@ -180,6 +193,9 @@ msgstr "Wąsko"
 msgid "Newest first"
 msgstr "Najpierw najświeższe"
 
+msgid "Next product"
+msgstr "Następny produkt"
+
 msgid "Next ›"
 msgstr "Następna ›"
 
@@ -204,11 +220,20 @@ msgstr "Osobisty formularz kontaktowy"
 msgid "Preview"
 msgstr "Podgląd"
 
+msgid "Previous product"
+msgstr "Poprzedni produkt"
+
 msgid "Primary admin actions"
 msgstr "Podstawowe akcje administratora"
 
 msgid "Primary tabs"
 msgstr "Zakładki podstawowe"
+
+msgid "Privacy policy"
+msgstr "Polityka prywatności"
+
+msgid "Privacy policy page"
+msgstr "Strona polityki prywatności"
 
 msgid "Publish media"
 msgstr "Opublikuj media"

@@ -15,7 +15,9 @@ export default defineConfig(({ mode }) => {
         input: ["scss/**/*.scss", "!scss/**/_*.scss", "js/*.js", "js/*.ts"],
       },
     },
-
+    optimizeDeps: {
+      include: [],
+    },
     server: {
       host: true,
       port: process.env.VITE_PORT || 12321,

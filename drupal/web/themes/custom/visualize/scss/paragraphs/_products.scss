@@ -3,6 +3,17 @@
   margin: 0 auto;
   padding: 136px 62.5px;
   min-height: 100vh;
+
+  > video {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+    opacity: 0.3;
+    fill: blur(2px);
+  }
 }
 
 @media (min-width: 768px) {
@@ -21,15 +32,15 @@
 
 @keyframes change-product {
   0% {
-    transform: scale(1)
+    transform: scale(1);
   }
 
   50% {
-    transform: scale(1.5, 1.1)
+    transform: scale(1.5, 1.1);
   }
 
   100% {
-    transform: scale(1)
+    transform: scale(1);
   }
 }
 
@@ -39,6 +50,6 @@
   }
 
   100% {
-    opacity: .3;
+    opacity: 0.3;
   }
 }

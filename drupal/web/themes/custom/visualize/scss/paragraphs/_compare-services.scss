@@ -27,7 +27,7 @@
       }
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         border-top: 2px solid $color-canvas-secondary;
         border-right: 2px solid $color-canvas-secondary;
@@ -35,7 +35,7 @@
         width: 30%;
         position: absolute;
         left: 50%;
-        transition: .2s ease-in-out;
+        transition: 0.2s ease-in-out;
       }
 
       &.splide__arrow--prev {
@@ -99,17 +99,17 @@
       }
 
       .splide__track {
-        >.splide__list {
+        > .splide__list {
           display: inline-flex;
           gap: 24px;
 
           @for $i from 1 through 5 {
-            >li:nth-of-type(#{$i}) {
+            > li:nth-of-type(#{$i}) {
               margin-top: $i * 24px;
 
               &:hover {
                 margin-top: ($i - 1) * 24px;
-                transition: margin .2s ease-in-out;
+                transition: margin 0.2s ease-in-out;
 
                 @if $i ==4 {
                   margin-bottom: 24px;

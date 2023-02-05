@@ -1,18 +1,17 @@
-uuid: d1b94123-d4fc-4c30-8131-a5b2936ebac6
+uuid: 67dfda8e-0a29-4700-b007-8f055ec0d458
 langcode: pl
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_product_photo
+    - field.storage.paragraph.field_product_media
     - media.type.image
-    - media.type.remote_video
     - media.type.video
     - paragraphs.paragraphs_type.paragraph_product
-id: paragraph.paragraph_product.field_product_photo
-field_name: field_product_photo
+id: paragraph.paragraph_product.field_product_media
+field_name: field_product_media
 entity_type: paragraph
 bundle: paragraph_product
-label: 'Zdjęcie produktu'
+label: 'Media produktu'
 description: ''
 required: false
 translatable: false
@@ -23,7 +22,6 @@ settings:
   handler_settings:
     target_bundles:
       image: image
-      remote_video: remote_video
       video: video
     sort:
       field: _none
