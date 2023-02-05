@@ -6,7 +6,7 @@ networks:
 volumes:
   db_data:
 services:
-  visualize-app:
+  app:
     container_name: visualize-app
     build:
       context: .
@@ -26,16 +26,12 @@ services:
       - backend
       - traefik
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.entrypoints=web-secure"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.service=${PROJECT_NAME}-drupal"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal-secure.tls=true"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal.entrypoints=web"
-      - "traefik.http.routers.${PROJECT_NAME}-drupal.service=${PROJECT_NAME}-drupal"
-      - "traefik.http.services.${PROJECT_NAME}-drupal.loadbalancer.server.port=80"
       - "traefik.docker.network=traefik"
+      - "traefik.enable=true"
+      - "traefik.http.routers.${PROJECT_NAME}-app.entrypoints=web"
+      - "traefik.http.routers.${PROJECT_NAME}-app.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.${PROJECT_NAME}-app.service=${PROJECT_NAME}-app"
+      - "traefik.http.services.${PROJECT_NAME}-app.loadbalancer.server.port=80"
     ports:
       - "${VITE_PORT:-12321}:${VITE_PORT:-12321}"
     restart: unless-stopped
@@ -64,9 +60,7 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--providers.docker.network=traefik"
-      - "--providers.file.filename=/etc/traefik/dynamic.yml"
       - "--entrypoints.web.address=:80"
-      - "--entrypoints.web-secure.address=:443"
       - "--entrypoints.dba.address=:81"
     image: traefik:2.8
     networks:
