@@ -47,7 +47,9 @@ RUN set -xe; \
   corepack enable yarn; \
   # Install drush launcher.
   curl -OL https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar; \
-  chmod +x drush.phar; mv drush.phar /usr/local/bin/drush
+  chmod +x drush.phar; mv drush.phar /usr/local/bin/drush \
+  # Enable apache modules.
+  && a2enmod rewrite headers ssl
 
 FROM base
 
