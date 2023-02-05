@@ -5,6 +5,7 @@
   background-size: cover;
   background-position: center;
   opacity: 0.3;
+  fill: blur(2px);
 
   &.animated {
     animation: change-products-background 0.75s ease-in-out;

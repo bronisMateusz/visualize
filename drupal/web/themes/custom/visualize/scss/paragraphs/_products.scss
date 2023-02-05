@@ -3,6 +3,17 @@
   margin: 0 auto;
   padding: 136px 62.5px;
   min-height: 100vh;
+
+  > video {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: none;
+    opacity: 0.3;
+    fill: blur(2px);
+  }
 }
 
 @media (min-width: 768px) {

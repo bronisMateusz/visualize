@@ -18,11 +18,23 @@
 
     <div class={{ products_images_class }}>
       {% for item in items %}
-        <div class='product-image__wrapper'>
+        <div class='product-media__wrapper'>
           {% for item in items %}
-            {% set product_classes = 'product-image' %}
-            {% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
-            {{ drupal_image(field_media_image.entity.id, 'product_photo', {alt: field_media_image.alt|t, class: product_classes}) }}
+            {% set product_media = item.content['#paragraph'].field_product_media %}
+            {% set product_media_uri = product_media|file_uri %}
+
+            {% if 'mp4' in product_media_uri %}
+              <video class="product-media" src="{{ product_media_uri|file_url }}" autoplay loop muted nofullscreen playsinline></video>
+            {% else %}
+              {{ drupal_image(
+                product_media_uri,
+                'product_photo',
+                {
+                  alt: product_media.entity.field_media_image.alt,
+                  class: 'product-media'
+                }
+              ) }}
+            {% endif %}
           {% endfor %}
         </div>
       {% endfor %}
@@ -70,11 +82,23 @@
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     <div class={{ products_images_class }}>
       {% for item in items %}
-        <div class='product-image__wrapper'>
+        <div class='product-media__wrapper'>
           {% for item in items %}
-            {% set product_classes = 'product-image' %}
-            {% set field_media_image = item.content['#paragraph'].field_product_photo.entity.field_media_image %}
-            {{ drupal_image(field_media_image.entity.id, 'product_photo', {alt: field_media_image.alt|t, class: product_classes}) }}
+            {% set product_media = item.content['#paragraph'].field_product_media %}
+            {% set product_media_uri = product_media|file_uri %}
+
+            {% if 'mp4' in product_media_uri %}
+              <video class="product-media" src="{{ product_media_uri|file_url }}" autoplay loop muted nofullscreen playsinline></video>
+            {% else %}
+              {{ drupal_image(
+                product_media_uri,
+                'product_photo',
+                {
+                  alt: product_media.entity.field_media_image.alt,
+                  class: 'product-media'
+                }
+              ) }}
+            {% endif %}
           {% endfor %}
         </div>
       {% endfor %}

@@ -6,7 +6,7 @@
     position: relative;
     margin-bottom: calc(20% + 24px);
 
-    .product-image__wrapper {
+    .product-media__wrapper {
       aspect-ratio: 9/11;
       overflow: hidden;
       position: relative;
@@ -26,7 +26,7 @@
         }
       }
 
-      .product-image {
+      .product-media {
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -123,7 +123,7 @@
       margin-bottom: initial;
       padding: 0 48px;
 
-      .product-image__wrapper {
+      .product-media__wrapper {
         &:first-child {
           max-width: 50%;
           margin-left: auto;

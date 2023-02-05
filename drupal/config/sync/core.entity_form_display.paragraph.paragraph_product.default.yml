@@ -4,8 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.paragraph_product.field_product_description
+    - field.field.paragraph.paragraph_product.field_product_media
     - field.field.paragraph.paragraph_product.field_product_name
-    - field.field.paragraph.paragraph_product.field_product_photo
     - paragraphs.paragraphs_type.paragraph_product
   module:
     - media_library
@@ -23,6 +23,13 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_product_media:
+    type: media_library_widget
+    weight: 0
+    region: content
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
   field_product_name:
     type: string_textfield
     weight: 2
@@ -30,13 +37,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_product_photo:
-    type: media_library_widget
-    weight: 1
-    region: content
-    settings:
-      media_types: {  }
     third_party_settings: {  }
 hidden:
   created: true

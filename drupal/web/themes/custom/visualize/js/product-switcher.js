@@ -10,7 +10,7 @@
           const prevBtn = productGallery.querySelector(".prev-product");
           const nextBtn = productGallery.querySelector(".next-product");
 
-          this.updateProductsImage(productGallery, 0);
+          this.updateProductsMedia(productGallery, 0);
           this.updateProductsBackground(productGallery, 0);
           this.updateProductsProgress(productGallery, 0);
 
@@ -24,22 +24,22 @@
       }
     },
 
-    setImagesIndex: (image, rightValue, productsQuantity) => {
+    setMediaIndex: (media, rightValue, productsQuantity) => {
       switch (rightValue) {
         case 0:
-          image.style.setProperty("z-index", productsQuantity + 1);
+          media.style.setProperty("z-index", productsQuantity + 1);
           break;
         case 100:
-          image.style.setProperty("z-index", productsQuantity);
+          media.style.setProperty("z-index", productsQuantity);
           break;
         case 200:
-          image.style.setProperty("z-index", productsQuantity - 2);
+          media.style.setProperty("z-index", productsQuantity - 2);
           break;
         case -100:
-          image.style.setProperty("z-index", productsQuantity - 1);
+          media.style.setProperty("z-index", productsQuantity - 1);
           break;
         default:
-          image.style.setProperty("z-index", productsQuantity - 2);
+          media.style.setProperty("z-index", productsQuantity - 2);
       }
     },
 
@@ -90,18 +90,18 @@
       );
     },
 
-    updateProductsImage(gallery, shiftValue) {
-      const imageWrappers = gallery.querySelectorAll(".product-image__wrapper");
-      const productsQuantity = imageWrappers.length;
+    updateProductsMedia(gallery, shiftValue) {
+      const mediaWrappers = gallery.querySelectorAll(".product-media__wrapper");
+      const productsQuantity = mediaWrappers.length;
       const minValue = -2;
       const maxValue = productsQuantity - 2;
 
-      imageWrappers.forEach((wrapper, wrapperIndex) => {
+      mediaWrappers.forEach((wrapper, wrapperIndex) => {
         const shiftValueComputed = wrapperIndex + shiftValue;
 
         if (wrapperIndex < 4) {
-          Array.from(wrapper.children).forEach((image, imageIndex) => {
-            let rightValue = imageIndex - shiftValueComputed;
+          Array.from(wrapper.children).forEach((media, mediaIndex) => {
+            let rightValue = mediaIndex - shiftValueComputed;
             rightValue = this.correctRightValue(
               rightValue,
               productsQuantity,
@@ -109,23 +109,20 @@
               maxValue
             );
 
-            image.style.right = `${rightValue}%`;
-            this.setElementAnimation(image);
-            this.setImagesIndex(image, rightValue, productsQuantity);
+            media.style.right = `${rightValue}%`;
+            this.setElementAnimation(media);
+            this.setMediaIndex(media, rightValue, productsQuantity);
           });
         }
       });
     },
 
-    getActiveProductImage: (gallery, childNumber) => {
-      const image = gallery.querySelector(
-        `.product-image:nth-child(${childNumber})`
+    getActiveProductMediaUrl: (gallery, childNumber) => {
+      const media = gallery.querySelector(
+        `.product-media:nth-child(${childNumber})`
       );
 
-      return image.src
-        .split("?")[0]
-        .replace("styles/product_photo/public/", "")
-        .replace(".webp", "");
+      return media.src;
     },
 
     updateProductsBackground(gallery, index) {
@@ -135,9 +132,26 @@
 
       if (productsBackground) {
         this.setElementAnimation(productsBackground);
+        const productsBackgroundParent = productsBackground.parentElement;
+        const mediaUrl = this.getActiveProductMediaUrl(gallery, index + 1);
 
-        const image = this.getActiveProductImage(gallery, index + 1);
-        productsBackground.style.backgroundImage = `url(${image})`;
+        if (mediaUrl.includes(".mp4")) {
+          const videoElement = document.createElement("video");
+          videoElement.autoplay = true;
+          videoElement.loop = true;
+          videoElement.muted = true;
+          videoElement.requestFullscreen = false;
+          videoElement.playsInline = false;
+          videoElement.src = mediaUrl;
+          productsBackgroundParent.appendChild(videoElement);
+          productsBackground.style.backgroundImage = "none";
+          return;
+        }
+
+        if (productsBackgroundParent.getElementsByTagName("video")[0])
+          productsBackgroundParent.lastElementChild.remove();
+
+        productsBackground.style.backgroundImage = `url(${mediaUrl})`;
       }
     },
 
@@ -155,7 +169,7 @@
 
       this.hideProductDetails(gallery);
       this.showProductDetails(gallery, nextIndex);
-      this.updateProductsImage(gallery, nextIndex);
+      this.updateProductsMedia(gallery, nextIndex);
       this.updateProductsBackground(gallery, nextIndex);
       this.updateProductsProgress(gallery, nextIndex);
     },
