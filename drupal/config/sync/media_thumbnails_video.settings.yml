@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: n6alvrURxAJbLad-Yg2MPgeJVCA1FI4nQlSPOP50r9A
+ffmpeg: /usr/local/bin/ffmpeg
+ffprobe: /usr/local/bin/ffprobe
+timeout: '3600'
+threads: '12'
+langcode: pl
