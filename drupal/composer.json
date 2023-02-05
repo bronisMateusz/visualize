@@ -123,6 +123,9 @@
         "patches": {
             "drupal/core": {
                 "https://www.drupal.org/project/drupal/issues/2845878": "https://www.drupal.org/files/issues/2019-07-12/drupal-locale-sort-exported-strings-2845878-6.patch"
+            },
+            "drupal/pathauto": {
+                "https://www.drupal.org/project/pathauto/issues/3328670": "https://www.drupal.org/files/issues/2022-12-21/php8.2notice-pathauto-3328670.patch"
             }
         },
         "drupal-scaffold": {
