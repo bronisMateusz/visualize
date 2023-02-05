@@ -1,7 +1,7 @@
 global-styling:
   vite: true
   js:
-    js/visualize.js: {}
+    js/product-switcher.js: {}
   css:
     component:
       scss/styles.scss: {}
