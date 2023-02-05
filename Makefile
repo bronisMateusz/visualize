@@ -11,6 +11,7 @@ down:
 
 prod:
 	docker compose -f docker-compose.yml -f docker-compose.prod.yml --profile adminer up -d
+	docker exec -t visualize-app composer install
 	docker exec -t visualize-app drush deploy
 
 ssh:
