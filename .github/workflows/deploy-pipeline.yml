@@ -1,4 +1,4 @@
-name: Build pipeline
+name: Deploy pipeline
 
 on:
   pull_request:
@@ -8,7 +8,6 @@ on:
       - closed
 jobs:
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
