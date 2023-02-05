@@ -4,17 +4,9 @@ on:
   pull_request:
     branches:
       - "main"
-
+    types:
+      - closed
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build
-        run: |
-          export DOCKER_BUILDKIT=1
-          cp .env.example .env
-          docker compose build
   deploy:
     needs: build
     runs-on: ubuntu-latest
