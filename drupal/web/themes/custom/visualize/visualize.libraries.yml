@@ -1,6 +1,7 @@
 global-styling:
   vite: true
   js:
+    js/intro-overlay.js: {}
     js/product-switcher.js: {}
   css:
     component:
